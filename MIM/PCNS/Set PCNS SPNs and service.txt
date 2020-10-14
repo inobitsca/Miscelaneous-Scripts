@@ -1,0 +1,18 @@
+workspace ID 
+0b0a625b-e32e-45c0-bbb1-fef2c25b0044 
+
+Subscription ID
+d0f60d49-a81b-4124-b434-c6a7965b5e16 
+
+
+setspn.exe -A PCNSCLNT/ZABEQHPMIM001.bw-eq.com BW-EQ\MIMSync
+setspn.exe -A PCNSCLNT/ZABEQHPMIM001 BW-EQ\MIMSync
+
+
+CD "c:\Program Files\Microsoft Password Change Notification\"
+.\Pcnscfg.exe addtarget /N:PCNSCLNT /A:ZABEQHPMIM001.BW-EQ.COM /S:PCNSCLNT/ZABEQHPMIM001.bw-eq.com /FI:"Domain Users" /F:3
+
+CD "c:\Program Files\Microsoft Password Change Notification\"
+.\Pcnscfg.exe addtarget /N:ZABEQHPMIM001 /A:ZABEQHPMIM001.BW-EQ.COM /S:PCNSCLNT/ZABEQHPMIM001.bw-eq.com /FI:"Domain Users" /F:3
+
+

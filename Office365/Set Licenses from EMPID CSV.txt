@@ -1,0 +1,5 @@
+Import-csv ah1.csv |% {get-aduser -Properties pager -f "pager -eq $($_.pager)" } | select-object –property Userprincipalname | Export-csv Working.csv
+
+Import-CSV "c:\temp\Working.csv" | % { set-msoluser –userprincipalname $_.UserPrincipalName -UsageLocation za }
+
+Import-CSV "c:\temp\Working.csv" | % { set-msoluserlicense –userprincipalname $_.userprincipalname –addlicenses "McCarthyLimited:OFFICESUBSCRIPTION" }

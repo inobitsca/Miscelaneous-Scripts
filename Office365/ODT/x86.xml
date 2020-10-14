@@ -1,0 +1,18 @@
+<Configuration>
+
+  <Add SourcePath="\\SERVENAME\ODT\Office2013_X86" OfficeClientEdition="32" >
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+    </Product>
+    
+  </Add>
+
+<Updates Enabled="TRUE"/>
+
+<Display Level="None" AcceptEULA="TRUE" />
+
+  <Logging Path="%temp%" />
+
+<Property Name="AUTOACTIVATE" Value="1" />
+
+</Configuration>

@@ -1,0 +1,8 @@
+$policy = Get-ThrottlingPolicy outlook2003;
+$mailboxes = Get-Mailbox | where-object {$_.ThrottlingPolicy -eq $policy.Identity};
+$defaultPolicy = Get-ThrottlingPolicy | where-object {$_.IsDefault -eq $true};
+foreach ($mailbox in $mailboxes)
+{
+  set-mailbox -Identity $mailbox.Identity -ThrottlingPolicy $defaultPolicy;
+}
+Remove-ThrottlingPolicy outlook2003;

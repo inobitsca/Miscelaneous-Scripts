@@ -1,0 +1,1 @@
+Import-csv ToBeEnabled.csv | % {  Set-ADAccountControl -identity $_.SamAccountName -Enabled $true }

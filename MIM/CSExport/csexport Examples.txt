@@ -1,0 +1,48 @@
+NOTE: CSExport.exe must be run from the "C:\Program Files\Microsoft Forefront Identity Manager\2010\Synchronization Service\Bin" directory
+ 
+
+Usage: CSEXPORT ma_name [filename] [/f[:]{d="DN"|r="rdn"|g="guid"|s|i|e|m|x}] [/
+ o[:]{[e][b][h][d][p]}]
+
+ma_name     Name of MA to export
+ filename    Filename (default is name of MA)
+ /f          Filter objects to export (default is all objects, if this option is omitted):
+             d   Specify DN to export where DN is the distinguished name or anchor to export
+             r   Specify RDN to export where RDN is the relative distinguished name to export
+             g   Specify GUID to export where GUID is the globally unique identifier to export
+             s   Disconnectors
+             i   Import errors
+             e   Export errors
+             m   Pending imports
+             x   Pending exports
+
+/o          Output the following items (default is all items, if this option is omitted):
+             e   include error information
+             b   include only the hologram
+             h   include all tower holograms
+             d   include all tower deltas
+             p   include password set/change history
+
+ 
+
+EXAMPLE:
+
+ 
+ Export Errors:
+ --------------
+
+csexport.exe "MA Name" "c:\FullFolderPath\Filename.XML" /f:e
+
+
+ Pending Exports:
+ ----------------
+
+csexport.exe "MA Name" "c:\FullFolderPath\Filename.XML" /f:m
+
+ 
+ Convert XML to CSV
+ ------------------
+
+CSExportAnalyzer.exe  "c:\FullFolderPath\Filename.XML" >  "c:\FullFolderPath\Filename.CSV"
+
+ 

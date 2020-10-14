@@ -1,0 +1,10 @@
+dnscmd localhost /zoneadd domdyn.net /secondary 172.16.128.174 172.16.128.178 /file domdyn.net.dns
+dnscmd localhost /zoneadd _msdcs.domdyn.net /secondary 172.16.128.174 172.16.128.178 /file _msdcs.domdyn.net.dns
+dnscmd localhost /zoneadd 16.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 16.172.in-addr.arpa.dns
+dnscmd localhost /zoneadd 17.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 17.172.in-addr.arpa.dns
+dnscmd localhost /zoneadd 18.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 18.172.in-addr.arpa.dns
+dnscmd localhost /zoneadd 19.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 19.172.in-addr.arpa.dns
+dnscmd localhost /zoneadd 20.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 20.172.in-addr.arpa.dns
+dnscmd localhost /zoneadd 21.172.in-addr.arpa /secondary 172.16.128.174 172.16.128.178 /file 21.172.in-addr.arpa.dns
+dnscmd localhost /resetforwarders 172.16.128.174 172.16.128.178
+

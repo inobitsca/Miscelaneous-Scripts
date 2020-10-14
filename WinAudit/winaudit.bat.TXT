@@ -1,0 +1,2 @@
+\\servername\sharename\winaudit.exe /r=gsotmidbMP /o=CSV /f=\\servername\sharename\%COMPUTERNAME% /L=en /m=The System Administrator is performing a brief audit of this computer /t=2
+

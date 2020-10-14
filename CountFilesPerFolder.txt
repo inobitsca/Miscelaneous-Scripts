@@ -1,0 +1,13 @@
+$root = read-host "Enter the root directory you want to count files and folders in"
+$Reportpath = $env:userprofile\documents\
+$Filename = Get-Date -Format yyyy-MM-ddThh-mm-ss
+$outfile = $Reportpath + $Filename + "-FileCount.csv"
+$header = "Folder,ItemCount"
+$header > $outfile
+$dir = Get-ChildItem C:\Users\cedri\ -Recurse -Directory
+$dir2 = $Dir |select fullname
+foreach($D in $Dir2) {$Count = Get-ChildItem $d.Fullname -File |Measure | %{$_.Count}
+$out = $D.fullname + "," + $count
+$out >> $outfile
+}
+Write-host "The filecount report is saved as" $outfile

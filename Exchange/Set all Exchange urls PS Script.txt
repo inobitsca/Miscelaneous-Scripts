@@ -1,0 +1,18 @@
+#"Edit the Client Access FQDN starting with http:// or https://" 
+
+$urlpath =  "https://mail.synchem.co.za" 
+
+
+Get-ClientAccessServer | Set-ClientAccessServer –AutodiscoverServiceInternalUri “$urlpath/autodiscover/autodiscover.xml” 
+Get-webservicesvirtualdirectory| Set-webservicesvirtualdirectory –internalurl “$urlpath/ews/exchange.asmx” 
+Get-oabvirtualdirectory | Set-oabvirtualdirectory –internalurl “$urlpath/oab” 
+Get-owavirtualdirectory | Set-owavirtualdirectory –internalurl “$urlpath/owa” 
+Get-ecpvirtualdirectory |Set-ecpvirtualdirectory –internalurl “$urlpath/ecp” 
+Get-ActiveSyncVirtualDirectory | Set-ActiveSyncVirtualDirectory -InternalUrl "$urlpath/Microsoft-Server-ActiveSync" 
+
+
+Get-webservicesvirtualdirectory|Set-webservicesvirtualdirectory -ExternalUrl “$urlpath/ews/exchange.asmx” 
+Get-oabvirtualdirectory |Set-oabvirtualdirectory –ExternalUrl “$urlpath/oab” 
+Get-owavirtualdirectory |Set-owavirtualdirectory –ExternalUrl “$urlpath/owa” 
+Get-ecpvirtualdirectory |Set-ecpvirtualdirectory –ExternalUrl “$urlpath/ecp” 
+Get-ActiveSyncVirtualDirectory |Set-ActiveSyncVirtualDirectory -ExternalUrl "$urlpath/Microsoft-Server-ActiveSync" 

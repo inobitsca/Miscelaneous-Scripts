@@ -1,0 +1,6 @@
+Name,Description
+FIMSyncAdmins,Members of this group have full access to everything within the Forefront Identity Manager Synchronization Service.
+FIMSyncOperators,"Members have access to Operations in the Identity Manager only. FIMSyncOperators can run management agents, view synchronization stats, and save the run histories.  Members must also be members of the MIISBrowse group to open links in synchronization statistics. "
+FIMSyncJoiners,Members have access to Joiner and Metaverse Search within the Synchronization Service Manager interface. FIMSyncJoiners can join or project disconnectors by using Joiner and they can use Metaverse Search to view object properties and disconnect objects from the metaverse.
+FIMSyncBrowse,Members of this group have permission to gather information about a user’s accounts when doing search operations with WMI queries
+FIMSyncPasswordSet,"Members can perform account search, password set, and password change operations using the password management interfaces with WMI."

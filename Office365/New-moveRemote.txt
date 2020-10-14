@@ -1,0 +1,14 @@
+$Cred = Get-Credential
+
+#Connect to remote Exchange Powershell
+$S = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Cred -Authentication Basic -AllowRedirection
+Import-PSSession $S -allowclobber
+
+
+$RemCred = get-credential
+$U = "ADFS_Testing@liberty.fin-za.net"
+New-MoveRequest -identity $U -Remote -RemoteHostName www.libertymail.co.za -RemoteCredential $RemCred -TargetDeliveryDomain “libertyholdings.onmicrosoft.com” -AcceptLargeDataLoss -BadItemLimit 1000
+
+
+Get-MoveRequest |Get-MoveRequestStatistics |ft DisplayName,StatusDetail,TotalMailboxSize,BytesTransferred,TotalMailboxItemCount,ItemsTransferred, PercentComplete
+

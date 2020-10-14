@@ -1,0 +1,7 @@
+<ns0:SequentialWorkflow x:Name="SequentialWorkflow" ActorId="00000000-0000-0000-0000-000000000000" WorkflowDefinitionId="00000000-0000-0000-0000-000000000000" RequestId="00000000-0000-0000-0000-000000000000" TargetId="00000000-0000-0000-0000-000000000000" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:Microsoft.ResourceManagement.Workflow.Activities;Assembly=Microsoft.ResourceManagement, Version=4.0.3606.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+	<ns0:SynchronizationRuleActivity RemoveValue="{x:Null}" AttributeId="00000000-0000-0000-0000-000000000000" AddValue="{x:Null}" x:Name="authenticationGateActivity1" SynchronizationRuleId="76762856-4dfc-4a98-8547-f6077bb97ac4" Action="Add">
+		<ns0:SynchronizationRuleActivity.Parameters>
+			<x:Array Type="{x:Type ns0:SynchronizationRuleParameter}" />
+		</ns0:SynchronizationRuleActivity.Parameters>
+	</ns0:SynchronizationRuleActivity>
+</ns0:SequentialWorkflow>

@@ -1,0 +1,41 @@
+Import-module msonline
+
+write-host "Get O365 Credentials e.g.ZaidP@netsurit.com" -Fore Green
+$cred = Get-Credential
+$cred
+
+write-host  "Get Exchange 2013 Credentials e.g. netsurit\ZaidP" -fore cyan
+$RemCred = Get-Credential
+$remcred 
+
+#Connect to Office365
+Connect-MsolService -Credential $cred
+
+#Connect to Exchange Online
+$S = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Cred -Authentication Basic -AllowRedirection
+Import-PSSession $S -allowclobber 
+
+write-host  "Supply the full path of the CSV File you will import" -fore Yellow
+write-host  "e.g.. c:\temp\MyList.csv" -fore Yellow
+write-host  "The CSV file muust have a heading UPN" -fore Yellow
+Write-Host "and a list of the user UPNs e.g. user@netsurit.com" -fore Yellow
+$users = Read-host "Enter the full path of the CSV file here" -fore Green
+
+foreach($user in $users) {
+
+#get username to move
+#$u = read-host “Enter the user UPN that is moving e.g. user@netsurit.com “
+$u=$user.upn
+#Set Usage Location
+set-msoluser –userprincipalname $u -UsageLocation za 
+
+#Assign License to User
+#set-msoluserlicense –userprincipalname $u –addlicenses "INOBITSZA:ENTERPRISEPREMIUM_NOPSTNCONF" 
+
+#Migrate Mailbox
+New-MoveRequest -identity $u -Remote -RemoteHostName webmail.netsurit.com -RemoteCredential $RemCred -TargetDeliveryDomain “inobitsza.onmicrosoft.com” -AcceptLargeDataLoss -BadItemLimit 1000 -LargeItemLimit 1000 
+
+#Get mailbox migration status
+Get-MoveRequest -identity $u |Get-MoveRequestStatistics | ft displayname,TotalMailboxSize,BytesTransferred,TotalMailboxItemCount,ItemsTransferred,PercentComplete,StatusDetail 
+
+}

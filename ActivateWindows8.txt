@@ -1,0 +1,5 @@
+Win2012 Standard (Partner Key)
+
+slmgr.vbs /ipk M233N-JMT88-9W464-R2672-27F92
+
+slmgr.vbs /ato

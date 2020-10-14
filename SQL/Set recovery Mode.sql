@@ -1,0 +1,2 @@
+USE master ;
+ALTER DATABASE PulseII SET RECOVERY simple ;

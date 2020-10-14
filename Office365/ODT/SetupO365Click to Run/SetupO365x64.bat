@@ -1,0 +1,1 @@
+\\192.168.1.21\software\ODT\setup.exe /configure \\192.168.1.21\software\ODT\Office2016BusPremx64.xml

@@ -1,0 +1,3 @@
+Set-AutoDiscoverVirtualDirectory -identity SLJNBSBS01\"Autodiscover (Default Web Site)" -InternalUrl https://remote.spazio.co.za/autodiscover/autodisover.xml -ExternalUrl https://remote.spazio.co.za/autodiscover/autodisover.xml
+
+Set-ClientAccessServer –Identity SLJNBSBS01 -AutoDiscoverServiceInternalUri:https://remote.spazio.co.za/autodiscover/autodisover.xml

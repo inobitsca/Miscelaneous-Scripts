@@ -1,0 +1,17 @@
+#TYPE Microsoft.ActiveDirectory.Management.ADUser
+"DistinguishedName","Enabled","extensionAttribute1","GivenName","Name","ObjectClass","ObjectGUID","SamAccountName","SID","Surname","UserPrincipalName"
+"CN=MIMAdmin,OU=MIM,DC=inobitsza,DC=com","True","Registered",,"MIMAdmin","user","af1725e6-0204-4dfd-a78d-726396bf12fd","MIMAdmin","S-1-5-21-735836038-508777156-4267692969-1108",,
+"CN=MIMMA,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMMA","user","5ec54af3-cb72-4bb7-a2e8-4e8ed376cb8b","MIMMA","S-1-5-21-735836038-508777156-4267692969-1109",,
+"CN=MIMSync,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMSync","user","2adef711-9c69-4085-9970-59e3d61520fb","MIMSync","S-1-5-21-735836038-508777156-4267692969-1110",,
+"CN=MIMService,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMService","user","56b93041-cfcb-4273-ba5e-e1eae5b5a54b","MIMService","S-1-5-21-735836038-508777156-4267692969-1111",,"mimservice@inobitsza.com"
+"CN=MIMSSPR,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMSSPR","user","913ee37c-a294-4b03-8ae7-b8347c8254d6","MIMSSPR","S-1-5-21-735836038-508777156-4267692969-1112",,
+"CN=MIMSharePoint,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMSharePoint","user","6f199551-9756-47db-989a-4032327c1a58","MIMSharePoint","S-1-5-21-735836038-508777156-4267692969-1113",,
+"CN=MIMSqlServer,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMSqlServer","user","b070323f-2afc-4828-b03a-0bd5302f8b1f","MIMSqlServer","S-1-5-21-735836038-508777156-4267692969-1114",,
+"CN=MIMBackupAdmin,OU=MIM,DC=inobitsza,DC=com","True",,,"MIMBackupAdmin","user","aa086e74-6f7b-41b9-9405-6e3da226dde3","MIMBackupAdmin","S-1-5-21-735836038-508777156-4267692969-1115",,
+"CN=Mim User 1,OU=MIM,DC=inobitsza,DC=com","True",,"Mim","Mim User 1","user","adab1242-877b-4766-901d-45bcb6f94088","mimuser1","S-1-5-21-735836038-508777156-4267692969-1158","User 1","mimuser1@inobitsza.com"
+"CN=Mim User 2,OU=MIM,DC=inobitsza,DC=com","True",,"Mim","Mim User 2","user","584811a1-e6fd-46a8-91ea-e21150f83bbf","mimuser2","S-1-5-21-735836038-508777156-4267692969-1159","User 2","mimuser2@inobitsza.com"
+"CN=Dawie Human,OU=MIM,DC=inobitsza,DC=com","True",,"Dawie","Dawie Human","user","69aa58eb-0e38-4475-93b2-404e705b747c","dawie","S-1-5-21-735836038-508777156-4267692969-1160","Human","dawie@inobitsza.com"
+"CN=MIM User 4,OU=MIM,DC=inobitsza,DC=com","True",,"MIM","MIM User 4","user","627f573d-34c1-4685-8cc7-1f33384459e3","mimuser4","S-1-5-21-735836038-508777156-4267692969-1162","User 4","mimuser4@inobitsza.com"
+"CN=MIM User 3,OU=MIM,DC=inobitsza,DC=com","True","Registered","MIM","MIM User 3","user","1e1cb61b-8c64-405c-8b11-aea058feb89a","mimuser3","S-1-5-21-735836038-508777156-4267692969-1163","User 3","mimuser3@inobitsza.com"
+"CN=Mim User 5,OU=MIM,DC=inobitsza,DC=com","True",,"Mim","Mim User 5","user","62f6200a-9261-43ca-88f1-e7c2f8c851a2","mimuser5","S-1-5-21-735836038-508777156-4267692969-1165","User 5","mimuser5@inobitsza.com"
+"CN=MIM User 6,OU=MIM,DC=inobitsza,DC=com","True",,"MIM","MIM User 6","user","d4404ffb-a364-4e06-974d-30efcb0f8b77","MIMUSER6","S-1-5-21-735836038-508777156-4267692969-1166","User 6","MIMUSER6@inobitsza.com"

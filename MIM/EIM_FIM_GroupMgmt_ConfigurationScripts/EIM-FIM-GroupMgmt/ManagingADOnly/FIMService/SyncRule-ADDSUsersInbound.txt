@@ -1,0 +1,26 @@
+ConnectedObjectType: user
+CreateConnectedSystemObject: False
+CreateILMObject: True
+DisconnectConnectedSystemObject: False
+DisplayName: AD DS: Users (Inbound)
+FlowType: 0
+ILMObjectType: person
+PersistentFlow: <import-flow><src><attr>givenName</attr></src><dest>givenName</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>sn</attr></src><dest>sn</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>objectSid</attr></src><dest>objectSid</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>sAMAccountName</attr></src><dest>accountName</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>userAccountControl</attr></src><dest>userAccountControl</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>userPrincipalName</attr></src><dest>userPrincipalName</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>company</attr></src><dest>company</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>department</attr></src><dest>department</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>description</attr></src><dest>description</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>displayName</attr></src><dest>displayName</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>employeeType</attr></src><dest>employeeType</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>mail</attr></src><dest>mail</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>manager</attr></src><dest>manager</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>title</attr></src><dest>title</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>objectSid</attr></src><dest>domain</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="Eq" isCustomExpression="false"><arg><fn id="Left" isCustomExpression="false"><arg><fn id="ConvertSidToString" isCustomExpression="false"><arg>objectSid</arg></fn></arg><arg>41</arg></fn></arg><arg>"S-1-5-21-2284779566-3916719919-2023547221"</arg></fn></arg><arg>"CONTOSO"</arg><arg>"Unknown"</arg></fn></import-flow>
+PersistentFlow: <import-flow><src><attr>userAccountControl</attr></src><dest>ADAccountStatus</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="Eq" isCustomExpression="false"><arg>userAccountControl</arg><arg>"514"</arg></fn></arg><arg>"Disabled"</arg><arg>"Active"</arg></fn></import-flow>
+Precedence: 5
+RelationshipCriteria: <conditions><condition><ilmAttribute>accountName</ilmAttribute><csAttribute>sAMAccountName</csAttribute></condition></conditions>
+ConnectedSystem: {111F9DA9-63B1-40F0-9008-A30F11A512CE}

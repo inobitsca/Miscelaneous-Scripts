@@ -1,0 +1,19 @@
+<Configuration>
+
+<Add SourcePath="\\10.0.1.2\software" OfficeClientEdition="64" >
+
+ <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+    </Product>
+
+  </Add> 
+
+  <Updates Enabled="TRUE" UpdatePath="\\10.0.1.2\software" />
+
+ <Display Level="full" AcceptEULA="TRUE" />  
+
+ <Logging Path="c:\temp" /> 
+
+ <Property Name="AUTOACTIVATE" Value="1" /> 
+
+</Configuration>

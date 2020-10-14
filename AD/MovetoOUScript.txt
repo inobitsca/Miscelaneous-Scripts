@@ -1,0 +1,1 @@
+import-csv OctoberDelete.csv | % { move-qadobject $_.LogonName -newparentcontainer "mccarthyltd.local/2012-Oct-delete" }

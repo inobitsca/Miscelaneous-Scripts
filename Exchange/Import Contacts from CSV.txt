@@ -1,0 +1,5 @@
+Import-Csv .\Contacts2.csv|%{New-MailContact -Name $_.Name -DisplayName $_.Display -ExternalEmailAddress $_.Email -FirstName $_.First -LastName $_.Last}
+Import-Csv .\Contacts2.csv|%{set-Contact -identity $_.Name -company $_.company}
+
+
+Import-Csv .\Contacts3.csv|%{set-Contact -identity $_.Name -displayname $_.Name -firstName "" -lastname "" -notes $_.notes}

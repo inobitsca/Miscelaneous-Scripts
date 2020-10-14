@@ -1,0 +1,41 @@
+$cred = get-credential 
+Connect-msolservice –credential $cred
+
+Import-CSV "pureusers.txt" | % { set-msoluser –userprincipalname $_.UserPrincipalName -UsageLocation za }
+
+Import-CSV "pureusers.txt" | % { set-msoluserlicense –userprincipalname $_.UserName –addlicenses "pureconsult:SMB_BUSINESS_PREMIUM" }
+
+
+Import-CSV "C:\temp\users.txt" | % { set-msoluserlicense –userprincipalname $_.UserName –addlicenses "netsurit0365:ENTERPRISEPACK" }
+
+Import-CSV "C:\temp\mcmotorimp.csv" | % { Get-MsolUser –userprincipalname $_.UserName |ft UserPrincipalName,Displayname,usagelocation,IsLicensed } >users.csv
+
+REMOVE LICENSES
+
+$cred = get-credential 
+Connect-msolservice –credential $cred
+
+Import-CSV "C:\temp\CT1.csv" | % { set-msoluserlicense –userprincipalname $_.UserPrincipalName -RemoveLicenses "McCarthyLimited:OFFICESUBSCRIPTION" } 
+
+
+Get-MsolUser -all |Where-Object {$_.Licenses.AccountSkuID -eq "syndication-account:ENTERPRISEPACK"}
+
+Get-MsolUser -all |Where-Object {$_.Licenses.AccountSkuID -eq "syndication-account:ENTERPRISEPACK"} | measure-object -line
+
+
+Import-CSV "E3.csv" | % { set-msoluserlicense –userprincipalname $_.User –addlicenses "syndication-account:ENTERPRISEPACK" }
+
+
+#Add License
+$UserPrincipalName = $M.upn
+set-msoluser –userprincipalname $UserPrincipalName -UsageLocation za
+set-msoluserlicense –userprincipalname $UserPrincipalName –addlicenses  "syndication-account:EXCHANGESTANDARD"
+
+
+#Remove License 
+$UserPrincipalName = "TestPentravel@pentravel.co.za"
+set-msoluserlicense –userprincipalname $UserPrincipalName –removelicenses  "syndication-account:EXCHANGESTANDARD"
+
+
+set-msoluser –userprincipalname $U -UsageLocation za
+set-msoluserlicense –userprincipalname $U –addlicenses syndication-account:MIDSIZEPACK

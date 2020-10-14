@@ -1,0 +1,3 @@
+Import-Module msonline
+
+Set-MsolUserPrincipalName -UserPrincipalName cmiranda@thompsonsafrica.co.za -NewUserPrincipalName cmiranda@cullinan.co.za

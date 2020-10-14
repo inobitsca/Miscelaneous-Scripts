@@ -1,0 +1,6 @@
+
+$groups = Get-DistributionGroup
+foreach ($group in $Groups) {
+
+Get-DistributionGroupMember $group |select-object name,groupname |ForEach-Object { $_.GroupName = $group.DisplayName; return $_ } |Export-Csv Groupmembers4.csv -Append 
+}

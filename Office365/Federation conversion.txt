@@ -1,0 +1,15 @@
+
+
+
+$DomName = "liblink.co.za"
+
+Convert-MsolDomainToFederated -DomainName $DomName -SupportMultipleDomain
+
+Convert-MsolDomainTostandard -DomainName $DomName -PasswordFile Pass.txt -SkipUserConversion $true
+NSAdmin@eiegroup.onmicrosoft.com
+
+Set-ReceiveConnector "Relay Connector" -RemoteIPRanges $RecvConn.RemoteIPRanges
+
+Set-ReceiveConnector "InternalRelay" -PermissionGroups AnonymousUsers
+
+Get-ReceiveConnector "InternalRelay" | Add-ADPermission -User "NT AUTHORITY\ANONYMOUS LOGON" -ExtendedRights "Ms-Exch-SMTP-Accept-Any-Recipient"

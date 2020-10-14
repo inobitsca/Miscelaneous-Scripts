@@ -1,0 +1,9 @@
+net use \\CJDMENLYN.mccarthyltd.local\distribution
+net use \\EPC-CJDCENT.mccarthyltd.local\distribution
+net use \\EPC-MENLSC.mccarthyltd.local\distribution
+net use \\EPCWITBANK.mccarthyltd.local\distribution
+net use \\MCCPTPARVCSS001.mccarthyltd.local\distribution
+net use \\MCCPTPARVCVS001.mccarthyltd.local\distribution
+net use \\MCCPTPLUSUSS001.mccarthyltd.local\distribution
+net use \\MCKIMCBDKIVS001.mccarthyltd.local\distribution   
+net use \\MTYMIDSERVER1.mccarthyltd.local\distribution   

@@ -1,0 +1,10 @@
+If a user is not showing in the on prem Hybrid Exchange, but has a mailbox in O365.
+
+https://blogs.technet.microsoft.com/johnbai/2013/09/11/o365-exchange-and-ad-how-msexchrecipientdisplaytype-and-msexchangerecipienttypedetails-relate-to-your-on-premises/ 
+
+Create a mail user in Exchange and then run the below against the user in AD PowerShell. Use the correct values as per the article 
+
+E.G
+Set-ADUser MailBoxAccountName –Replace @{msExchRecipientDisplayType = “-2147483642”}
+Set-ADUser MailBoxAccountName –Replace @{msExchRecipientTypeDetails = “2147483648”}
+Set-ADUser MailBoxAccountName –Replace @{msExchRemoteRecipientType = “4”}

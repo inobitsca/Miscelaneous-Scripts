@@ -1,0 +1,36 @@
+#----------------------------------------------------------------------------------------------------------
+ set-variable -name URI   -value "http://localhost:5725/resourcemanagementservice"    -option constant 
+#----------------------------------------------------------------------------------------------------------
+ if(@(get-pssnapin | where-object {$_.Name -eq "FIMAutomation"} ).count -eq 0) {add-pssnapin FIMAutomation}
+ $mprNames = @()
+ $mprNames += ”General: Users can read non-administrative configuration resources”
+ $mprNames += “User management: Users can read attributes of their own”
+#----------------------------------------------------------------------------------------------------------
+ write-host "Cheking MPRs"
+ write-host "============"
+ foreach($mprName in $mprNames)
+ {
+   write-host $mprName
+   $curMpr = export-fimconfig -uri "http://localhost:5725/resourcemanagementservice" `
+                              -customconfig ("/ManagementPolicyRule[DisplayName='$mprName']") `
+                              –onlyBaseResources `
+                              -ErrorVariable Err `
+                              -ErrorAction SilentlyContinue
+   if($Err) {throw $Err}                                 
+   if($curMpr -eq $null) {throw "MPR not found!"}
+   
+   $isDisabled = $curMpr.ResourceManagementObject.ResourceManagementAttributes | `
+                 Where-Object {$_.AttributeName -eq "Disabled"}
+
+   if($isDisabled.Value -eq $true)
+   {write-host "Enabled: No`n" -foregroundcolor yellow -backgroundcolor black}
+   else {write-host "Enabled: Yes`n"}
+ }
+ write-host "`nCommand completed successfully`n" 
+#----------------------------------------------------------------------------------------------------------
+ trap 
+ { 
+    Write-Host "`nError: $($_.Exception.Message)`n" -foregroundcolor white -backgroundcolor darkred
+    Exit 1
+ }
+#------------------------------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+copy %logonserver%\netlogon\dnscmd.exe c:\windows
+
+netsh dhcp server add scope 172.19.24.0 255.255.255.0 EikestadVorto
+netsh dhcp server scope 172.19.24.0 add iprange 172.19.24.100 172.19.24.250
+netsh dhcp server set optionvalue 3 IPADDRESS 172.19.24.1
+netsh dhcp server set optionvalue 6 IPADDRESS 172.19.24.14 172.16.128.174 172.16.128.178

@@ -1,0 +1,1 @@
+get-mailbox -resultsize unlimited | ForEach-Object {Add-MailboxFolderPermission $_”:Calendar” -User calendars@netsurit.com -AccessRights Reviewer} 

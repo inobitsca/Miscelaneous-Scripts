@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1423288",
+    "ThreadId": "636886",
+    "Html": "Hi,\r<br />\n I am using Generic Rest API MA for Google MA and able to provision users from FIM to Google.When i do an export on Google, the user provisioned and I am  doing a Import on Google again. After that  i changed the user at FIM(modify firstName/LastName), and did a delta Import and delta Sync on FIM MA. On doing Delta Sync,the update is not relecting and giving an error &quot;object already exists in Google MA&quot;.\r<br />\n<br />\nIf I do a change without doing a Import on Google MA, then update is working fine without any errors.\r<br />\n<br />\nCan you pleas suggest, why the error is generating with Import on Google MA(Import done After doing an Export on Google MA).  <br />\n",
+    "PostedDate": "2015-05-06T03:38:29.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1461957",
+    "ThreadId": "636886",
+    "Html": "Hi, \r<br />\n<br />\nThis MA does not support delta import/sync, so please use full import / synchronization.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-02-04T07:58:58.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

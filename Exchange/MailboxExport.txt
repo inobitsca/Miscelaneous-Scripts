@@ -1,0 +1,2 @@
+New-ManagementRoleAssignment –Role “Mailbox Import Export” –User cullinanholding\netsurit.ca
+New-MailboxExportRequest -Mailbox VIP -FilePath \\ex2010cas\c$\temp\VIP.PST

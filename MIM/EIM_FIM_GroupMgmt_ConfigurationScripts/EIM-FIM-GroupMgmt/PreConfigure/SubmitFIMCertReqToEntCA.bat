@@ -1,0 +1,1 @@
+certreq -submit -config "FABRIKAMDC1\fabrikam-FABRIKAMDC1-CA" "C:\EIM-FIM-GroupMgmt\PreConfigure\certnew-fabrikamFIMSRV01.req" "C:\EIM-FIM-GroupMgmt\PreConfigure\FabrikamFIMSRV01-Cert.cer"

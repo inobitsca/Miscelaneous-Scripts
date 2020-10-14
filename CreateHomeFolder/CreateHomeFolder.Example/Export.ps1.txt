@@ -1,0 +1,128 @@
+param (
+    $Username, 
+    $Password
+    )
+
+BEGIN
+{#Writing Start tag in Debug File.
+$DebugFilePath = "C:\PSMA\DebugHomeFolderMA.txt"
+    if(!(Test-Path $DebugFilePath))
+    {$DebugFile = New-Item -Path $DebugFilePath -ItemType File}
+    else
+    {$DebugFile = Get-Item -Path $DebugFilePath}
+"Starting Export : " + (Get-Date) | Out-File $DebugFile -Append
+}
+
+PROCESS
+{
+#Initialize Parameters
+$Identifier = $_.'[Identifier]'
+$objectGuid = $_.'[DN]'
+$Anchor = $_.'[Anchor]'
+$IdentifierAsGuid = $_.'[IdentifierAsGuid]'
+$ObjectModificationType = $_.'[ObjectModificationType]'
+$ObjectType = $_.'[ObjectType]'
+$AttributeNames = $_.'[AttributeNames]'
+$ChangedAttributeNames = $_.'[ChangedAttributeNames]'
+$accountName = $_.accountName
+$homeFolderPath = $_.homeFolderPath
+$homeFolderPath = $homeFolderPath +"\"+$accountname #this expressions requires that the path does NOT include a "\" at the end
+
+
+$ErrorName = "success"
+$ErrorDetail = $null
+$date = Get-Date -Format "yyyy-MM-dd"
+
+$curUser = New-Object System.DirectoryServices.DirectoryEntry "LDAP://<GUID=$objectGuid>", $Username, $Password
+$curHomeDirectory = $curUser.homeDirectory.Value
+$curHomeDrive = $curUser.homeDrive.Value
+$account = $curUser.sAMAccountName.Value
+$defaultDrive = "H:"
+
+#Writing curUser to debug file
+"-------------------------------------------------------------"  | Out-File $DebugFile -Append
+"accountName :  " + $accountName | Out-File $DebugFile -Append
+"User Guid : " + $_.'[DN]' | Out-File $DebugFile -Append
+"No of Changes : " + $_.'[ChangedAttributeNames]'.Count | Out-File $DebugFile -Append
+"curHomeDirectory : " +$curHomeDirectory | Out-File $DebugFile -Append
+"curHomeDrive : " +$curHomeDrive | Out-File $DebugFile -Append
+"account : " +$account | Out-File $DebugFile -Append
+"'[ChangedAttributeNames]' :  " + $ChangedAttributeNames | Out-File $DebugFile -Append
+"homeFolderPath :  " + $homeFolderPath | Out-File $DebugFile -Append
+#Check homefolder path
+$exists = Test-Path $homeFolderPath
+
+
+### --- FUNCTIONS --- ###
+#NOTE! Function calls from the script will generate output to the pipeline unless catched by parameter.
+#This output will be seen as errors when running the MA
+#Call functions using $catch = FunctionName param1 param2
+
+#Function for adding AccessRule to folder
+#$A = Account in the format "AccountName"
+#$F = Folder
+#$P = Permission to assign. Modify, Read or FullControl typically
+#Inheritence is added by default.
+function AddAccessRule($F, $A, $P)
+    {
+    Try{
+        $acl = Get-Acl $F
+        $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($A,$P,"ContainerInherit,ObjectInherit","None","Allow")
+        $acl.AddAccessRule($rule)
+        Set-Acl -Path $F.FullName -AclObject $acl
+        }
+    Catch
+        {
+        "Error in AddAccessRule" | Out-File $DebugFile -Append
+        $ErrorName = "Script Error"
+        $ErrorDetail = "Error when trying to Add Access Rule"
+        }
+    }
+
+#Function for adding default subfolders to new homefolders
+#F = Folder where subfolders should be created
+function AddDefaultFolders($F)
+    {
+    #If you are running Notes for example might like to have this
+    #New-Item $F"\Program\Lotus\Notes\Data" -Type Directory
+    }
+
+
+#Function for setting homeDirectory and homeDrive attribute on user in AD
+#Dir = Full homeDirectory path in the format \\server\share\username
+#Drive = The drive letter to use, H:
+function UpdateUser($Dir,$Drive)
+    {
+    If($Dir)
+        {
+        $curUser.homeDirectory.Value = $Dir
+        if($Drive){$curUser.homeDrive.Value = $Drive}else{$curUser.homeDrive.Value = $defaultDrive}
+        }
+    else
+        {
+        $curUser.homeDirectory.Value = $null
+        $curUser.homeDrive.Value = $null
+        }
+    $curUser.SetInfo()
+    }
+
+### --- End of FUNCTIONS --- ###
+
+### --- MAIN SCRIPT --- ###
+
+"Does homeFolderPath Exist :  " + $exists | Out-File $DebugFile -Append
+If(!$exists){
+#Create NEW HomeFolder
+                "Creating new homefolder at " + $homeFolderPath + " for : $account" | Out-File $DebugFile -Append
+                $folder = New-Item $homeFolderPath -Type Directory
+                $catch = AddAccessRule $folder $account "Modify"
+                $catch = AddDefaultFolders $folder
+                $catch = UpdateUser $homeFolderPath $defaultDrive
+}
+else{"Homefolder already exists " + $homeFolderPath + " for : $account" | Out-File $DebugFile -Append}
+}
+
+END
+{#Writing close tag in debugfile
+"Ending Export : " + (Get-Date) | Out-File $DebugFile -Append
+}

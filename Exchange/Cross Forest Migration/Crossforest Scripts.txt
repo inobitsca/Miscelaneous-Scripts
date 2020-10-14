@@ -1,0 +1,30 @@
+Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -MRSProxyEnabled $true
+
+c:\Program Files\Microsoft\Exchange Server\V14\ClientAccess\exchweb\ews\web.config
+
+#Prepare the move
+
+c:\Program Files\Microsoft\Exchange Server\V14\Scripts
+
+$Email = ""
+$SourceDC = arjnbdc01.altriskho.local
+$SourceExchange = arjnbdcas01.altriskho.local
+$DestinationDC = hssad1899.hicnet.loc
+$DestinationExchange = hssex12403.hicnet.loc
+$SourceCredentials
+$DestinationCredentials
+$TargetOU = ""
+
+#CSV has Users with a Columns calle Email and TargetOU
+
+Import-csv UserList.csv | % { .\Prepare-MoveRequest.Ps1 -Identity $_.Email -RemoteForestDomainController $SourceDC -RemoteForestCredential $SourceCredentials -LocalForestDomainController $DestinationDC -LocalForestCredential $DestinationCredentials -TargetMailUserOU $_.TargetOU –UseLocalObject -Verbose }
+
+#Use ADMT to add SID history
+
+#Move the mailbox
+
+
+New-MoveRequest –Identity $EmailAddress –Remote –Remotehostname $SourceExchange  -RemoteCredential $SourceCredentials –TargetDeliverydomain $DestinationExchange
+
+
+ Import-Csv c:\tmp\Contacts.csv | ForEach-Object { New-MailContact -Name $_."Name" -ExternalEmailAddress $_."Email-Address" -FirstName $_."FirstName" -OrganizationalUnit "hicnet.loc/Users Groups/Arcadia/Altrisk/ALTRISK SERVICES/Altrisk-Contacts" -Alias $_."Name" }

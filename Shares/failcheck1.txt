@@ -1,0 +1,8 @@
+c:\distribution>net use \\CJDMENLYN.mccarthyltd.local\distribution 
+
+c:\distribution>net use \\EPCWITBANK.mccarthyltd.local\distribution 
+
+c:\distribution>net use \\MCKIMCBDKIVS001.mccarthyltd.local\distribution    
+
+
+

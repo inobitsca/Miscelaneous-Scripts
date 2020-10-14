@@ -1,0 +1,424 @@
+
+c:\distribution>net use \\BCA_CPT_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\BCA_DBN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\BCA_JHB_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\BFSDBNUMHSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\BRAJHBISASS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\BRAJHBISAVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\CJDMENLYN.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-CJDCENT.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\EPC-CJDCENT.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-CJDWON.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-FOUNTS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-MBWDB.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-MCCENT.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-MENLSC.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\EPC-MENLSC.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-MITHAT.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-MITMID.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPC-PARTS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\EPCWITBANK.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\GMDTD035243.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\GMS_MENLYN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\GMS_MONT_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\INYANGAFS1.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\INYANGAFS3.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\LEX_MID_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\LRV_CKLF_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\LRV_MID_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCCPTGOOLRSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCCPTN1CTOSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCCPTPARVCSS001.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\MCCPTPARVCSS001.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\MCCPTPARVCVS001.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\MCCPTPARVCVS001.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\MCCPTPLUSUSS001.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\MCCPTPLUSUSS001.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\MCDBNCENLRSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCDBNGRVTOSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCDBNGRVTOVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCDBNMOBTOSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCEMPINYMESS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCEMPINYMEVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCJHBALBCVSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCJHBBOKNSSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCJHBBOKNSVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCJHBGERNSSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCJHBSBYHTSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKIMCBDKISS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKIMCBDKIVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKZNDBNTYSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKZNPMBHTSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKZNPMBTYSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCKZNPMBTYVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCLIMPOLVCSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCOFSBLMSUSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCOFSBLMVCSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCOFSBLMVCVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAARCTOSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTACENVCSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTACENVCVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAGEZFISS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAGEZVWSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAGEZVWVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAMENSUSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAMENSUVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTAPRPTOSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCPTASILGMDT017.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCVRYINYMESS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MCVRYINYMEVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MDCMMHDHO001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MFSICT01.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MGMHATSERVER1.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHJHBFORSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHJHBFORVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHPTAFORSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHWITCJDSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHWITMBZSS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MMHWITMBZVS001.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MNSNFLTACT01.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MNSNIPG01.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\MTYMIDSERVER1.mccarthyltd.local\distribution 
+Local name        
+Remote name       \\MTYMIDSERVER1.mccarthyltd.local\distribution
+Resource type     Disk
+Status            Disconnected
+# Opens           0
+# Connections     1
+The command completed successfully.
+
+
+c:\distribution>net use \\NSN_ENDS_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\NSN_WOOD_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_BALL_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_BRUMA_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_CENT_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_EDEN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_EMP_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\toy_gez_ps.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_HAT_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_KING_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_LYNN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_N1C_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_PAARL_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_PAR_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_PTN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_SINO_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_TABLE_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_TRPTN_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_VERM_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\TOY_WOOD_PS.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\ZA016370S00011.mccarthyltd.local\distribution 
+The command completed successfully.
+
+
+c:\distribution>net use \\ZA016480S00010.mccarthyltd.local\distribution 
+The command completed successfully.
+

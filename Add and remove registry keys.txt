@@ -1,0 +1,2 @@
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "AppV Installer" /t REG_SZ /d C:\AppV\BidvestAutoPrompt.bat /f
+reg delete HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "AppV Installer" /f

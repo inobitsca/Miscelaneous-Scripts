@@ -1,0 +1,12 @@
+Import-Module ActiveDirectory
+
+
+$users = import-csv match.csv
+
+Foreach ($user in $users) {
+  
+$ID = $user.ADUPN
+$email = $user.MSOLUPN
+Set-ADUser -Identity $ID -Add @{Proxyaddresses="smtp:"+$email}
+Set-ADUser -Identity $ID -emailaddress $newmail 
+} 

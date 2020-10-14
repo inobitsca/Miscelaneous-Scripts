@@ -1,0 +1,19 @@
+[
+  {
+    "Id": "0",
+    "Name": "Generic REST MA Setup File",
+    "DevelopmentStatus": "Stable",
+    "Description": "First release including GoogleApps plugin library.\n- not support delta import\n\n2015.04.12\n- Replace GenericRESTMA.dll for newer build.\n   - support for multiple object types in single MA instance.\n2015.04.04\n- Fix installer issue ( json.net library copied to wrong destination )",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-04-12T00:24:19.787-07:00",
+    "Files": [
+      {
+        "Id": "48aba201-b455-4438-a48b-4d9337a86c81",
+        "FileName": "setup.exe",
+        "Url": "./0/48aba201-b455-4438-a48b-4d9337a86c81",
+        "Type": "Application",
+        "UploadDate": "2015-04-12T00:24:17.787-07:00"
+      }
+    ]
+  }
+]

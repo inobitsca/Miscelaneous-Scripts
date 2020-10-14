@@ -1,0 +1,5 @@
+Set-ADUser –Identity $ThisUser -add @{"extensionattribute1"="MyString"}
+
+Set-ADUser –Identity $ThisUser -replace @{"extensionattribute1"="MyString"}
+
+Set-ADUser –Identity $ThisUser -Clear "extensionattribute1" 

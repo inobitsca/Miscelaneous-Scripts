@@ -1,0 +1,8 @@
+
+foreach ($g in $gen2) {
+$g1 = $g.displayname
+$a = get-mailuser $g1
+$UPN = $a.userprincipalname
+$NewUpn = $a.PrimarySmtpAddress
+Set-MsolUserPrincipalName -UserPrincipalName $upn -NewUserPrincipalName $newupn}
+

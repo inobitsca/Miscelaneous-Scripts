@@ -1,0 +1,19 @@
+import-module msonline
+Connect-MsolService
+
+$date = Get-Date -Format "yyyy-MM-dd"
+
+$file = "C:\temp\O365_user_License-" + $Date + ".csv"
+$head = "DisplayName,UPN,LicenseSKU"
+
+$head > $file
+
+$users = Get-MsolUser -MaxResults 5000 |where {$_.islicensed -eq $true}
+ foreach ($user in $users) {
+ $lic = $user.licenses
+ $SKUs = $lic.accountskuid
+ $DN = $User.DisplayName
+ $UPN = $user.UserPrincipalName
+ Foreach ($SKU in $SKUs) {
+ $Out = $DN + "," + $UPN +"," + $SKU
+$out >> $file}}

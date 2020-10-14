@@ -1,0 +1,11 @@
+$Cred = get-credential
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Cred -Authentication Basic -AllowRedirection
+
+Import-PSSession $Session
+
+New-MigrationBatch -Name "IMAPBatch7" -TargetDeliveryDomain "routegaming.onmicrosoft.com"`
+-AllowUnknownColumnsInCsv $true -NotificationEmails "cedrica@inobits.com"`
+ -CSVData ([System.IO.File]::ReadAllBytes("C:\Users\cedri\Netsurit\OneDrive - Netsurit\Clients\Route Gaming\O365\RGSCSV6.csv"))`
+ -BadItemLimit 99999 -LargeItemLimit 99999 -autostart -SourceEndpoint "RGS IMAP"
+ 

@@ -1,0 +1,1 @@
+$members = Import-CSV .\employeestemp.csv | % {add-Adgroupmember -Identity "Mercedes Benz-People" -members $_.SamAccountname -Confirm:$false }

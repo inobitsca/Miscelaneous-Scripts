@@ -1,0 +1,10 @@
+MIM 
+SQL Native Client is vital (2008 and 2012)
+DotNet 3.5 - Requires an Alterbnative source usually the Windows Server ISO.
+
+
+Sharepoint
+Install prerequsites either manually or automatically EXCEPT AppFabric 1.1 and CU1. These must be done through the pre-requisite wizard.
+Ensure the MIM service is a SharePoint Administrator
+Create your MIM portal using the Sharepoiont scripts.
+Check the Alternative Mappings before deploying the MIM service and Portal. You must use a mapping that is registered. Usually this is http://Localhost:Port/MIMPORTALNAME/

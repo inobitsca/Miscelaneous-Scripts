@@ -1,0 +1,14 @@
+Upload winaudit.bat file to C:\Winaudit
+open up cmd
+Change directory to C:\
+Run command:
+
+psexec \\* -c -d -n 20 -w \\servername.domain.com\SharedFolder\ -u DOMAIN\User -p P@ssw0rd  \\servername.domain.com\SharedFolder\Winaudit.bat -b
+
+Explanations:
+PSexec copies the batchfile to all computers specified (in this case \\* is all PCs in the domain) -
+	 The attached Excel spreadsheet can be used to specify computernames
+ServerName => Name of the server where the Winaudit software is loaded
+domainName => name of the domain i.e. netsurit
+AdminPW => Domain Admin PW
+Winaudit.bat = Batchfile with Winaudit commands

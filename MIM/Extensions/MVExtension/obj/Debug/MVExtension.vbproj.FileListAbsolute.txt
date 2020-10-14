@@ -1,0 +1,4 @@
+C:\Program Files\Microsoft Forefront Identity Manager\2010\Synchronization Service\Extensions\MVExtension.dll
+C:\Program Files\Microsoft Forefront Identity Manager\2010\Synchronization Service\Extensions\MVExtension.pdb
+C:\Development\MVExtension\MVExtension\obj\Debug\MVExtension.dll
+C:\Development\MVExtension\MVExtension\obj\Debug\MVExtension.pdb

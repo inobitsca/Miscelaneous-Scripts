@@ -1,0 +1,13 @@
+#CSV file must have a column header Displayname
+
+$CSVpath = read-host "Enter the full path of the CSV file"
+$users = import-csv $csvpath
+$target = "OU=Disabled Users,OU=Johannesburg,OU=Netsurit,DC=netsurit,DC=com" 
+
+Foreach ($user in $users) {
+$Displayname = $user.DisplayName
+$U= get-aduser -Filter 'Displayname -eq $Displayname'
+#Set User to Disabled
+Set-ADAccountControl -Identity $U.SamAccountName -Enabled -ErrorAction SilentlyContinue $false
+#Move User into created Disabled OU based on date
+Get-aduser $U.SamAccountName | Move-ADObject -TargetPath $target }

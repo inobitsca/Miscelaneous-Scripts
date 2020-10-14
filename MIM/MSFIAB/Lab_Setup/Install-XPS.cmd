@@ -1,0 +1,1 @@
+ServerManagerCmd -i XPS-Viewer

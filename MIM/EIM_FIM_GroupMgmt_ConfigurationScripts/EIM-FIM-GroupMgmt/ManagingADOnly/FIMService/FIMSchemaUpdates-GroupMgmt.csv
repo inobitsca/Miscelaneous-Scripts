@@ -1,0 +1,8 @@
+SystemName,DisplayName,Description,DataType,MultiValued
+GoodbyeMessage,Goodbye Email Message,This text will be displayed in the body of the goodbye email sent to the member who has been removed.,Text,False
+GoodbyeMessageEnabled,Send Goodbye Emails to Removed Members,Check the box to send goodbye emails to recently removed members.,Boolean,False
+WelcomeMessage,Welcome Email Message,This text will be displayed in the body of the welcome email sent to the new member or members.,Text,False
+WelcomeMessageEnabled,Send Welcome Emails to New Members,Check the box to send welcome emails to new members.,Boolean,False
+userPrincipalName,User Principal Name,"This value illustrates the users logon name (""userPrincipalName"") value from their Active Directory user account object.",String,False
+UserAccountControl,User Account Control,This attribute is used to illustrate whether a users Active Directory account is enabled or disabled.,Integer,False
+ADAccountStatus,AD Account Status,The purpose of this attribute is to illustrate the users Active Directory account status for the users AD account which they use to log into the FIM system. The value should be either ""Active"" or ""Disabled"".",String,False

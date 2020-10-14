@@ -1,0 +1,25 @@
+#All servers
+
+
+
+Get-WmiObject -namespace root/ADFS -class SecurityTokenService 
+
+
+Get-AdfsProperties
+
+$SQLDB = "PSQLIT4L1"
+
+$temp= Get-WmiObject -namespace root/ADFS -class SecurityTokenService
+$temp.ConfigurationdatabaseConnectionstring=”data source=$SQLDB;initial catalog=adfsconfiguration;integrated security=true”
+$temp.put()
+
+#One server
+
+Set-AdfsProperties –artifactdbconnection ”Data source=$SQLDB;Initial Catalog=AdfsArtifactStore;Integrated Security=True”
+
+
+
+Check
+
+Get-WmiObject -namespace root/ADFS -class SecurityTokenService
+Get-AdfsProperties

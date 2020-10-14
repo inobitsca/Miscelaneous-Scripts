@@ -1,0 +1,11 @@
+Function Set-AdUserPwd 
+{ 
+Param( 
+[string]$user, 
+[string]$pwd 
+) #end param 
+$oUser = [adsi]"LDAP://$user" 
+$ouser.psbase.invoke("SetPassword",$pwd) 
+$ouser.psbase.CommitChanges() 
+} # end function Set-AdUserPwd 
+import-csv users.txt | % { Set-AdUserPwd -user $_.DN -pwd $Pwd}

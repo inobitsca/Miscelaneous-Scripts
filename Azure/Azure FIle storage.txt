@@ -1,0 +1,24 @@
+# create a context for account and key
+$ctx=New-AzureStorageContext talk2us FHHhBG2dwyVybhPxGpinKmiBYid3WaNH7SYi3ObO6IVhpyExOicIHvDfBfqt9xh1w8DMCbyyfyPUVYW66eojog==
+ 
+# create a new share
+$s = New-AzureStorageShare largestorage1 -Context $ctx
+
+#Map Share to AzureVM
+net use x: \\talk2us.file.core.windows.net\LargeStorage1
+
+ 
+# create a directory in the test share just created
+New-AzureStorageDirectory -Share $s -Path testdir
+ 
+# upload a local file to the testdir directory just created
+Set-AzureStorageFileContent -Share $s -Source D:\upload\testfile.txt -Path testdir
+ 
+# list out the files and subdirectories in a directory
+Get-AzureStorageFile -Share $s -Path testdir
+ 
+# download files from azure storage file service
+Get-AzureStorageFileContent -Share $s -Path testdir/testfile.txt -Destination D:\download
+ 
+# remove files from azure storage file service
+Remove-AzureStorageFile -Share $s -Path testdir/testfile.txt 

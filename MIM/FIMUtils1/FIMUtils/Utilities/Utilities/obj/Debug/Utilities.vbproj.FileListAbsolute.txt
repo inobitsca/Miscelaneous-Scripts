@@ -1,0 +1,10 @@
+C:\Development\FIMUtils\Utilities\Utilities\obj\Debug\Utilities.vbproj.GenerateResource.Cache
+C:\Development\FIMUtils\Utilities\Utilities\bin\Debug\Utilities.dll
+C:\Development\FIMUtils\Utilities\Utilities\bin\Debug\Utilities.pdb
+C:\Development\FIMUtils\Utilities\Utilities\bin\Debug\Utilities.xml
+C:\Development\FIMUtils\Utilities\Utilities\bin\Debug\Logging.dll
+C:\Development\FIMUtils\Utilities\Utilities\bin\Debug\Microsoft.MetadirectoryServicesEx.dll
+C:\Development\FIMUtils\Utilities\Utilities\obj\Debug\CustomUtils.Resources.resources
+C:\Development\FIMUtils\Utilities\Utilities\obj\Debug\Utilities.dll
+C:\Development\FIMUtils\Utilities\Utilities\obj\Debug\Utilities.xml
+C:\Development\FIMUtils\Utilities\Utilities\obj\Debug\Utilities.pdb

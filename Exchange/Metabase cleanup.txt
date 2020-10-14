@@ -1,0 +1,5 @@
+Setup /m:RecoverServer /IAcceptExchangeServerLicenseTerms
+
+
+$path = [ADSI]"IIS://localhost/W3SVC/2/ROOT"
+$path.Delete("IIsWebVirtualDir","PushNotifications")

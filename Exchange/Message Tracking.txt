@@ -1,0 +1,10 @@
+Get-MessageTrackingLog -ResultSize Unlimited -Start "11/6/2015 0:01AM" -End "11/6/2013 11:59PM" -Sender "mpho.ngcobo@tbwa.co.za"
+
+
+Get-MessageTrackingLog -ResultSize Unlimited -Start "08/08/2016 08:00:01"  -recipient "0823337773@winsms.net" -EventId "fail" |fl
+
+
+Get-MessageTrackingLog -ResultSize Unlimited -Start "16/04/2018 00:30AM" -End "16/04/2018 11:59AM" -Sender "cedrica@inobits.com"  -recipient "mvdmerwe@genwealth.co.za"
+
+
+Get-MessageTrackingLog Get-MessageTrackingLog -ResultSize Unlimited -Start "2018-05-22 9:31AM" -End "2018-03-20 11:59PM"

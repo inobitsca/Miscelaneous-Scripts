@@ -1,0 +1,42 @@
+DisplayName,FirstName,LastName,UPN,SAM
+Lynda Training,,,lynda@payspace.com,Lynda
+Thyann Delport,Thyann,Delport,thyannd@payspace.com,Thyannd
+Zilungile Dimbaza,Zilungile,Dimbaza,lungiled@payspace.com,lungiled
+Warren van Wyk,Warren,van Wyk,warrenvw@payspace.com,warrenvw
+News,,,news@payspace.com,News
+Ronel Pieterse,Ronel,Pieterse,ronelp@payspace.com,ronelp
+Tanya Hemraj,Tanya,Hemraj,tanyah@payspace.com,tanyah
+Chanine Williams,Chanine,Williams,chaninew@payspace.com,chaninew
+Ksaselihle Thango,Ksaselihle,Thango,lihlet@payspace.com,lihlet
+Modiehi Motuba,Modiehi,Motuba,Modiem@payspace.com,Modiem
+BAT Outsource,,,SMO-15098TTPW@insightit.co.za,Smo-15098Ttpw
+Careers,,,careers@insightit.co.za,Careers
+Sello Mohlabe,Sello,Mohlabe,sellom@payspace.com,sellom
+Apply,,,apply@payspace.com,Apply
+Info,,,info@payspace.com,Info
+Careers,,,SMO-Recruitment@insightit.co.za,Smo-Recruitment
+Kyle Mostert,Kyle,Mostert,kylem@payspace.com,kylem
+Nadia Muller,Nadia,Muller,nadiam@payspace.com,nadiam
+Statements,,,statements@insightit.co.za,Statements
+Bhavik Metha,Bhavik,Metha,bhavikm@payspace.com,bhavikm
+Quintin Hepburn,Quintin,Hepburn,quintinh@payspace.com,quintinh
+PaySpace Support,PaySpace,Support,support@payspace.com,support
+Ridge Zwane,Ridge,Zwane,ridgez@payspace.com,ridgez
+George Karageorgiades,George,Karageorgiades,georgek@payspace.com,georgek
+Crystal Logan,Crystal,Logan,crystall@payspace.com,crystall
+Terisa  Pohl,Terisa,Pohl,Terisap@payspace.com,Terisap
+Invoices,,,invoices@insightit.co.za,Invoices
+dns-admin,,,dns-admin@payspace.com,Dns-Admin
+Bruce van Wyk,Bruce,van Wyk,brucevw@payspace.com,brucevw
+Sonja Welgemoed,Sonja,Welgemoed,sonjaw@payspace.com,sonjaw
+Vicky Holtzhausen,Vicky,Holtzhausen,vickyh@payspace.com,vickyh
+PaySpace Johannesburg Main Boardroom,,,MainRoom@payspace.com,Mainroom
+Daleen Potgieter,Daleen,Potgieter,daleenp@payspace.com,daleenp
+Clyde van Wyk,Clyde,van Wyk,clydevw@payspace.com,clydevw
+Marilee Garcia,Marilee,Garcia,marileeg@payspace.com,marileeg
+Maritza van Wyk,Maritza,van Wyk,maritzavw@payspace.com,Maritzavw
+Scott Ellis,Scott,Ellis,scotte@payspace.com,scotte
+Rozanne Sallie,Rozanne,Sallie,rozannes@payspace.com,rozannes
+Craig Jacobs,Craig,Jacobs,craigj@payspace.com,craigj
+Motshedisi Raphela,Motshedisi,Raphela,fredahr@payspace.com,fredahr
+Nkosinathi Matsenjwa,Nkosinathi,Matsenjwa,nathim@payspace.com,nathim

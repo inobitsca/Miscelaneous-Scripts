@@ -1,0 +1,16 @@
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\bin\Debug\SmsServiceProvider.dll
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\bin\Debug\SmsServiceProvider.pdb
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\bin\Debug\Microsoft.IdentityManagement.SmsServiceProviderContract.dll
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.csprojResolveAssemblyReference.cache
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.dll
+c:\users\cedric10\documents\visual studio 2015\Projects\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.pdb
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Clients\BCX\SMS gateway\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.csprojResolveAssemblyReference.cache
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Clients\BCX\SMS gateway\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.csproj.CoreCompileInputs.cache
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Clients\BCX\SMS gateway\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.dll
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Clients\BCX\SMS gateway\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.pdb
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\bin\Debug\SmsServiceProvider.dll
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\bin\Debug\SmsServiceProvider.pdb
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.csproj.CoreCompileInputs.cache
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.dll
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.pdb
+C:\Users\cedri\Netsurit\OneDrive - Netsurit\Scripts\MIM\SmsServiceProvider\SmsServiceProvider\obj\Debug\SmsServiceProvider.csprojResolveAssemblyReference.cache

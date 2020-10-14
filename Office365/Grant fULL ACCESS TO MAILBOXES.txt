@@ -1,0 +1,7 @@
+$Cred = get-credential
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Cred -Authentication Basic -AllowRedirection
+
+Import-PSSession $Session
+
+Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Add-MailboxPermission -User administrator@moregolf.co.za -AccessRights FullAccess -InheritanceType all

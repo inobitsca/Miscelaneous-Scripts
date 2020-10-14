@@ -1,0 +1,10 @@
+$users= Import-csv c:\temp\users.csv
+$pw = Read-Host "password?" -AsSecureString 
+Foreach ($user in $users) {
+
+New-ADUser $User.SAM  -DisplayName $user.displayname -Surname $user.Surname -GivenName $User.Firstname  -AccountPassword $pw -Enabled $true -Path 'OU=mortimertoyota,DC=mortimertoyota,DC=co,DC=za'
+
+Set-ADUser -Identity $ID -Add @{Proxyaddresses="SMTP:"+$user.mail1}
+Set-ADUser -Identity $ID -emailaddress $user.mail1 
+
+}

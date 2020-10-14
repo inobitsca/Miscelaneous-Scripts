@@ -1,0 +1,1 @@
+Set-mailuser –identity SHOLLANDER –externalemailaddress sdamster@vb001437.onmicrosoft.com

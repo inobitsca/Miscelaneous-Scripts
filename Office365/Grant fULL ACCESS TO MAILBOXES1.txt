@@ -1,0 +1,11 @@
+C:\PS>New-MsolUser -UserPrincipalName iq@jdl.co.za -DisplayName "iQ Retail" -FirstName "iQ" -LastName "Retail" -UsageLocation "ZA" 
+
+$Cred = Get-Credential
+
+$s = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell -Credential $cred -Authentication Basic –AllowRedirection
+
+Import-PSSession $S
+
+Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox') -and (Alias -ne 'Admin')} | Add-MailboxPermission -User fred@jdl.co.za -AccessRights fullaccess -InheritanceType all
+
+Remove-PSSession $S

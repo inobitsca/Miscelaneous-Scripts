@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <SyncParams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Global>
+	<AD>
+		<Connector>AD</Connector>
+		<BASEDN>DC=cut,DC=ac,DC=za</BASEDN>
+		<domain>@cut.ac.za</domain>
+		<studentOU>OU=stud</studentOU>
+		<AcademicOU>OU=Academic</AcademicOU>
+		<DefaultUsersOU>OU=Default Users</DefaultUsersOU>
+		<DisabledOU>OU=Disabled Users</DisabledOU>
+        <DefaultSecurityGroupDN>OU=Groups,OU=bfn,DC=cut,DC=ac,DC=za</DefaultSecurityGroupDN>
+		<DefaultDistributionGroupDN>OU=Groups,OU=bfn,DC=cut,DC=ac,DC=za</DefaultDistributionGroupDN>
+		<BloemfonteinHomeDirectoryStaff>\\cutfs2\users\</BloemfonteinHomeDirectoryStaff>
+		<BloemfonteinHomeDirectoryStudent>\\cutfs4\studusers\</BloemfonteinHomeDirectoryStudent>
+		<WelkomHomeDirectoryStaff>\\wlkdc1\users\</WelkomHomeDirectoryStaff>
+		<WelkomHomeDirectoryStudent>\\wlkdc1\studusers\</WelkomHomeDirectoryStudent>
+		<OtherHomeDirectoryStaff>\\cutfs2\users\</OtherHomeDirectoryStaff>
+		<OtherHomeDirectoryStudent>\\cutfs4\studusers\</OtherHomeDirectoryStudent>
+		<homeDrive>U:</homeDrive>
+	</AD>
+	<ZopeUsers>
+		<System>ZopeUsers</System>
+		<Connector>Zope_Users</Connector>
+	</ZopeUsers>
+	<ZopeUserRolesStaff>
+		<System>ZopeUserRolesStaff</System>
+		<Connector>Zope_UserRoles_Staff</Connector>
+	</ZopeUserRolesStaff>
+	<ZopeUserRolesStudent>
+		<System>ZopeUserRolesStudents</System>
+		<Connector>Zope_UserRoles_Students</Connector>
+	</ZopeUserRolesStudent>
+	<Exchange>
+		<MailServer>Exchange</MailServer>
+		<homeMDB_Academic>CN=Academic,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=CUT Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=cut,DC=ac,DC=za</homeMDB_Academic>
+		<homeMDB_AdminStaff>CN=AdminStaff,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=CUT Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=cut,DC=ac,DC=za</homeMDB_AdminStaff>
+		<homeMDB_Management>CN=Management,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=CUT Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=cut,DC=ac,DC=za</homeMDB_Management>
+		<homeMDB_Default>CN=Academic,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=CUT Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=cut,DC=ac,DC=za</homeMDB_Default>
+		<homeMDB_Welkom>CN=WLKStaff,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=CUT Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=cut,DC=ac,DC=za</homeMDB_Welkom>
+		<msExchHomeServerNameBfn>/o=CUT Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=CUTMBX1</msExchHomeServerNameBfn>
+		<msExchHomeServerNameWlk>/o=CUT Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=WLKMAIL3</msExchHomeServerNameWlk>
+	</Exchange>
+    </Global>
+<ManagementAgents>
+    <AD>
+      <maType>AD</maType>
+      <maName>AD_MA</maName>
+      <provisionEnabled>True</provisionEnabled>
+      <MVobjectType>person</MVobjectType>
+      <MVobjectType>group</MVobjectType>
+      <ShouldExist>True</ShouldExist>
+    </AD>
+ </ManagementAgents>
+</SyncParams>

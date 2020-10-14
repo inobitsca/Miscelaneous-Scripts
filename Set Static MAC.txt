@@ -1,0 +1,1 @@
+Get-VMNetworkAdapter GLOJHBPAS01| Set-VMNetworkAdapter -StaticMacAddress 00:15:5D:00:C9:1B

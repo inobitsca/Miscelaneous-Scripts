@@ -1,0 +1,1 @@
+Add-MailboxPermission -Identity "con_cabrahams" -User "iih\con_cabrahams" -AccessRights FullAccess,ExternalAccount -InheritanceType All

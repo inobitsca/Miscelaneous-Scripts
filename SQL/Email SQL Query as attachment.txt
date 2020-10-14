@@ -1,0 +1,29 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+ USE [msdb]
+
+    EXEC sp_send_dbmail
+
+      @profile_name ='SQLMailProfileName',
+
+      @recipients ='USER@netsurit.com',
+
+      @subject ='T-SQL PRINT Result',
+
+      @body ='The output of PRINT is sent to you as follows.',
+
+      @execute_query_database ='DB_NAME',
+
+      @query = '
+
+SELECT * from
+	  PUT QUERY HERE
+    '
+    ,
+    
+     @attach_query_result_as_file = 1 ,
+     @query_attachment_filename = 'FileName.csv' ,
+     @Query_result_separator = ',' ,
+     @query_result_width = 32767 ;
+
+    
+

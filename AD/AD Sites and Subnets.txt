@@ -1,0 +1,5 @@
+Get-ADObject -Filter "ObjectClass -eq 'site'" -SearchBase "CN=sites,cn=configuration,dc=mccarthyltd,dc=local"
+
+New-ADObject -type Site -name "HQ" -path "CN=sites,cn=configuration,dc=mccarthyltd,dc=local"
+New-ADObject -type ServersContainer -name "Servers" -path "CN=HQ,CN=Sites,CN=Configuration,dc=mccarthyltd,dc=local"
+New-ADObject -type ntdsSiteSettings -name "NTDS Site Settings" -path "CN=HQ,CN=Sites,CN=Configuration,dc=mccarthyltd,dc=local"

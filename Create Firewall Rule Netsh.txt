@@ -1,0 +1,3 @@
+
+
+	netsh advfirewall firewall add rule name="3. AlwaysOn Cluster Port 1440" dir=in action=allow protocol=TCP localport=1440

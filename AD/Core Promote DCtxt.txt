@@ -1,0 +1,32 @@
+#Join Domain
+Sconfig.exe
+
+#Install Rolse for Domain Controller
+Install-WindowsFeature AD-Domain-Services,dns,wins
+
+
+#Provide credentials for the AD Upgrade Must be a member of Schema Admins and Enterprise Admins.  
+$Cred = Get-Credential
+
+#Run the domain controller promotion (Schema is updated during the installation of the 1st 2016 DC)
+Install-ADDSDomainController -DomainName jse.co.za -Credential $cred
+
+Install-WindowsFeature WINS -IncludeManagementTools 
+Install-WindowsFeature dhcp -IncludeManagementTools 
+
+#Check AD services are installed
+Get-Service adws,kdc,netlogon,dns,dhcpserver
+
+#Take over IP address
+#Add New Address
+Netsh Int IPv4 Add Address Ethernet0 10.6.xx.xx SkipAsSource=false
+
+#remove Old Address
+netsh interface ipv4 delete address Ethernet0 10.6.xx.xx
+
+DHCP Shared Secret:  $f&6h%fJ3l.
+
+:Sh@9j]I
+
+BE$1{P@$s2d@y
+

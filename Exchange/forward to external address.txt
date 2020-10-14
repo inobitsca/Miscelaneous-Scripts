@@ -1,0 +1,11 @@
+
+Forwarding
+Set-Mailbox -Identity "Ntombim"  -ForwardingAddress Ntombi.Mothobi@reckittbenckiser.com
+
+
+Set-Mailbox -Identity "Ntombim" -DeliverToMailboxAndForward $True -ForwardingAddress Ntombi.Mothobi@reckittbenckiser.com
+
+-ForwardingAddress is a contact
+
+Cancel Forwarding
+Set-Mailbox -Identity "cedricadmin" -DeliverToMailboxAndForward $false -ForwardingSMTPAddress $null

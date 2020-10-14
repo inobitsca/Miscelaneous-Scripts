@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1438312",
+    "ThreadId": "642617",
+    "Html": "Hi there, \r<br />\n<br />\nIn the GetAccessToken() method of the Utils class, there is a request to the access_token. However mine always fails and throws an invalid_grant &quot;Not a valid email&quot; exception in the _result. When I use the .NET Quickstart solution, I am able to connect no problem <a href=\"https://developers.google.com/admin-sdk/directory/v1/quickstart/dotnet\" rel=\"nofollow\">https://developers.google.com/admin-sdk/directory/v1/quickstart/dotnet</a> \r<br />\n<br />\nFor your reference:\r<br />\n<br />\n_tokenEndPoint is: &quot;<a href=\"https://www.googleapis.com/oauth2/v3/token\" rel=\"nofollow\">https://www.googleapis.com/oauth2/v3/token</a>&quot;\r<br />\n<br />\n_payload looks like:\r<br />\n{\r<br />\n  &quot;sub&quot;: &quot;<a href=\"mailto:admin@mycompany.com&quot;,\" rel=\"nofollow\">admin@mycompany.com\",</a>  &quot;iss&quot;: &quot;<a href=\"mailto:4235XXXXX977-bhcjq8i2XXXXXX94hudq7b1l6869XXXX@developer.gserviceaccount.com&quot;,\" rel=\"nofollow\">4235XXXXX977-bhcjq8i2XXXXXX94hudq7b1l6869XXXX@developer.gserviceaccount.com\",</a>  &quot;scope&quot;: &quot;<a href=\"https://www.googleapis.com/auth/admin.directory.user\" rel=\"nofollow\">https://www.googleapis.com/auth/admin.directory.user</a> <a href=\"https://www.googleapis.com/auth/admin.directory.group\" rel=\"nofollow\">https://www.googleapis.com/auth/admin.directory.group</a>&quot;,\r<br />\n  &quot;aud&quot;: &quot;<a href=\"https://www.googleapis.com/oauth2/v3/token\" rel=\"nofollow\">https://www.googleapis.com/oauth2/v3/token</a>&quot;,\r<br />\n  &quot;exp&quot;: 1439395616,\r<br />\n  &quot;iat&quot;: 1439392316\r<br />\n}\r<br />\n<br />\nIs there something missing? I've followed the guide with all the MA parameters to a tee. \r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2015-08-12T08:18:33.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1461958",
+    "ThreadId": "642617",
+    "Html": "Hi,\r<br />\n<br />\nDid you grant permission to API client on admin console?<br />\n",
+    "PostedDate": "2016-02-04T08:07:04.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

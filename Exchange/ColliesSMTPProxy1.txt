@@ -1,0 +1,15 @@
+Import-Module ActiveDirectory
+
+
+$users = import-csv collies.csv
+
+
+Foreach ($user in $users) {
+  
+$ID = $user.SAM
+$mail = $user.email
+Set-ADUser -Identity $ID -Add @{Proxyaddresses="SMTP:"+$mail}
+Set-ADUser -Identity $ID -emailaddress $newmail 
+
+
+} 

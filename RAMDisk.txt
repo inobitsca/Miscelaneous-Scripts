@@ -1,0 +1,7 @@
+New-IscsiVirtualDisk -Path "ramdisk:Ramdisk.vhdx" -Size 2GB
+
+New-IscsiServerTarget -TargetName targetRAM -InitiatorIds @("IPAddress:10.10.40.7")
+
+Add-IscsiVirtualDiskTargetMapping -TargetName targetRAM -DevicePath "ramdisk:Ramdisk.vhdx"
+
+

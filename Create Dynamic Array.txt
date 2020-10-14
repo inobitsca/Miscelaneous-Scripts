@@ -1,0 +1,4 @@
+
+[System.Collections.ArrayList]$Group = Get-ADGroupMember "Domain Admins" |select name
+
+$group.add("New Member")

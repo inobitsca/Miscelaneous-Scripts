@@ -1,0 +1,39 @@
+<Configuration>
+
+  <!--  <Add SourcePath="\\10.255.0.25\iso\O365\" OfficeClientEdition="32" >
+        <Product ID="VisioProRetail">
+      <Language ID="en-us" />
+    </Product>
+  </Add>  -->
+
+  <!--  <Updates Enabled="TRUE" UpdatePath="\\10.255.0.25\iso\O365\" /> -->
+
+  <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
+
+  <!--  <Logging Path="%temp%" />  -->
+
+  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+</Configuration>
+
+
+
+<Configuration>
+  
+  <Add SourcePath="\\DREAMS-AD01\software\odt\" Version="" OfficeClientEdition="32"> 
+
+  <Product ID="O365ProPlusRetail">
+  <Language ID="en-us" />
+  </Product>
+  
+<Product ID="VisioProRetail">
+  <Language ID="en-us" />
+  </Product>
+ 
+ </Add>
+  <Display Level="None" AcceptEULA="TRUE" />
+  <Updates Enabled="TRUE" Branch="Current" UpdatePath="\\DREAMS-AD01\software\odt\"/>
+  <Property Name="AUTOACTIVATE" Value="1" /> 
+  <Logging Level="Standard" Path="c:\temp" />
+
+</Configuration>

@@ -1,0 +1,255 @@
+<my:ObjectControlConfiguration my:TypeName="UserProfileCodeBehind"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:my="http://schemas.microsoft.com/2006/11/ResourceManagement"
+ xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <my:ObjectDataSource my:TypeName="PrimaryResourceObjectDataSource" my:Name="object" my:Parameters=""/>
+  <my:ObjectDataSource my:TypeName="PrimaryResourceDeltaDataSource" my:Name="delta"/>
+  <my:ObjectDataSource my:TypeName="PrimaryResourceRightsDataSource" my:Name="rights"/>
+  <my:ObjectDataSource my:TypeName="SchemaDataSource" my:Name="schema"/>
+  <my:Panel my:Name="page" my:Caption="%SYMBOL_ViewUserPanelCaption_END%">
+    <my:Grouping my:Name="caption" my:IsHeader="true" my:Caption="" my:Visible="true">
+      <my:Control my:Name="caption" my:TypeName="UocCaptionControl" my:ExpandArea="true" my:Caption="" my:Description="{Binding Source=object, Path=DisplayName}">
+        <my:Properties>
+          <my:Property my:Name="MaxHeight" my:Value="32"/>
+          <my:Property my:Name="MaxWidth" my:Value="32"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="BasicInfo" my:Caption="%SYMBOL_BasicInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Control my:Name="Photo" my:TypeName="UocPictureBox" my:Caption="" my:Description="" my:RightsLevel="{Binding Source=rights, Path=Photo}">
+        <my:Properties>
+          <my:Property my:Name="MaxHeight" my:Value="100"/>
+          <my:Property my:Name="MaxWidth" my:Value="100"/>
+          <my:Property my:Name="ImageData" my:Value="{Binding Source=object, Path=Photo}"/>
+          <my:Property my:Name="ImageUrl" my:Value="~/_layouts/images/MSILM2/defaultuserphoto.gif"/>
+          <my:Property my:Name="AlternateText" my:Value="{Binding Source=schema, Path=Photo.DisplayName}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="FirstName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=FirstName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=FirstName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=FirstName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=FirstName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="LastName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=LastName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=LastName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=LastName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=LastName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MiddleName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=MiddleName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=MiddleName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MiddleName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MiddleName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="DisplayName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=DisplayName.DisplayName}" my:Description="{Binding Source=schema, Path=DisplayName.Description}" my:RightsLevel="{Binding Source=rights, Path=DisplayName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=DisplayName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=DisplayName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="AccountName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=AccountName.DisplayName}" my:Description="{Binding Source=schema, Path=AccountName.Description}" my:RightsLevel="{Binding Source=rights, Path=AccountName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=AccountName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=AccountName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="UserPrincipalName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=userPrincipalName.DisplayName}" my:Description="{Binding Source=schema, Path=userPrincipalName.Description}" my:RightsLevel="{Binding Source=rights, Path=userPrincipalName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=userPrincipalName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=userPrincipalName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="ADAccountStatus" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=ADAccountStatus.DisplayName}" my:Description="{Binding Source=schema, Path=ADAccountStatus.Description}" my:RightsLevel="{Binding Source=rights, Path=ADAccountStatus}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=ADAccountStatus.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=ADAccountStatus, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Domain" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Domain.DisplayName}" my:Description="{Binding Source=schema, Path=Domain.Description}" my:RightsLevel="{Binding Source=rights, Path=Domain}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Domain.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Domain, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MailNickname" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=MailNickname.DisplayName}" my:Description="{Binding Source=schema, Path=MailNickname.Description}" my:RightsLevel="{Binding Source=rights, Path=MailNickname}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MailNickname.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MailNickname, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Email" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Email.DisplayName}" my:Description="{Binding Source=schema, Path=Email.Description}" my:RightsLevel="{Binding Source=rights, Path=Email}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Email.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Email, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="JobTitle" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=JobTitle.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=JobTitle}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=JobTitle.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=JobTitle, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Department" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Department.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=Department}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Department.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Department, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="WorkInfo" my:Caption="%SYMBOL_WorkInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Control my:Name="EmployeeStartDate" my:TypeName="UocDateTimeControl" my:Caption="{Binding Source=schema, Path=EmployeeStartDate.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeStartDate.Description}" my:RightsLevel="{Binding Source=rights, Path=EmployeeStartDate}">
+        <my:Properties>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=EmployeeStartDate, Mode=TwoWay}"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeEndDate" my:TypeName="UocDateTimeControl" my:Caption="{Binding Source=schema, Path=EmployeeEndDate.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeEndDate.Description}" my:RightsLevel="{Binding Source=rights, Path=EmployeeEndDate}">
+        <my:Properties>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=EmployeeEndDate, Mode=TwoWay}"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeType" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=EmployeeType.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeType.Description}"  my:RightsLevel="{Binding Source=rights, Path=EmployeeType}">
+        <my:Properties>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=EmployeeType.EnumerationString}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeID" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=EmployeeID.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeID.Description}" my:RightsLevel="{Binding Source=rights, Path=EmployeeID}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=EmployeeID.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=EmployeeID, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Manager" my:TypeName="UocHyperLink" my:Caption="{Binding Source=schema, Path=Manager.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=Manager}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Manager.Required}"/>
+          <my:Property my:Name="ObjectReference" my:Value="{Binding Source=object, Path=Manager, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Assistant" my:TypeName="UocHyperLink" my:Caption="{Binding Source=schema, Path=Assistant.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=Assistant}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Assistant.Required}"/>
+          <my:Property my:Name="ObjectReference" my:Value="{Binding Source=object, Path=Assistant, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="CostCenter" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=CostCenter.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=CostCenter}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=CostCenter.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=CostCenter, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="CostCenterName" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=CostCenterName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=CostCenterName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=CostCenterName.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=CostCenterName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="IsRASEnabled" my:TypeName="UocRadioButtonList" my:Caption="{Binding Source=schema, Path=IsRASEnabled.DisplayName}" my:RightsLevel="{Binding Source=rights, Path=IsRASEnabled}">
+        <my:Options>
+          <my:Option my:Value="True" my:Caption="%SYMBOL_AllowCaption_END%" my:Hint=""/>
+          <my:Option my:Value="False" my:Caption="%SYMBOL_DenyCaption_END%" my:Hint=""/>
+          <my:Option my:Value="" my:Caption="%SYMBOL_ControlBasedRASPolicyCaption_END%" my:Hint=""/>
+        </my:Options>
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=IsRASEnabled.Required}"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+          <my:Property my:Name="ValuePath" my:Value="Value"/>
+          <my:Property my:Name="CaptionPath" my:Value="Caption"/>
+          <my:Property my:Name="ItemSource" my:Value="Custom"/>
+          <my:Property my:Name="HintPath" my:Value="Hint"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=IsRASEnabled, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="ContactInfo" my:Caption="%SYMBOL_ContactInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Control my:Name="OfficePhone" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=OfficePhone.DisplayName}" my:Description="{Binding Source=schema, Path=OfficePhone.Description}" my:RightsLevel="{Binding Source=rights, Path=OfficePhone}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficePhone.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficePhone, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="OfficeFax" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=OfficeFax.DisplayName}" my:Description="{Binding Source=schema, Path=OfficeFax.Description}" my:RightsLevel="{Binding Source=rights, Path=OfficeFax}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficeFax.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficeFax, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MobilePhone" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=MobilePhone.DisplayName}" my:Description="{Binding Source=schema, Path=MobilePhone.Description}" my:RightsLevel="{Binding Source=rights, Path=MobilePhone}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MobilePhone.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MobilePhone, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="OfficeLocation" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=OfficeLocation.DisplayName}" my:Description="{Binding Source=schema, Path=OfficeLocation.Description}" my:RightsLevel="{Binding Source=rights, Path=OfficeLocation}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficeLocation.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficeLocation, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Address" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Address.DisplayName}" my:Description="{Binding Source=schema, Path=Address.Description}" my:RightsLevel="{Binding Source=rights, Path=Address}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Address.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Address, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="City" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=City.DisplayName}" my:Description="{Binding Source=schema, Path=City.Description}" my:RightsLevel="{Binding Source=rights, Path=City}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=City.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=City, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="PostalCode" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=PostalCode.DisplayName}" my:Description="{Binding Source=schema, Path=PostalCode.Description}" my:RightsLevel="{Binding Source=rights, Path=PostalCode}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=PostalCode.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=PostalCode, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Country" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Country.DisplayName}" my:Description="{Binding Source=schema, Path=Country.Description}" my:RightsLevel="{Binding Source=rights, Path=Country}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Country.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Country, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="provisioningGroup" my:Caption="%SYMBOL_ProvisioningTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Control my:Name="ExpectedRulesList" my:TypeName="UocListView" my:Caption="{Binding Source=schema, Path=ExpectedRulesList.DisplayName}" my:Description="{Binding Source=schema, Path=ExpectedRulesList.Description}" my:RightsLevel="{Binding Source=rights, Path=ExpectedRulesList}">
+        <my:Properties>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName, ExpectedRuleEntryAction, SynchronizationRuleStatus"/>
+          <my:Property my:Name="ResultObjectType" my:Value="ExpectedRuleEntry"/>
+          <my:Property my:Name="UsageKeywords" my:Value="ExpectedRuleEntry"/>
+          <my:Property my:Name="TargetAttribute" my:Value="ExpectedRulesList"/>
+          <my:Property my:Name="EmptyResultText" my:Value="%SYMBOL_ProvisioningEmptyResultText_END%"/>
+          <my:Property my:Name="PageSize" my:Value="10"/>
+          <my:Property my:Name="ShowTitleBar" my:Value="false"/>
+          <my:Property my:Name="ShowActionBar" my:Value="false"/>
+          <my:Property my:Name="ShowPreview" my:Value="false"/>
+          <my:Property my:Name="ShowSearchControl" my:Value="false"/>
+          <my:Property my:Name="EnableSelection" my:Value="false"/>
+          <my:Property my:Name="SingleSelection" my:Value="false"/>
+          <my:Property my:Name="ItemClickBehavior" my:Value="ModelessDialog"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="DetectedRulesList" my:TypeName="UocListView" my:Caption="{Binding Source=schema, Path=DetectedRulesList.DisplayName}" my:Description="{Binding Source=schema, Path=DetectedRulesList.Description}" my:RightsLevel="{Binding Source=rights, Path=DetectedRulesList}">
+        <my:Properties>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName"/>
+          <my:Property my:Name="ResultObjectType" my:Value="DetectedRuleEntry"/>
+          <my:Property my:Name="UsageKeywords" my:Value="DetectedRuleEntry"/>
+          <my:Property my:Name="TargetAttribute" my:Value="DetectedRulesList"/>
+          <my:Property my:Name="EmptyResultText" my:Value="%SYMBOL_DetectedRulesListEmptyResultText_END%"/>
+          <my:Property my:Name="PageSize" my:Value="10"/>
+          <my:Property my:Name="ShowTitleBar" my:Value="false"/>
+          <my:Property my:Name="ShowActionBar" my:Value="false"/>
+          <my:Property my:Name="ShowPreview" my:Value="false"/>
+          <my:Property my:Name="ShowSearchControl" my:Value="false"/>
+          <my:Property my:Name="EnableSelection" my:Value="false"/>
+          <my:Property my:Name="SingleSelection" my:Value="false"/>
+          <my:Property my:Name="ItemClickBehavior" my:Value="ModelessDialog"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+  </my:Panel>
+</my:ObjectControlConfiguration>

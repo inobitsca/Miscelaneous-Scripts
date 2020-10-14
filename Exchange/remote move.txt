@@ -1,0 +1,8 @@
+0724203418
+
+$Sourcecredentials = get-credential
+$TargetCredentials = get-credential
+
+.\Prepare-MoveRequest.Ps1 -Identity "altrisk2@altrisk.test" -RemoteForestDomainController "server2.altrisk.test" -RemoteForestCredential $Sourcecredentials -LocalForestDomainController "server1.domain.local" -LocalForestCredential $TargetCredentials -TargetMailUserOU "OU=Altrisk Users,DC=Domain,DC=local" -UseLocalObject -Verbose
+
+New-MoveRequest -Identity "altrisk1@altrisk.test" -Remote -Remotehostname "altriskex.altrisk.test"  -RemoteCredential $Sourcecredentials -TargetDeliverydomain domain.local

@@ -1,0 +1,5 @@
+Win2012 Standard (Partner Key)
+
+slmgr.vbs /ipk FQNQP-GJBP2-T8CDQ-8RKDR-8B2QD
+
+slmgr.vbs /ato

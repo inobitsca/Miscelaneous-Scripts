@@ -1,0 +1,10 @@
+[DCInstall]
+InstallDNS=Yes
+NewDomain=forest
+NewDomainDNSName=fabrikam.com
+DomainNetBiosName=fabrikam
+ReplicaOrNewDomain=domain
+ForestLevel=4
+DomainLevel=4
+RebootOnCompletion=yes
+SafeModeAdminPassword=

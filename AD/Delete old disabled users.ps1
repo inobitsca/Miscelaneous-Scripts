@@ -1,0 +1,1 @@
+Get-ADUser -Filter * -Properties Modified | Where {$_.Modified -le $(Get-Date).AddDays(-60) -and $_.Enabled -eq $False} | Remove-ADUser -Whatif

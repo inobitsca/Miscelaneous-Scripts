@@ -1,0 +1,7 @@
+
+
+ROBOCOPY \\production.retbrands.local\e$\OPERATIONS E:\RB\Operations /MIR /B /log+:e:\rb\OperationsCopy.log /TEE /w:1 /r:1
+
+
+
+ROBOCOPY \\production.retbrands.local\e$\users E:\RB\users /MIR /B /log+:e:\rb\UsersCopy.log /TEE /w:1 /r:1

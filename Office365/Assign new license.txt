@@ -1,0 +1,8 @@
+$users = Get-msoluser | where {$_.islicensed -like "true*"} 
+foreach ($user in $users) {
+
+$UPN = $User.UserPrincipalName
+set-msoluserlicense -UserPrincipalName $UPN -RemoveLicenses "syndication-account:MIDSIZEPACK"
+
+set-msoluserlicense –userprincipalname $UPN –addlicenses "syndication-account:O365_BUSINESS_PREMIUM"
+}

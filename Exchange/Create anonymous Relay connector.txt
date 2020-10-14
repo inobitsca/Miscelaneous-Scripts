@@ -1,0 +1,8 @@
+Get-ReceiveConnector "glhcexpf00\Relay Connector" | Add-ADPermission -User “NT AUTHORITY\ANONYMOUS LOGON” -ExtendedRights “Ms-Exch-SMTP-Accept-Any-Recipient”
+
+
+Set-ReceiveConnector "glhcexpf00\Relay Connector" -PermissionGroups AnonymousUsers
+Get-ReceiveConnector "glhcexpf00\Relay Connector" | Add-ADPermission -User 'NT AUTHORITY\Anonymous Logon' -ExtendedRights MS-Exch-SMTP-Accept-Any-Recipient
+
+Set-ReceiveConnector "SYNDC01EXC02\RelayConnector" -PermissionGroups AnonymousUsers
+Get-ReceiveConnector "SYNDC01EXC02RelayConnector" | Add-ADPermission -User 'NT AUTHORITY\Anonymous Logon' -ExtendedRights MS-Exch-SMTP-Accept-Any-Recipient

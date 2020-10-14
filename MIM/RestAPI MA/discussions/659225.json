@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1487488",
+    "ThreadId": "659225",
+    "Html": "Are there support for MIM versions?<br />\n",
+    "PostedDate": "2016-11-07T02:37:52.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1488255",
+    "ThreadId": "659225",
+    "Html": "\r\n<div dir=\"ltr\">Yes, some users already uses this agent on MIM 2016.</div>\r\n<div><br>\r\n<div>2016-11-18 7:56 GMT&#43;09:00 aavikko <span dir=\"ltr\">&lt;[email removed]&gt;</span>:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: aavikko</p>\r\n<div id=\"m_2502849186141213872ThreadNotificationPostBody\">Are there support for MIM versions?<br>\r\n</div>\r\n<div id=\"m_2502849186141213872ThreadNotificationFooter\">\r\n<p>Read the <a href=\"http://restmafim.codeplex.com/discussions/659225#post1487488\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email ([email removed])</p>\r\n<p>To start a new discussion for this project, email [email removed]</p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"http://restmafim.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2016-11-17T18:38:50.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1490869",
+    "ThreadId": "659225",
+    "Html": "After successfully running setup as Administrator on a MIM 2016 server the Generic REST API Management Agent did not appear in the list of available MAs.  Thoughts?<br />\n",
+    "PostedDate": "2017-01-09T13:35:44.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

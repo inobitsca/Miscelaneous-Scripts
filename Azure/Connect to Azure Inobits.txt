@@ -1,0 +1,3 @@
+Import-Module "C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\Azure.psd1"
+
+PS C:\WINDOWS\system32> Import-AzurePublishSettingsFile 'C:\temp\Microsoft Partner Network-Microsoft Azure Sponsorship-Visual Studio Premium with MSDN-5-30-2016 -credentials.publishsettings'

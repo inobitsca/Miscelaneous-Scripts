@@ -1,0 +1,5 @@
+Open Powershell as administrator
+
+Import-Module DirSync
+
+Start-OnlineCoexistenceSync, and then press ENTER.

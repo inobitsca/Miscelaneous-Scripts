@@ -1,0 +1,24 @@
+$transcriptname = "c:\scripts\SSPRAutoRegister_" + `
+    (Get-Date -format s).Replace(":","-") +".log"
+Start-Transcript $transcriptname
+
+Add-PSSnapin FIMAutomation
+$AccountName = $fimwf.WorkflowDictionary.AccountName
+$Email = $fimwf.WorkflowDictionary.Email
+$Domain = $fimwf.WorkflowDictionary.Domain
+$user= $domain +"\" + $accountname
+if($Email -and $Domain)
+{
+	$template = Get-AuthenticationWorkflowRegistrationTemplate -AuthenticationWorkflowName 'Password Reset AuthN Workflow'
+	$template.GateRegistrationTemplates[0].Data[0].Value = $Email
+	Register-AuthenticationWorkflow -UserName $user -AuthenticationWorkflowRegistrationTemplate $template
+}  
+
+Else {
+
+Write-host Failure of automatic SSPR registration for user $acccountname with a domain name of $domain and an Email address of $email 
+
+}
+
+Stop-Transcript
+

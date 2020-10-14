@@ -1,0 +1,53 @@
+$resourceGroupName = 'rg-pdg-qa'
+
+$azureRGInfo = Get-AzureRmResourceGroup -Name $resourceGroupName
+
+Set-AzureRmResourceGroup -Id $azureRGInfo.ResourceId -Tag @{ key="Environment"; Value="QA"} 
+
+
+
+
+
+
+$resourceGroupName = 'rg-pdg-qa'
+
+$azureRGInfo = Get-AzureRmResourceGroup -Name $resourceGroupName
+foreach ($item in $azureRGInfo) 
+{
+Get-AzureRmResource -ResourceGroupName $item.ResourceGroupName | ForEach-Object {Set-AzureRmResource -ResourceId $PSItem.ResourceId -Tag $item.Tags -Force } 
+}
+
+
+
+#Getting the list of VMs based on the resource group. THe Scope can be changed to include more resources.
+$Resources = Get-AzResource -TagName "enviroment" -TagValue "qa"
+#Details of the tag to remove are stored in the $TagtoRemove variable.
+$TagtoRemove = @{Key="Environment";Value="qa"}
+foreach ($Resource in $Resources)
+{
+ $Resourcetags = $Resource.tags # Getting the list of all the tags for the VM.
+ $newtag = @{} # Creating a new Hashtable variable to store the Tag Values.
+ foreach ( $KVP in $Resourcetags.GetEnumerator() )
+ {
+ Write-Host "`n`n`n"
+ If($KVP.Key -eq $TagtoRemove.Key)
+ {
+ write-host $TagtoRemove.Key "exists in the "$Resource.Name " will be removed `n"}
+ Else
+ {
+ $newtag.add($KVP.Key,$KVP.Value) # Adding all the tags in the $newtag Variable except the $TagtoRemove.key values
+ }
+}
+ #Updating the resource with the updated tag values $newtag.
+ Set-AzureRmResource -ResourceGroupName $Resource.ResourceGroupName -ResourceName $Resource.Name -Tag $newtag -Force -ResourceType Microsoft.Compute/VirtualMachines
+}
+
+
+
+
+$TagtoRemove = @{Key="Enviroment";Value="qa"}
+ $newtag = @{} # Creating a new Hashtable variable to store the Tag Values.
+ 
+ 
+ $Tags = Get-AzResource -TagName "environment" -TagValue "qa"
+foreach ($tag in $tags.GetEnumerator()) {Remove-AzureRmTag -name "Enviroment" -value "QA"}

@@ -1,0 +1,18 @@
+[13:16, 1/26/2018] +27 72 514 1016: !nn0@DM!N2018!
+
+https://www.winsms.co.za/api/batchmessage.asp?User=john&Password=john&Delivery=Yes&Message=Test&Numbers=2783333333;2782222222&Scheduled=200210291230
+
+
+https://www.winsms.co.za/api/batchmessage.asp?
+
+User=john
+&Password=john
+&Delivery=Yes
+&Message=Test
+&Numbers=0823337773   &Numbers=2783333333;2782222222
+&Scheduled=200210291230
+[{"key":"","value":"'Content-Type': 'application/json","description":"","type":"text","enabled":true}]
+
+DCC8E664-E348-4F63-86D3-7E1B17727660
+
+https://www.winsms.co.za/api/rest/v1/sms/outgoing/send

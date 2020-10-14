@@ -1,0 +1,67 @@
+﻿###
+### GAC the WF DLL
+###
+$assemblyFileName = '.\FimExtensions.FimActivityLibrary.dll'
+if (-not (Test-Path $assemblyFileName))
+{
+    Throw "Unable to find the DLL: $assemblyFileName"
+}
+
+$fullFileName = dir $assemblyFileName | select -expand fullname
+[Reflection.Assembly]::LoadWithPartialName("System.EnterpriseServices") | Out-Null
+[System.EnterpriseServices.Internal.Publish] $publish = new-object System.EnterpriseServices.Internal.Publish
+### 
+### This method call will never return errors or exceptions
+### On failure however it does put an entry into the event viewer
+###
+$publish.GacInstall($fullFileName)
+
+###
+### Get the Assembly (we use this to get the assembly FullName)
+###
+$wfAssembly = [reflection.assembly]::LoadWithPartialName("FimExtensions.FimActivityLibrary")
+if (-not $wfAssembly)
+{
+   Throw "Failed to GAC the Assembly"
+}
+
+###
+### Create the Activity Information Configuration
+### (only if the FIM Service Config module is loaded)
+###
+if (Get-Module FimPowerShellModule)
+{
+	New-FimImportObject -ObjectType ManagementPolicyRule -State Put -AnchorPairs @{DisplayName='Administration: Administrators control configuration related resources'} -Changes @(    New-FimImportChange -Operation Add    -AttributeName ActionParameter -AttributeValue IsAuthorizationActivity ) -ApplyNow 
+	New-FimImportObject -ObjectType ManagementPolicyRule -State Put -AnchorPairs @{DisplayName='Administration: Administrators control configuration related resources'} -Changes @(    New-FimImportChange -Operation Delete -AttributeName ActionParameter -AttributeValue IsAuthoriztionActivity	) -ApplyNow 
+
+    New-FimImportObject -ObjectType ActivityInformationConfiguration -State Create -Changes @{
+    	DisplayName 				= 'PowerShell Activity'
+    	Description 				= 'PowerShell Activity from CodePlex (fimpowershellwf.codeplex.com)'
+    	ActivityName 				= 'FimExtensions.FimActivityLibrary.PowerShellActivity'  
+    	TypeName 					= 'FimExtensions.FimActivityLibrary.PowerShellActivitySettingsPart'
+        AssemblyName 				= $wfAssembly.FullName
+    	IsActionActivity 			= 'true'
+    	IsAuthenticationActivity 	= 'false'
+    	IsAuthorizationActivity 	= 'true'
+    	IsConfigurationType 		= 'true'
+    } -ApplyNow
+}
+else
+{
+	Write-Error "The FimPowerShellModule is not loaded so we skipped installing the ActivityInformationConfiguration object."
+}
+
+###
+### Register the Eventlog Source for the PowerShell Workflow Activity
+###
+try
+{
+	New-EventLog -Source PowerShellActivity -LogName Application -ErrorAction Stop
+}
+catch
+{
+	 if ($_.Exception -notlike '*source is already registered*')
+	 {
+	    throw "Failed to register the event log source for the PowerShell Workflow Activity"
+	 }
+}

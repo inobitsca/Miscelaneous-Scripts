@@ -1,0 +1,26 @@
+add-computer –domainname domain.com -Credential $cred  -restart –force
+
+
+Set-TimeZone -Name "South Africa standard time"
+
+
+$Username = 'Domain\UserName'
+$Password = 'YourPassword'
+$pass = ConvertTo-SecureString -AsPlainText $Password -Force
+
+$SecureString = $pass
+# Users you password securly
+$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Username,$SecureString 
+
+add-computer –domainname domain.com -Credential $cred  -restart –force
+
+
+$Username = 'Domain\UserName'
+$Password = 'YourPassword'
+$pass = ConvertTo-SecureString -AsPlainText $Password -Force
+$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Username, $Pass
+#Reset-ComputerMachinePassword -Credential $Credential
+Test-ComputerSecureChannel -Repair -Credential $Credential
+
+
+

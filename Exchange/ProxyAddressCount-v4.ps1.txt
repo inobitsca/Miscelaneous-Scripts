@@ -1,0 +1,100 @@
+﻿<#
+Features:
+    1) This script creates a CSV output of everyone's SMTP proxy addresses.
+    2) Reports to the screen the total number of users found.
+    3) Reports to the screen the user(s) with the most proxy addresses.
+    4) You can configure the threshold of users reported.  
+        For example, if you only wanted users with 2 or more proxy addresses included, 
+        you should change the line: "$Threshold = 0" to "$Threshold = 2"
+Misc:
+    A) This uses "get-recipient" with no filters by default.  You may want to 
+        replace this with something more restrictive, like "get-mailbox", or use the 
+        -filter parameter.
+
+ 
+November 15 2013
+Mike Crowley
+ 
+http://mikecrowley.us
+ 
+#>
+
+#Console prep
+cd \
+cls
+
+#Getting a list of Recipients to work with
+$AllRecipients = Get-Recipient -ResultSize unlimited
+
+#Initializing variables
+$Threshold = 0
+$AttributeList = @()
+$UsersAndSMTPProxies = @()
+$UpperLimit = 0
+
+#Examine each recipient
+$AllRecipients | % {
+    
+    #Get a list of SMTP and smtp proxy addresses for each User
+    $SmtpProxyAddresses = $_.emailaddresses | ? {$_.prefixstring -like 'smtp'} | sort IsPrimaryAddress -Descending
+  
+    #Create a new placeholder object with only their name
+    $UserAndSmtpObject = New-Object PSObject -Property @{
+        Name = $_.name
+        }
+        
+    #Initialize the proxy counter
+    $counter = 0
+    
+    #Begin breaking out proxy addresses
+    $SmtpProxyAddresses | % {
+
+        $SMTPaddress = $_ -replace “smtp:”
+        $counter += 1
+        
+        if ($counter -eq 1) {$UserAndSmtpObject | Add-Member -MemberType NoteProperty -Name PrimarySmtpAddress -Value $SMTPaddress}
+
+        else {$UserAndSmtpObject | Add-Member -MemberType NoteProperty -Name (“SmtpAddress” + $Counter) -Value $SMTPaddress}
+
+        #Keep track of the highest proxy count
+        if ($Counter -gt $UpperLimit) {$UpperLimit = ($UpperLimit + 1)}
+      
+    }
+   
+   #Add the custom object to the master array
+   if ($counter -gt $Threshold) {$UsersAndSMTPProxies += $UserAndSmtpObject}
+}
+
+$UpperLimitAttribute = ('SMTPAddress' + $UpperLimit)
+
+$UpperLimitReference = $UpperLimit
+
+#Build output selection
+$AttributeList += "Name"
+$AttributeList += "PrimarySmtpAddress"
+while ($UpperLimit -gt 1) {
+    $AttributeList += ("SMTPAddress" + $UpperLimit)
+    $UpperLimit = $UpperLimit -1
+    }
+
+      
+#Arrange attributes
+[array]::sort($AttributeList)
+
+#Output to file
+$UsersAndSMTPProxies | select $AttributeList | Export-CSV $env:USERPROFILE\Desktop\UsersAndSMTPProxies.csv -notype
+
+#Output to screen
+# $UsersAndSMTPProxies | select $AttributeList
+Write-Host “”
+Write-Host "There are " -NoNewline -Fore DarkCyan
+Write-Host $UsersAndSMTPProxies.count -Fore Cyan -NoNewline 
+Write-Host " recipients. "  -NoNewline -Fore DarkCyan
+Write-Host (($UsersAndSMTPProxies | sort $AttributeList[-1])[0]).name -NoNewline -fore Cyan
+Write-host " was the recipient(s) with the most amount of proxy addresses (Total: " -NoNewline -Fore DarkCyan
+Write-Host $UpperLimitReference -Fore Cyan -NoNewline
+Write-Host ")." -Fore DarkCyan
+Write-Host “” 
+Write-Host "The report has been saved here: " -NoNewline -Fore DarkCyan
+Write-Host "$env:USERPROFILE\Desktop\UsersAndSMTPProxies.csv" -Fore Cyan
+Write-Host “” 

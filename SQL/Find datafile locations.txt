@@ -1,0 +1,6 @@
+SELECT database_id,name, physical_name AS current_file_location
+FROM sys.master_files where database_id = '26'
+
+select * from  sys.master_files
+
+Select DB_ID ('SKPProducer_QA')

@@ -1,0 +1,120 @@
+Use [Data Warehouse]
+GO
+DBCC SHRINKFILE (Datawarehouse_log, 50) 
+GO
+Use [DWH_Summary]
+GO
+DBCC SHRINKFILE (DWH_Summary_log, 50) 
+GO
+Use [ExceptionReports]
+GO
+DBCC SHRINKFILE (ExceptionReports_log, 50) 
+GO
+Use [Firm_IT]
+GO
+DBCC SHRINKFILE (Firm_IT_log, 50) 
+GO
+Use [FoschiniMTN]
+GO
+DBCC SHRINKFILE (FoschiniMTN_log, 50) 
+GO
+Use [FoschiniRecharge]
+GO
+DBCC SHRINKFILE (FoschiniRecharge_log, 50) 
+GO
+Use [Nebula Labs]
+GO
+DBCC SHRINKFILE ([Nebula Labs - Absamobile_log], 50) 
+GO
+Use [Nebula Labs - Absamobile]
+GO
+DBCC SHRINKFILE ([Nebula Labs_log], 50) 
+GO
+Use [Nebula_CorporateSupport]
+GO
+DBCC SHRINKFILE (Nebula_CorporateSupport_log, 50) 
+GO
+Use [Nebula_DW_Configuration]
+GO
+DBCC SHRINKFILE (Nebula_DW_Configuration_log, 50) 
+GO
+Use [nebula_fit]
+GO
+DBCC SHRINKFILE (nebula_fit_log, 50) 
+GO
+Use [ReportServer]
+GO
+DBCC SHRINKFILE (ReportServer_log, 50) 
+GO
+Use [ReportServerTempDB]
+GO
+DBCC SHRINKFILE (ReportServerTempDB_log, 50) 
+GO
+Use [repository_reports]
+GO
+DBCC SHRINKFILE (repository_reports_log, 50) 
+GO
+Use [sagent_repository]
+GO
+DBCC SHRINKFILE (sagent_repository_log, 50) 
+GO
+Use [Supernova_1NEB]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_ABSA]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_CAPT]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_CHEV]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_DIST]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_ENG]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_NCSA]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_PNP]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_Template]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_Template_0.1]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_Template_0.2]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_TFG]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Supernova_WW]
+GO
+DBCC SHRINKFILE (Supernova_TEMPLATE_log, 50) 
+GO
+Use [Timesheets]
+GO
+DBCC SHRINKFILE (Timesheets_log, 50) 
+GO
+Use [TMS]
+GO
+DBCC SHRINKFILE (TMS_log, 50) 
+GO

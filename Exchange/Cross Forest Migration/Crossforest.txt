@@ -1,0 +1,27 @@
+Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -MRSProxyEnabled $true
+
+c:\Program Files\Microsoft\Exchange Server\V14\ClientAccess\exchweb\ews\web.config
+
+#Prepare the move
+
+c:\Program Files\Microsoft\Exchange Server\V14\Scripts
+
+$Email = ""
+$SourceDC =Read-host "Enter Source DC server FQDN"
+$SourceExchange =Read-host "Enter Source Exchange server FQDN"
+$DestinationDC =Read-host "Enter Source Destination DC FQDN"
+$DestinationExchange =Read-host "Enter Destination Exchange server FQDN"
+$SourceCredentials
+$DestinationCredentials
+$TargetOU = ""
+
+#CSV has Hsers with a Columns calle Email and TargetOU
+
+Import-csv UserList.csv | % { .\Prepare-MoveRequest.Ps1 -Identity $_.Email -RemoteForestDomainController $SourceDC -RemoteForestCredential $SourceCredentials -LocalForestDomainController $DestinationDC -LocalForestCredential $DestinationCredentials -TargetMailUserOU $_.TargetOU –UseLocalObject -Verbose }
+
+#Use ADMT to add SID history
+
+#Move the mailbox
+
+
+New-MoveRequest –Identity $EmailAddress –Remote –Remotehostname $SourceExchange  -RemoteCredential $SourceCredentials –TargetDeliverydomain $DestinationExchange

@@ -1,0 +1,30 @@
+ConnectedObjectType: group
+CreateConnectedSystemObject: False
+CreateILMObject: True
+DisconnectConnectedSystemObject: False
+FlowType: 0
+ILMObjectType: group
+PersistentFlow: <import-flow><src><attr>cn</attr></src><dest>cn</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>description</attr></src><dest>description</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>displayName</attr><attr>sAMAccountName</attr></src><dest>displayName</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="IsPresent" isCustomExpression="false"><arg>displayName</arg></fn></arg><arg>displayName</arg><arg>sAMAccountName</arg></fn></import-flow>
+PersistentFlow: <import-flow><src><attr>dLMemSubmitPerms</attr></src><dest>dlMemSubmitPerms</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>hideDLMembership</attr></src><dest>hideDLMembership</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>mail</attr></src><dest>mail</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>mailNickname</attr></src><dest>mailNickname</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>managedBy</attr></src><dest>displayedOwner</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>managedBy</attr></src><dest>membershipAddWorkflow</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="IsPresent" isCustomExpression="false"><arg>managedBy</arg></fn></arg><arg>"Owner Approval"</arg><arg>"None"</arg></fn></import-flow>
+PersistentFlow: <import-flow><src><attr>managedBy</attr></src><dest>owner</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>member</attr></src><dest>member</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>msExchHideFromAddressLists</attr></src><dest>msExchHideFromAddressLists</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>msExchRequireAuthToSendTo</attr></src><dest>msExchRequireAuthToSendTo</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>objectSid</attr></src><dest>objectSid</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>objectSid</attr></src><dest>domain</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="Eq" isCustomExpression="false"><arg><fn id="Left" isCustomExpression="false"><arg><fn id="ConvertSidToString" isCustomExpression="false"><arg>objectSid</arg></fn></arg><arg>41</arg></fn></arg><arg>"S-1-5-21-2284779566-3916719919-2023547221"</arg></fn></arg><arg>"CONTOSO"</arg><arg>"Unknown"</arg></fn></import-flow>
+PersistentFlow: <import-flow><src><attr>oOFReplyToOriginator</attr></src><dest>oOFReplyToOriginator</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>sAMAccountName</attr></src><dest>accountName</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>unauthOrig</attr></src><dest>unauthOrig</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src>false</src><dest>membershipLocked</dest><scoping></scoping></import-flow>
+PersistentFlow: <import-flow><src><attr>groupType</attr></src><dest>scope</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="Eq" isCustomExpression="false"><arg><fn id="BitAnd" isCustomExpression="false"><arg>2</arg><arg>groupType</arg></fn></arg><arg>2</arg></fn></arg><arg>"Global"</arg><arg><fn id="IIF" isCustomExpression="false"><arg><fn id="Eq" isCustomExpression="false"><arg><fn id="BitAnd" isCustomExpression="false"><arg>4</arg><arg>groupType</arg></fn></arg><arg>4</arg></fn></arg><arg>"DomainLocal"</arg><arg>"Universal"</arg></fn></arg></fn></import-flow>
+PersistentFlow: <import-flow><src><attr>groupType</attr></src><dest>type</dest><scoping></scoping><fn id="IIF" isCustomExpression="true"><arg><fn id="Eq" isCustomExpression="false"><arg><fn id="BitOr" isCustomExpression="false"><arg>14</arg><arg>groupType</arg></fn></arg><arg>14</arg></fn></arg><arg>"Distribution"</arg><arg>"Security"</arg></fn></import-flow>
+Precedence: 5
+RelationshipCriteria: <conditions><condition><ilmAttribute>accountName</ilmAttribute><csAttribute>sAMAccountName</csAttribute></condition></conditions>
+ConnectedSystem: {252472ED-2480-4F84-AFD6-4E5CA1CDFF7D}

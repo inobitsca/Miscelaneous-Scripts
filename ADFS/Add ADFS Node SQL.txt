@@ -1,0 +1,11 @@
+
+$fscred = get-credential
+
+Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=PSQLIT4L1;Integrated Security=True" -certificatethumprint ‎6ed867088f9552198ebcf1519833eb0a005605b3
+
+
+Invoke-AdfsFarmBehaviorLevelRaise 
+
+
+
+https://sts.liberty.co.za/FederationMetadata/2007-06/FederationMetadata.xml

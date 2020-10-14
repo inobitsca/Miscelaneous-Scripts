@@ -1,0 +1,22 @@
+<Configuration>
+
+<Add SourcePath="\\192.168.1.21\software\ODT" OfficeClientEdition="32" >
+
+ <Product ID="O365BusinessRetail">
+      <Language ID="en-us" />
+    </Product>
+<Product ID="SkypeforBusinessEntryRetail">
+      <Language ID="en-us" />
+    </Product>
+
+  </Add> 
+
+  <Updates Enabled="TRUE" UpdatePath="\\192.168.1.21\software\ODT" />
+
+ <Display Level="full" AcceptEULA="TRUE" />  
+
+ <Logging Path="c:\temp" /> 
+
+ <Property Name="AUTOACTIVATE" Value="1" /> 
+
+</Configuration>

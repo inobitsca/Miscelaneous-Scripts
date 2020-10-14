@@ -1,0 +1,28 @@
+# Get the VNET to which to connect the NIC
+$VNET = Get-AzureRmVirtualNetwork -Name 'InobitsAzureNetwork' -ResourceGroupName 'InobitsAzureResourcegroup'
+# Get the Subnet ID to which to connect the NIC
+$SubnetID = (Get-AzureRmVirtualNetworkSubnetConfig -Name 'InobitsAzureLab' -VirtualNetwork $VNET).Id
+# NIC Name
+
+
+$Location = 'West europe'
+
+
+$NICName = 'PassResetNIC'
+$VMname = 'Inazsp01'
+$VMRG =  'InobitsAzureResourcegroup'
+
+#Get the VM
+$VM = Get-AzureRmVM -Name $VMname -ResourceGroupName $VMRG
+
+#Add the second NIC
+$NewNIC =  Get-AzureRmNetworkInterface -Name $NICName -ResourceGroupName $NICResourceGroup
+$VM = Add-AzureRmVMNetworkInterface -VM $VM -Id $NewNIC.Id
+# Show the Network interfaces
+$VM.NetworkProfile.NetworkInterfaces
+
+#we have to set one of the NICs to Primary, i will set the first NIC in this example
+$VM.NetworkProfile.NetworkInterfaces.Item(0).Primary = $true
+
+#Update the VM configuration (The VM will be restarted)
+Update-AzureRmVM -VM $VM -ResourceGroupName $VMRG

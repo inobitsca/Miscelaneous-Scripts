@@ -1,0 +1,3 @@
+$oldSuffix = 'mccarthyltd.local'
+ $newSuffix = 'mcmotor.com'
+ Get-ADUser -SearchBase "OU=Users,OU=AutoHaus Centurion,OU=McCarthy Volkswagen,OU=Johannesburg Region,OU=McCarthy Motor Holdings,DC=mccarthyltd,DC=local" -SearchScope Subtree -filter * | ForEach-Object { $newUpn = $_.UserPrincipalName.Replace($oldSuffix,$newSuffix) $_ | Set-ADUser -server mmhjhbisodc002.mccarthyltd.local -UserPrincipalName $newUpn -whatif }

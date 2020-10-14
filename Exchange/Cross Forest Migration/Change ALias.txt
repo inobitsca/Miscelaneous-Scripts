@@ -1,0 +1,8 @@
+import-csv alias.csv |set-mailbox $alias -alias 'Moved_"+$Alias
+
+
+
+get-aduser -filter {mailNickname -eq "yearplanner"} |Set-ADUser  -Add @{Proxyaddresses="smtp:yearplanner@policyadmin.co.za"}
+
+
+

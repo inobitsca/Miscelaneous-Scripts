@@ -1,0 +1,1 @@
+msiexec /i "c:\Software\FIM\Add-ins and extensions.msi" /quiet ADDLOCAL=PasswordClient,SQMFeatureOptinRegistrySetting,ClientComponents REGISTRATION_PORTAL_URL=https://mimpwregistration.transnet.net RMS_LOCATION=JHBWMIMPRSP101 ACCEPT_EULA=1 /l*v C:\temp\FIMlog1.txt

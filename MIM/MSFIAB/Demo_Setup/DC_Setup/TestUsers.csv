@@ -1,0 +1,17 @@
+Username,DisplayName,description
+SVC-FIM-SPAppPool,SVC-FIM-SPAppPool,FIM SharePoint Application Pool Service Account
+SVC-FIM-Service,SVC-FIM-Service,FIM Service Account
+SVC-FIM-MA,SVC-FIM-MA,FIM Management Agent Service Account
+SVC-FIM-Sync,SVC-FIM-Sync,FIM Synchronization Service Service Account
+SVC-FIM-ADMA,SVC-FIM-ADMA,FIM Active Directory Management Agent Service Account
+SVC-FIM-SQLAgent,SVC-FIM-SQLAgent,FIM SQL Server Agent Service Account
+SVC-FIM-SQL,SVC-FIM-SQL,FIM SQL Server Database Engine Service Account
+SVC-FIM-SQLReport,SVC-FIM-SQLReport,FIM SQL Server Reporting Services
+SVC-FIM-Pwd,SVC-FIM-Pwd,FIM Password Self Serivce Account
+SVC-FIM-Batch,SVC-FIM-Batch,FIM Server Batch Account
+SVC-SCSM-DW,SVC-SCSM-DW,SCSM Data warehouse Service Manager Account
+SVC-SCSM-Report,SVC-SCSM-Report,SCSM Reporting Service Account
+SVC-SCSM-Service,SVC-SCSM-Service,SCSM Services Manager Account
+SVC-SCSM-WF,SVC-SCSM-WF,SCSM Workflow Service Account
+FIMAdmin,FIMAdmin,FIM Installation and maintenance account. Do not remove
+

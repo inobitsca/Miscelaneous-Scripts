@@ -1,0 +1,73 @@
+<html>
+<style type="text/css">
+body  {
+ font-family:arial;
+ font-size: 9pt;
+}
+table.gridtable {
+ width:400px;
+ font-family: arial;
+ font-size: 9pt;
+ background: #BDD6EE
+}
+.odd th, .odd td {
+  background: #DEEAF6; 
+} 
+</style>
+<body>
+Dear $Context/Path[Relationship='CustomSystem_WorkItem_Library!System.WorkItemAffectedUser' TypeConstraint='System!System.User']/Property[Type='System!System.User']/FirstName$, 
+<br> 
+<br> 
+A ticket has been created for you:<br>
+<br>
+<table class="gridtable">
+ <colgroup>
+       <col span="1" style="width: 30%;">
+       <col span="1" style="width: 70%;">
+  </colgroup>
+
+<tr class="odd">
+  <td><strong>Ticket ID</strong></td> 
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Library!System.WorkItem']/Id$</td>
+ </tr>
+<tr>
+  <td><strong>Title </strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Library!System.WorkItem']/Title$</td>
+</tr>
+<tr class="odd">
+  <td><strong>Affected user</strong></td>
+  <td>$Context/Path[Relationship='CustomSystem_WorkItem_Library!System.WorkItemAffectedUser' TypeConstraint='System!System.User']$?$DisplayName$?  </td>
+</tr>
+<tr>
+  <td><strong>Registered date</strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Library!System.WorkItem']/CreatedDate$</td>
+ </tr>
+<tr>
+  <td><strong>Category</strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Incident_Library!System.WorkItem.Incident']/Classification$</td>
+ </tr>
+<tr class="odd">
+  <td><strong>Description</strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Library!System.WorkItem']/Description$</td>
+ </tr>
+<tr>
+<tr class="odd">
+  <td><strong>Source</strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Incident_Library!System.WorkItem.Incident']/Source$</td>
+ </tr>
+<tr>
+  <td><strong>Priority</strong></td>
+  <td>$Context/Property[Type='CustomSystem_WorkItem_Library!System.WorkItem.TroubleTicket']/Priority$</td>
+ </tr>
+</table>
+<br>
+<br>
+Regards
+<br>
+<br>
+<br>
+<strong>IT-support</strong>
+<br>
+<br>
+IR -Assigned to Notification
+<br>

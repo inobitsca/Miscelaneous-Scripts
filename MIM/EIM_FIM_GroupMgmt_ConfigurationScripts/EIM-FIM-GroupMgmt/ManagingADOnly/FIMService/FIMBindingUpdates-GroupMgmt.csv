@@ -1,0 +1,10 @@
+objectType,attributeType,required
+Group,GoodbyeMessage,False
+Group,GoodbyeMessageEnabled,False
+Group,WelcomeMessageEnabled,False
+Person,userPrincipalName,False
+Group,WelcomeMessage,False
+Person,UserAccountControl,False
+Group,ADAccountStatus,False
+Group,RetentionPeriod,False
+Person,ADAccountStatus,False

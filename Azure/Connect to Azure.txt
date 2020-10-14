@@ -1,0 +1,11 @@
+Get-AzurePublishSettingsFile
+
+Import-AzurePublishSettingsFile 'C:\Temp\SUBSCRIPTIONFIlE.publishsettings'
+
+Get-AzureSubscription
+
+Select-AzureSubscription -default -SubscriptionId f5fb651f-0c63-4abe-8986-**********
+
+#If Multiple Subscriptions
+Select-AzureSubscription -current -SubscriptionId f5fb651f-0c63-4abe-8986-**********
+

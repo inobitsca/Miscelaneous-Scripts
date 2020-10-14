@@ -1,0 +1,3 @@
+New-TransportRule "BlockKnownSpammers" -from "xiua_chan2@WingHangBanking.onmicrosoft.com","no-reply@mail.stumblemail.net","leeseed1@outlook.com","kiranjoon@outlook.com" -DeleteMessage $true
+
+Set-TransportRule "BlockKnownSpammers" -from "xiua_chan2@WingHangBanking.onmicrosoft.com","no-reply@mail.stumblemail.net","leeseed1@outlook.com","kiranjoon@outlook.com" -DeleteMessage $true

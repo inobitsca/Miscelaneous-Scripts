@@ -1,0 +1,15 @@
+Upload winaudit.bat file to C:\Winaudit
+open up cmd
+Change directory to C:\
+Run command:
+
+psexec \\* -c -d -n 20 -w \\servername.domain.com\SharedFolder\ -u DOMAIN\User -p P@ssw0rd  \\servername.domain.com\SharedFolder\Winaudit.bat -b
+
+psexec \\674-TMAYA -s -c -d -n 20  \\zahcPVH01\Export\MDMReg.bat -b
+
+psexec \\674-TMAYA -s -c -d -n 20  \\premierfoods.com\NETLOGON\GPU.bat -b
+
+psexec \\6201-tvdmescht -s -c -d -n 20  \\zahcPVH01\Export\WindowsDefenderATPOnboardingPackage\WindowsDefenderATPLocalOnboardingScript.cmd
+
+psexec \\ZA900VRRAS01 -s -c -d -n 20 \\GLHCVMIMSYNC01\compnames$\MMASet.bat
+

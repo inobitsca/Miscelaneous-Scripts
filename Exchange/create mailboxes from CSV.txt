@@ -1,0 +1,14 @@
+$users= Import-csv c:\temp\users.csv
+Import-Module Activedirectory
+$OU = "OU=PFUsers,OU=SBSUsers,OU=Users,OU=MyBusiness,DC=mlc-ct,DC=local"
+$pw = Read-Host "password?" -AsSecureString
+$group = "PFMBUsers"
+Foreach ($user in $users) {
+
+New-Mailbox -UserPrincipalName $user.mail1 -Alias $user.firstname -Name $user.firstname -OrganizationalUnit $ou -Password $pw -FirstName $user.firstname -DisplayName $user.displayname -ResetPasswordOnNextLogon $False
+
+Add-ADPrincipalGroupMembership -Identity $User.SAM -MemberOf $group
+Write-Host -ForegroundColor Green $User.SAM
+Enable-Mailbox -Identity $User.SAM -Alias $User.SAM
+
+}

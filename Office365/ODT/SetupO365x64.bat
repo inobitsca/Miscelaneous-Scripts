@@ -1,0 +1,1 @@
+\\127.0.0.1\ODT\setup.exe /configure \\127.0.0.1\ODT\Office2016ProPlus32.xml

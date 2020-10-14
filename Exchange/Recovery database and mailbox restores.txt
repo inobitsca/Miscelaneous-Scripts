@@ -1,0 +1,28 @@
+IDWEXCDB03_2Gb
+
+New-MailboxDatabase -Recovery -Name IDWEXCDB03_2Gb -Server idwdc01exc01 -EdbFilePath G:\Exchangedb_2GB\Exchange1-restore\IDWEXCDB03_2Gb.edb -LogFolderPath "G:\Exchangedb_2GB\Exchange1-restore"
+
+Get-MailboxDatabase | Get-MailboxStatistics | Where { $_.DisconnectReason -eq "SoftDeleted" } | fl DisplayName,DisconnectReason,DisconnectDate
+
+Get-MailboxStatistics -Database idwexcdb03_2gb | Where { $_.DisconnectReason -eq "SoftDeleted" -or $_.DisconnectReason -eq "Disabled" } | Format-List LegacyDN, DisplayName, MailboxGUID, DisconnectReason
+
+Get-MailboxStatistics -Database idwexcdb03_2gb | ft -auto
+
+Get-MailboxStatistics -Identity adm-pbosman
+
+Get-mailbox madelyn | ft name,ExchangeGUID
+
+New-MailboxRestoreRequest -SourceDatabase idwexcdb03_2gb -SourceStoreMailbox  c170ab10-ad91-4714-a543-00c960092682  -TargetMailbox "Gerhard Pretorius" -name "Gerhard Pretorius"
+
+Get-MailboxRestoreRequest |Get-MailboxRestoreRequestStatistics |ft Ds
+
+Get-MailboxRestoreRequest |Get-MailboxRestoreRequestStatistics |fl TargetMailboxIdentity,EstimatedTransferItemCount,ItemsTransferred,EstimatedTransferSize,BytesTransferred,statusdetail,percentcomplete
+
+foreach($mailbox in Get-MailboxStatistics -Database idwexcdb03_2gb)  
+{New-MailboxRestoreRequest -SourceDatabase idwexcdb03_2gb -SourceStoreMailbox 
+$mailbox.DisplayName -TargetMailbox $mailbox.DisplayName -name $mailbox.DisplayName}
+
+$mailboxes = Import-csv c:\temp\IDwalaRec.csv
+foreach($mailbox in $mailboxes)  
+{New-MailboxRestoreRequest -SourceDatabase idwexcdb03_2gb -SourceStoreMailbox 
+$mailbox.MailboxGuid -TargetMailbox $mailbox.DisplayName -name $mailbox.DisplayName}

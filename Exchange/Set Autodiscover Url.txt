@@ -1,0 +1,5 @@
+
+Get-ClientAccessServer | FL AutoDiscoverServiceInternalUri 
+
+Set-ClientAccessServer -Identity MBG-MAIL -AutoDiscoverServiceInternalUri https://webmail.gvk.co.za/Autodiscover/Autodiscover.xml
+

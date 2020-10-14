@@ -1,0 +1,7 @@
+Import-AzurePublishSettingsFile '.\Microsoft Partner Network-Microsoft Azure Sponsorship-Visual Studio Premium with MSDN-5-30-2016-credentials.publishsettings'
+
+
+PS C:\Temp> Select-AzureSubscription -Current -SubscriptionId bfafb1cd-667b-4844-8eda-3d058574ee21
+
+
+

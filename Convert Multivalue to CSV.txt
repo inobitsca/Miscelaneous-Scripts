@@ -1,0 +1,3 @@
+Get-ReceiveConnector Office365Relay |select Name, @{Name=’RemoteIPRanges';Expression={[string]::join(";",($_.RemoteIPRanges))}} | Export-CSV c:\temp\ipRelay.txt
+
+get-ADuser "LDuPreez" |select Name, @{Name='proxyaddresses';Expression={[string]::join(",",($_.proxyaddresses))}} | Export-CSV c:\temp\_Email.csv

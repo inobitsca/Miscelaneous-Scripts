@@ -1,0 +1,613 @@
+<my:ObjectControlConfiguration my:TypeName="UserProfileCodeBehind"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:my="http://schemas.microsoft.com/2006/11/ResourceManagement"
+ xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <my:ObjectDataSource my:TypeName="PrimaryResourceObjectDataSource" my:Name="object" my:Parameters=""/>
+  <my:ObjectDataSource my:TypeName="PrimaryResourceDeltaDataSource" my:Name="delta"/>
+  <my:ObjectDataSource my:TypeName="PrimaryResourceRightsDataSource" my:Name="rights"/>
+  <my:ObjectDataSource my:TypeName="SchemaDataSource" my:Name="schema"/>
+  <my:ObjectDataSource my:TypeName="DomainDataSource" my:Name="domain"/>
+  <my:ObjectDataSource my:TypeName="TimeZoneDataSource" my:Name="timezone"/>
+  <my:XmlDataSource my:Name="summaryTransformXsl" my:Parameters="Microsoft.IdentityManagement.WebUI.Controls.Resources.DefaultSummary.xsl"/>
+  <my:XmlDataSource my:Name="regions">
+    <Regions>
+      <CountryRegion Code="" Name=""/>
+      <CountryRegion Code="AF" Name="%SYMBOL_AFCaption_END%"/>
+      <CountryRegion Code="AL" Name="%SYMBOL_ALCaption_END%"/>
+      <CountryRegion Code="DZ" Name="%SYMBOL_DZCaption_END%"/>
+      <CountryRegion Code="AS" Name="%SYMBOL_ASCaption_END%"/>
+      <CountryRegion Code="AD" Name="%SYMBOL_ADCaption_END%"/>
+      <CountryRegion Code="AO" Name="%SYMBOL_AOCaption_END%"/>
+      <CountryRegion Code="AI" Name="%SYMBOL_AICaption_END%"/>
+      <CountryRegion Code="AQ" Name="%SYMBOL_AQCaption_END%"/>
+      <CountryRegion Code="AG" Name="%SYMBOL_AGCaption_END%"/>
+      <CountryRegion Code="AR" Name="%SYMBOL_ARCaption_END%"/>
+      <CountryRegion Code="AM" Name="%SYMBOL_AMCaption_END%"/>
+      <CountryRegion Code="AW" Name="%SYMBOL_AWCaption_END%"/>
+      <CountryRegion Code="AU" Name="%SYMBOL_AUCaption_END%"/>
+      <CountryRegion Code="AT" Name="%SYMBOL_ATCaption_END%"/>
+      <CountryRegion Code="AZ" Name="%SYMBOL_AZCaption_END%"/>
+      <CountryRegion Code="BS" Name="%SYMBOL_BSCaption_END%"/>
+      <CountryRegion Code="BH" Name="%SYMBOL_BHCaption_END%"/>
+      <CountryRegion Code="BD" Name="%SYMBOL_BDCaption_END%"/>
+      <CountryRegion Code="BB" Name="%SYMBOL_BBCaption_END%"/>
+      <CountryRegion Code="BY" Name="%SYMBOL_BYCaption_END%"/>
+      <CountryRegion Code="BE" Name="%SYMBOL_BECaption_END%"/>
+      <CountryRegion Code="BZ" Name="%SYMBOL_BZCaption_END%"/>
+      <CountryRegion Code="BJ" Name="%SYMBOL_BJCaption_END%"/>
+      <CountryRegion Code="BM" Name="%SYMBOL_BMCaption_END%"/>
+      <CountryRegion Code="BT" Name="%SYMBOL_BTCaption_END%"/>
+      <CountryRegion Code="BO" Name="%SYMBOL_BOCaption_END%"/>
+      <CountryRegion Code="BA" Name="%SYMBOL_BACaption_END%"/>
+      <CountryRegion Code="BW" Name="%SYMBOL_BWCaption_END%"/>
+      <CountryRegion Code="BV" Name="%SYMBOL_BVCaption_END%"/>
+      <CountryRegion Code="BR" Name="%SYMBOL_BRCaption_END%"/>
+      <CountryRegion Code="IO" Name="%SYMBOL_IOCaption_END%"/>
+      <CountryRegion Code="BN" Name="%SYMBOL_BNCaption_END%"/>
+      <CountryRegion Code="BG" Name="%SYMBOL_BGCaption_END%"/>
+      <CountryRegion Code="BF" Name="%SYMBOL_BFCaption_END%"/>
+      <CountryRegion Code="BI" Name="%SYMBOL_BICaption_END%"/>
+      <CountryRegion Code="KH" Name="%SYMBOL_KHCaption_END%"/>
+      <CountryRegion Code="CM" Name="%SYMBOL_CMCaption_END%"/>
+      <CountryRegion Code="CA" Name="%SYMBOL_CACaption_END%"/>
+      <CountryRegion Code="CV" Name="%SYMBOL_CVCaption_END%"/>
+      <CountryRegion Code="KY" Name="%SYMBOL_KYCaption_END%"/>
+      <CountryRegion Code="CF" Name="%SYMBOL_CFCaption_END%"/>
+      <CountryRegion Code="TD" Name="%SYMBOL_TDCaption_END%"/>
+      <CountryRegion Code="CL" Name="%SYMBOL_CLCaption_END%"/>
+      <CountryRegion Code="CN" Name="%SYMBOL_CNCaption_END%"/>
+      <CountryRegion Code="CX" Name="%SYMBOL_CXCaption_END%"/>
+      <CountryRegion Code="CC" Name="%SYMBOL_CCCaption_END%"/>
+      <CountryRegion Code="CO" Name="%SYMBOL_COCaption_END%"/>
+      <CountryRegion Code="KM" Name="%SYMBOL_KMCaption_END%"/>
+      <CountryRegion Code="CG" Name="%SYMBOL_CGCaption_END%"/>
+      <CountryRegion Code="CD" Name="%SYMBOL_CDCaption_END%"/>
+      <CountryRegion Code="CK" Name="%SYMBOL_CKCaption_END%"/>
+      <CountryRegion Code="CR" Name="%SYMBOL_CRCaption_END%"/>
+      <CountryRegion Code="CI" Name="%SYMBOL_CICaption_END%"/>
+      <CountryRegion Code="HR" Name="%SYMBOL_HRCaption_END%"/>
+      <CountryRegion Code="CU" Name="%SYMBOL_CUCaption_END%"/>
+      <CountryRegion Code="CY" Name="%SYMBOL_CYCaption_END%"/>
+      <CountryRegion Code="CZ" Name="%SYMBOL_CZCaption_END%"/>
+      <CountryRegion Code="DK" Name="%SYMBOL_DKCaption_END%"/>
+      <CountryRegion Code="DJ" Name="%SYMBOL_DJCaption_END%"/>
+      <CountryRegion Code="DM" Name="%SYMBOL_DMCaption_END%"/>
+      <CountryRegion Code="DO" Name="%SYMBOL_DOCaption_END%"/>
+      <CountryRegion Code="EC" Name="%SYMBOL_ECCaption_END%"/>
+      <CountryRegion Code="EG" Name="%SYMBOL_EGCaption_END%"/>
+      <CountryRegion Code="SV" Name="%SYMBOL_SVCaption_END%"/>
+      <CountryRegion Code="GQ" Name="%SYMBOL_GQCaption_END%"/>
+      <CountryRegion Code="ER" Name="%SYMBOL_ERCaption_END%"/>
+      <CountryRegion Code="EE" Name="%SYMBOL_EECaption_END%"/>
+      <CountryRegion Code="ET" Name="%SYMBOL_ETCaption_END%"/>
+      <CountryRegion Code="FK" Name="%SYMBOL_FKCaption_END%"/>
+      <CountryRegion Code="FO" Name="%SYMBOL_FOCaption_END%"/>
+      <CountryRegion Code="FJ" Name="%SYMBOL_FJCaption_END%"/>
+      <CountryRegion Code="FI" Name="%SYMBOL_FICaption_END%"/>
+      <CountryRegion Code="FR" Name="%SYMBOL_FRCaption_END%"/>
+      <CountryRegion Code="GF" Name="%SYMBOL_GFCaption_END%"/>
+      <CountryRegion Code="PF" Name="%SYMBOL_PFCaption_END%"/>
+      <CountryRegion Code="TF" Name="%SYMBOL_TFCaption_END%"/>
+      <CountryRegion Code="GA" Name="%SYMBOL_GACaption_END%"/>
+      <CountryRegion Code="GM" Name="%SYMBOL_GMCaption_END%"/>
+      <CountryRegion Code="GE" Name="%SYMBOL_GECaption_END%"/>
+      <CountryRegion Code="DE" Name="%SYMBOL_DECaption_END%"/>
+      <CountryRegion Code="GH" Name="%SYMBOL_GHCaption_END%"/>
+      <CountryRegion Code="GI" Name="%SYMBOL_GICaption_END%"/>
+      <CountryRegion Code="GR" Name="%SYMBOL_GRCaption_END%"/>
+      <CountryRegion Code="GL" Name="%SYMBOL_GLCaption_END%"/>
+      <CountryRegion Code="GD" Name="%SYMBOL_GDCaption_END%"/>
+      <CountryRegion Code="GP" Name="%SYMBOL_GPCaption_END%"/>
+      <CountryRegion Code="GU" Name="%SYMBOL_GUCaption_END%"/>
+      <CountryRegion Code="GT" Name="%SYMBOL_GTCaption_END%"/>
+      <CountryRegion Code="GG" Name="%SYMBOL_GGCaption_END%"/>
+      <CountryRegion Code="GN" Name="%SYMBOL_GNCaption_END%"/>
+      <CountryRegion Code="GW" Name="%SYMBOL_GWCaption_END%"/>
+      <CountryRegion Code="GY" Name="%SYMBOL_GYCaption_END%"/>
+      <CountryRegion Code="HT" Name="%SYMBOL_HTCaption_END%"/>
+      <CountryRegion Code="HM" Name="%SYMBOL_HMCaption_END%"/>
+      <CountryRegion Code="HN" Name="%SYMBOL_HNCaption_END%"/>
+      <CountryRegion Code="HK" Name="%SYMBOL_HKCaption_END%"/>
+      <CountryRegion Code="HU" Name="%SYMBOL_HUCaption_END%"/>
+      <CountryRegion Code="IS" Name="%SYMBOL_ISCaption_END%"/>
+      <CountryRegion Code="IN" Name="%SYMBOL_INCaption_END%"/>
+      <CountryRegion Code="ID" Name="%SYMBOL_IDCaption_END%"/>
+      <CountryRegion Code="IR" Name="%SYMBOL_IRCaption_END%"/>
+      <CountryRegion Code="IQ" Name="%SYMBOL_IQCaption_END%"/>
+      <CountryRegion Code="IE" Name="%SYMBOL_IECaption_END%"/>
+      <CountryRegion Code="IM" Name="%SYMBOL_IMCaption_END%"/>
+      <CountryRegion Code="IL" Name="%SYMBOL_ILCaption_END%"/>
+      <CountryRegion Code="IT" Name="%SYMBOL_ITCaption_END%"/>
+      <CountryRegion Code="JM" Name="%SYMBOL_JMCaption_END%"/>
+      <CountryRegion Code="JP" Name="%SYMBOL_JPCaption_END%"/>
+      <CountryRegion Code="JE" Name="%SYMBOL_JECaption_END%"/>
+      <CountryRegion Code="JO" Name="%SYMBOL_JOCaption_END%"/>
+      <CountryRegion Code="KZ" Name="%SYMBOL_KZCaption_END%"/>
+      <CountryRegion Code="KE" Name="%SYMBOL_KECaption_END%"/>
+      <CountryRegion Code="KI" Name="%SYMBOL_KICaption_END%"/>
+      <CountryRegion Code="KR" Name="%SYMBOL_KRCaption_END%"/>
+      <CountryRegion Code="KW" Name="%SYMBOL_KWCaption_END%"/>
+      <CountryRegion Code="KG" Name="%SYMBOL_KGCaption_END%"/>
+      <CountryRegion Code="LA" Name="%SYMBOL_LACaption_END%"/>
+      <CountryRegion Code="LV" Name="%SYMBOL_LVCaption_END%"/>
+      <CountryRegion Code="LB" Name="%SYMBOL_LBCaption_END%"/>
+      <CountryRegion Code="LS" Name="%SYMBOL_LSCaption_END%"/>
+      <CountryRegion Code="LR" Name="%SYMBOL_LRCaption_END%"/>
+      <CountryRegion Code="LY" Name="%SYMBOL_LYCaption_END%"/>
+      <CountryRegion Code="LI" Name="%SYMBOL_LICaption_END%"/>
+      <CountryRegion Code="LT" Name="%SYMBOL_LTCaption_END%"/>
+      <CountryRegion Code="LU" Name="%SYMBOL_LUCaption_END%"/>
+      <CountryRegion Code="MO" Name="%SYMBOL_MOCaption_END%"/>
+      <CountryRegion Code="MK" Name="%SYMBOL_MKCaption_END%"/>
+      <CountryRegion Code="MG" Name="%SYMBOL_MGCaption_END%"/>
+      <CountryRegion Code="MW" Name="%SYMBOL_MWCaption_END%"/>
+      <CountryRegion Code="MY" Name="%SYMBOL_MYCaption_END%"/>
+      <CountryRegion Code="MV" Name="%SYMBOL_MVCaption_END%"/>
+      <CountryRegion Code="ML" Name="%SYMBOL_MLCaption_END%"/>
+      <CountryRegion Code="MT" Name="%SYMBOL_MTCaption_END%"/>
+      <CountryRegion Code="MH" Name="%SYMBOL_MHCaption_END%"/>
+      <CountryRegion Code="MQ" Name="%SYMBOL_MQCaption_END%"/>
+      <CountryRegion Code="MR" Name="%SYMBOL_MRCaption_END%"/>
+      <CountryRegion Code="MU" Name="%SYMBOL_MUCaption_END%"/>
+      <CountryRegion Code="YT" Name="%SYMBOL_YTCaption_END%"/>
+      <CountryRegion Code="MX" Name="%SYMBOL_MXCaption_END%"/>
+      <CountryRegion Code="FM" Name="%SYMBOL_FMCaption_END%"/>
+      <CountryRegion Code="MD" Name="%SYMBOL_MDCaption_END%"/>
+      <CountryRegion Code="MC" Name="%SYMBOL_MCCaption_END%"/>
+      <CountryRegion Code="MN" Name="%SYMBOL_MNCaption_END%"/>
+      <CountryRegion Code="ME" Name="%SYMBOL_MECaption_END%"/>
+      <CountryRegion Code="MS" Name="%SYMBOL_MSCaption_END%"/>
+      <CountryRegion Code="MA" Name="%SYMBOL_MACaption_END%"/>
+      <CountryRegion Code="MZ" Name="%SYMBOL_MZCaption_END%"/>
+      <CountryRegion Code="MM" Name="%SYMBOL_MMCaption_END%"/>
+      <CountryRegion Code="NA" Name="%SYMBOL_NACaption_END%"/>
+      <CountryRegion Code="NR" Name="%SYMBOL_NRCaption_END%"/>
+      <CountryRegion Code="NP" Name="%SYMBOL_NPCaption_END%"/>
+      <CountryRegion Code="NL" Name="%SYMBOL_NLCaption_END%"/>
+      <CountryRegion Code="AN" Name="%SYMBOL_ANCaption_END%"/>
+      <CountryRegion Code="NC" Name="%SYMBOL_NCCaption_END%"/>
+      <CountryRegion Code="NZ" Name="%SYMBOL_NZCaption_END%"/>
+      <CountryRegion Code="NI" Name="%SYMBOL_NICaption_END%"/>
+      <CountryRegion Code="NE" Name="%SYMBOL_NECaption_END%"/>
+      <CountryRegion Code="NG" Name="%SYMBOL_NGCaption_END%"/>
+      <CountryRegion Code="NU" Name="%SYMBOL_NUCaption_END%"/>
+      <CountryRegion Code="NF" Name="%SYMBOL_NFCaption_END%"/>
+      <CountryRegion Code="KP" Name="%SYMBOL_KPCaption_END%"/>
+      <CountryRegion Code="MP" Name="%SYMBOL_MPCaption_END%"/>
+      <CountryRegion Code="NO" Name="%SYMBOL_NOCaption_END%"/>
+      <CountryRegion Code="OM" Name="%SYMBOL_OMCaption_END%"/>
+      <CountryRegion Code="PK" Name="%SYMBOL_PKCaption_END%"/>
+      <CountryRegion Code="PW" Name="%SYMBOL_PWCaption_END%"/>
+      <CountryRegion Code="PS" Name="%SYMBOL_PSCaption_END%"/>
+      <CountryRegion Code="PA" Name="%SYMBOL_PACaption_END%"/>
+      <CountryRegion Code="PG" Name="%SYMBOL_PGCaption_END%"/>
+      <CountryRegion Code="PY" Name="%SYMBOL_PYCaption_END%"/>
+      <CountryRegion Code="PE" Name="%SYMBOL_PECaption_END%"/>
+      <CountryRegion Code="PH" Name="%SYMBOL_PHCaption_END%"/>
+      <CountryRegion Code="PN" Name="%SYMBOL_PNCaption_END%"/>
+      <CountryRegion Code="PL" Name="%SYMBOL_PLCaption_END%"/>
+      <CountryRegion Code="PT" Name="%SYMBOL_PTCaption_END%"/>
+      <CountryRegion Code="PR" Name="%SYMBOL_PRCaption_END%"/>
+      <CountryRegion Code="QA" Name="%SYMBOL_QACaption_END%"/>
+      <CountryRegion Code="RE" Name="%SYMBOL_RECaption_END%"/>
+      <CountryRegion Code="RO" Name="%SYMBOL_ROCaption_END%"/>
+      <CountryRegion Code="RU" Name="%SYMBOL_RUCaption_END%"/>
+      <CountryRegion Code="RW" Name="%SYMBOL_RWCaption_END%"/>
+      <CountryRegion Code="SH" Name="%SYMBOL_SHCaption_END%"/>
+      <CountryRegion Code="KN" Name="%SYMBOL_KNCaption_END%"/>
+      <CountryRegion Code="LC" Name="%SYMBOL_LCCaption_END%"/>
+      <CountryRegion Code="PM" Name="%SYMBOL_PMCaption_END%"/>
+      <CountryRegion Code="VC" Name="%SYMBOL_VCCaption_END%"/>
+      <CountryRegion Code="WS" Name="%SYMBOL_WSCaption_END%"/>
+      <CountryRegion Code="SM" Name="%SYMBOL_SMCaption_END%"/>
+      <CountryRegion Code="ST" Name="%SYMBOL_STCaption_END%"/>
+      <CountryRegion Code="SA" Name="%SYMBOL_SACaption_END%"/>
+      <CountryRegion Code="SN" Name="%SYMBOL_SNCaption_END%"/>
+      <CountryRegion Code="RS" Name="%SYMBOL_RSCaption_END%"/>
+      <CountryRegion Code="SC" Name="%SYMBOL_SCCaption_END%"/>
+      <CountryRegion Code="SL" Name="%SYMBOL_SLCaption_END%"/>
+      <CountryRegion Code="SG" Name="%SYMBOL_SGCaption_END%"/>
+      <CountryRegion Code="SK" Name="%SYMBOL_SKCaption_END%"/>
+      <CountryRegion Code="SI" Name="%SYMBOL_SICaption_END%"/>
+      <CountryRegion Code="SB" Name="%SYMBOL_SBCaption_END%"/>
+      <CountryRegion Code="SO" Name="%SYMBOL_SOCaption_END%"/>
+      <CountryRegion Code="ZA" Name="%SYMBOL_ZACaption_END%"/>
+      <CountryRegion Code="GS" Name="%SYMBOL_GSCaption_END%"/>
+      <CountryRegion Code="ES" Name="%SYMBOL_ESCaption_END%"/>
+      <CountryRegion Code="LK" Name="%SYMBOL_LKCaption_END%"/>
+      <CountryRegion Code="SD" Name="%SYMBOL_SDCaption_END%"/>
+      <CountryRegion Code="SR" Name="%SYMBOL_SRCaption_END%"/>
+      <CountryRegion Code="SJ" Name="%SYMBOL_SJCaption_END%"/>
+      <CountryRegion Code="SZ" Name="%SYMBOL_SZCaption_END%"/>
+      <CountryRegion Code="SE" Name="%SYMBOL_SECaption_END%"/>
+      <CountryRegion Code="CH" Name="%SYMBOL_CHCaption_END%"/>
+      <CountryRegion Code="SY" Name="%SYMBOL_SYCaption_END%"/>
+      <CountryRegion Code="TW" Name="%SYMBOL_TWCaption_END%"/>
+      <CountryRegion Code="TJ" Name="%SYMBOL_TJCaption_END%"/>
+      <CountryRegion Code="TZ" Name="%SYMBOL_TZCaption_END%"/>
+      <CountryRegion Code="TH" Name="%SYMBOL_THCaption_END%"/>
+      <CountryRegion Code="TL" Name="%SYMBOL_TLCaption_END%"/>
+      <CountryRegion Code="TG" Name="%SYMBOL_TGCaption_END%"/>
+      <CountryRegion Code="TK" Name="%SYMBOL_TKCaption_END%"/>
+      <CountryRegion Code="TO" Name="%SYMBOL_TOCaption_END%"/>
+      <CountryRegion Code="TT" Name="%SYMBOL_TTCaption_END%"/>
+      <CountryRegion Code="TN" Name="%SYMBOL_TNCaption_END%"/>
+      <CountryRegion Code="TR" Name="%SYMBOL_TRCaption_END%"/>
+      <CountryRegion Code="TM" Name="%SYMBOL_TMCaption_END%"/>
+      <CountryRegion Code="TC" Name="%SYMBOL_TCCaption_END%"/>
+      <CountryRegion Code="TV" Name="%SYMBOL_TVCaption_END%"/>
+      <CountryRegion Code="UM" Name="%SYMBOL_UMCaption_END%"/>
+      <CountryRegion Code="UG" Name="%SYMBOL_UGCaption_END%"/>
+      <CountryRegion Code="UA" Name="%SYMBOL_UACaption_END%"/>
+      <CountryRegion Code="AE" Name="%SYMBOL_AECaption_END%"/>
+      <CountryRegion Code="GB" Name="%SYMBOL_GBCaption_END%"/>
+      <CountryRegion Code="US" Name="%SYMBOL_USCaption_END%"/>
+      <CountryRegion Code="UY" Name="%SYMBOL_UYCaption_END%"/>
+      <CountryRegion Code="UZ" Name="%SYMBOL_UZCaption_END%"/>
+      <CountryRegion Code="VU" Name="%SYMBOL_VUCaption_END%"/>
+      <CountryRegion Code="VA" Name="%SYMBOL_VACaption_END%"/>
+      <CountryRegion Code="VE" Name="%SYMBOL_VECaption_END%"/>
+      <CountryRegion Code="VN" Name="%SYMBOL_VNCaption_END%"/>
+      <CountryRegion Code="VG" Name="%SYMBOL_VGCaption_END%"/>
+      <CountryRegion Code="VI" Name="%SYMBOL_VICaption_END%"/>
+      <CountryRegion Code="WF" Name="%SYMBOL_WFCaption_END%"/>
+      <CountryRegion Code="YE" Name="%SYMBOL_YECaption_END%"/>
+      <CountryRegion Code="ZM" Name="%SYMBOL_ZMCaption_END%"/>
+      <CountryRegion Code="ZW" Name="%SYMBOL_ZWCaption_END%"/>
+    </Regions>
+  </my:XmlDataSource>
+  <my:Panel my:Name="page" my:Caption="%SYMBOL_EditUserPanelCaption_END%">
+    <my:Grouping my:Name="caption" my:IsHeader="true" my:Caption="%SYMBOL_CaptionTabCaption_END%" my:Visible="true">
+      <my:Control my:Name="caption" my:TypeName="UocCaptionControl" my:ExpandArea="true" my:Caption="" my:Description="{Binding Source=object, Path=DisplayName}">
+        <my:Properties>
+          <my:Property my:Name="MaxHeight" my:Value="32"/>
+          <my:Property my:Name="MaxWidth" my:Value="32"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="BasicInfo" my:Caption="%SYMBOL_BasicInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Help my:HelpText="%SYMBOL_BasicInfoTabHelpText_END%" my:Link="01796fb1-c1ab-417c-abe3-41d1907e299a.htm#bkmk_grouping_BasicInfo"/>
+      <my:Control my:Name="PhotoUpload" my:TypeName="UocFileUpload" my:Caption="{Binding Source=schema, Path=Photo.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=Photo}">
+        <my:Properties>
+          <my:Property my:Name="MaxHeight" my:Value="100"/>
+          <my:Property my:Name="MaxWidth" my:Value="100"/>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Photo.Required}"/>
+          <my:Property my:Name="ContentType" my:Value="Image"/>
+          <my:Property my:Name="AllowedFileTypes" my:Value="*.gif; *.jpg; *.jpeg; *.png; *.bmp; *.tif; *.tiff"/>
+          <my:Property my:Name="ImageUrl" my:Value="~/_layouts/images/MSILM2/defaultuserphoto.gif"/>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=Photo, Mode=TwoWay}"/>
+          <my:Property my:Name="PromptForNoValue" my:Value="%SYMBOL_PhotoPromptForNoValueCaption_END%"/>
+          <my:Property my:Name="AlternateText" my:Value="{Binding Source=schema, Path=Photo.DisplayName}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="FirstName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=FirstName.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=FirstName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=FirstName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=FirstName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="LastName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=LastName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=LastName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=LastName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=LastName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MiddleName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=MiddleName.DisplayName}" my:Description="" my:RightsLevel="{Binding Source=rights, Path=MiddleName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MiddleName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MiddleName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="DisplayName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=DisplayName.DisplayName}" my:Description="{Binding Source=schema, Path=DisplayName.Description}"  my:RightsLevel="{Binding Source=rights, Path=DisplayName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=DisplayName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="64"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=DisplayName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="AccountName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=AccountName.DisplayName}" my:Description="{Binding Source=schema, Path=AccountName.Description}" my:RightsLevel="{Binding Source=rights, Path=AccountName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=AccountName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="64"/>
+          <my:Property my:Name="RegularExpression" my:Value="{Binding Source=schema, Path=AccountName.StringRegex}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=AccountName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="UserPrincipalName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=userPrincipalName.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=userPrincipalName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=userPrincipalName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=userPrincipalName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="ADAccountStatus" my:TypeName="UocDropDownList" my:Caption="{Binding Source=schema, Path=ADAccountStatus.DisplayName}" my:Description="{Binding Source=schema, Path=ADAccountStatus.Description}"  my:RightsLevel="{Binding Source=rights, Path=ADAccountStatus}">
+        <my:Options>
+          <my:Option my:Value="Active" my:Caption="Active" my:Hint="Denotes an Active User." />
+          <my:Option my:Value="Disabled" my:Caption="Disabled" my:Hint="Denotes a Disabled User" />
+        </my:Options>
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=ADAccountStatus.Required" />
+          <my:Property my:Name="ValuePath" my:Value="Value" />
+          <my:Property my:Name="CaptionPath" my:Value="Caption" />
+          <my:Property my:Name="HintPath" my:Value="Hint" />
+          <my:Property my:Name="ItemSource" my:Value="Custom" />
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=ADAccountStatus, Mode=TwoWay}" />
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Domain" my:TypeName="UocDropDownList" my:Caption="{Binding Source=schema, Path=Domain.DisplayName}" my:Description="{Binding Source=schema, Path=Domain.Description}" my:RightsLevel="{Binding Source=rights, Path=Domain}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Domain.Required}"/>
+          <my:Property my:Name="Columns" my:Value="40"/>
+          <my:Property my:Name="ValuePath" my:Value="Value"/>
+          <my:Property my:Name="CaptionPath" my:Value="Caption"/>
+          <my:Property my:Name="HintPath" my:Value="Hint"/>
+          <my:Property my:Name="ItemSource" my:Value="{Binding Source=domain, Path=Domain, Mode=OneWay}"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=Domain, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MailNickname" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=MailNickname.DisplayName}" my:Description="{Binding Source=schema, Path=MailNickname.Description}" my:RightsLevel="{Binding Source=rights, Path=MailNickname}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MailNickname.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="64"/>
+          <my:Property my:Name="RegularExpression" my:Value="{Binding Source=schema, Path=MailNickname.StringRegex}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MailNickname, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Email" my:TypeName="UocLabel" my:Caption="{Binding Source=schema, Path=Email.DisplayName}" my:Description="{Binding Source=schema, Path=Email.Description}"  my:RightsLevel="{Binding Source=rights, Path=Email}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Email.Required}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Email, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="JobTitle" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=JobTitle.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=JobTitle}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=JobTitle.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=JobTitle, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Department" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=Department.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=Department}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Department.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Department, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="IsRASEnabled" my:TypeName="UocRadioButtonList" my:Caption="{Binding Source=schema, Path=IsRASEnabled.DisplayName}" my:RightsLevel="{Binding Source=rights, Path=IsRASEnabled}">
+        <my:Options>
+          <my:Option my:Value="True" my:Caption="%SYMBOL_AllowCaption_END%" my:Hint=""/>
+          <my:Option my:Value="False" my:Caption="%SYMBOL_DenyCaption_END%" my:Hint=""/>
+          <my:Option my:Value="" my:Caption="%SYMBOL_ControlBasedRASPolicyCaption_END%" my:Hint=""/>
+        </my:Options>
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=IsRASEnabled.Required}"/>
+          <my:Property my:Name="ValuePath" my:Value="Value"/>
+          <my:Property my:Name="CaptionPath" my:Value="Caption"/>
+          <my:Property my:Name="ItemSource" my:Value="Custom"/>
+          <my:Property my:Name="HintPath" my:Value="Hint"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=IsRASEnabled, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="TimeZone" my:TypeName="UocDropDownList" my:Caption="{Binding Source=schema, Path=TimeZone.DisplayName}" my:RightsLevel="{Binding Source=rights, Path=TimeZone}">
+        <my:Properties>
+          <my:Property my:Name="Columns" my:Value="100"/>
+          <my:Property my:Name="ValuePath" my:Value="Value"/>
+          <my:Property my:Name="CaptionPath" my:Value="Caption"/>
+          <my:Property my:Name="HintPath" my:Value="Hint"/>
+          <my:Property my:Name="ItemSource" my:Value="{Binding Source=timezone, Path=TimeZone, Mode=OneWay}"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=TimeZone, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="WorkInfo" my:Caption="%SYMBOL_WorkInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Help my:HelpText="%SYMBOL_WorkInfoTabHelpText_END%" my:Link="01796fb1-c1ab-417c-abe3-41d1907e299a.htm#bkmk_grouping_WorkInfo"/>
+      <my:Control my:Name="EmployeeStartDate" my:TypeName="UocDateTimeControl" my:Caption="{Binding Source=schema, Path=EmployeeStartDate.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeStartDate.Description}"  my:RightsLevel="{Binding Source=rights, Path=EmployeeStartDate}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=EmployeeStartDate.Required}"/>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=EmployeeStartDate, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeEndDate" my:TypeName="UocDateTimeControl" my:Caption="{Binding Source=schema, Path=EmployeeEndDate.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeEndDate.Description}"  my:RightsLevel="{Binding Source=rights, Path=EmployeeEndDate}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=EmployeeEndDate.Required}"/>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=EmployeeEndDate, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeType" my:TypeName="UocDropDownList" my:Caption="{Binding Source=schema, Path=EmployeeType.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeType.Description}"  my:RightsLevel="{Binding Source=rights, Path=EmployeeType}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=EmployeeType.Required}"/>
+          <my:Property my:Name="ValuePath" my:Value="Value"/>
+          <my:Property my:Name="CaptionPath" my:Value="Caption"/>
+          <my:Property my:Name="HintPath" my:Value="Hint"/>
+          <my:Property my:Name="ItemSource" my:Value="{Binding Source=schema, Path=EmployeeType.LocalizedAllowedValues}"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=EmployeeType, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="EmployeeID" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=EmployeeID.DisplayName}" my:Description="{Binding Source=schema, Path=EmployeeID.Description}"  my:RightsLevel="{Binding Source=rights, Path=EmployeeID}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=EmployeeID.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="15"/>
+          <my:Property my:Name="RegularExpression" my:Value="[\w]{0,400}"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=EmployeeID, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Manager" my:TypeName="UocIdentityPicker" my:Caption="{Binding Source=schema, Path=Manager.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=Manager}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Manager.Required}"/>
+          <my:Property my:Name="Mode" my:Value="SingleResult"/>
+          <my:Property my:Name="ObjectTypes" my:Value="Person"/>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName, AccountName, Department"/>
+          <my:Property my:Name="AttributesToSearch" my:Value="DisplayName, AccountName"/>
+          <my:Property my:Name="UsageKeywords" my:Value="Person"/>
+          <my:Property my:Name="ResultObjectType" my:Value="Person"/>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=Manager, Mode=TwoWay}"/>
+          <my:Property my:Name="ListViewTitle" my:Value="%SYMBOL_ManagerListViewTitleCaption_END%"/>
+          <my:Property my:Name="PreviewTitle" my:Value="%SYMBOL_ManagerPreviewTitleCaption_END%"/>
+          <my:Property my:Name="MainSearchScreenText" my:Value="%SYMBOL_ManagerMainSearchScreenTextCaption_END%"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Assistant" my:TypeName="UocIdentityPicker" my:Caption="{Binding Source=schema, Path=Assistant.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=Assistant}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Assistant.Required}"/>
+          <my:Property my:Name="Mode" my:Value="SingleResult"/>
+          <my:Property my:Name="ObjectTypes" my:Value="Person"/>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName, AccountName, Department"/>
+          <my:Property my:Name="AttributesToSearch" my:Value="DisplayName, AccountName"/>
+          <my:Property my:Name="UsageKeywords" my:Value="Person"/>
+          <my:Property my:Name="ResultObjectType" my:Value="Person"/>
+          <my:Property my:Name="Value" my:Value="{Binding Source=object, Path=Assistant, Mode=TwoWay}"/>
+          <my:Property my:Name="ListViewTitle" my:Value="%SYMBOL_AssistantListViewTitleCaption_END%"/>
+          <my:Property my:Name="PreviewTitle" my:Value="%SYMBOL_AssistantPreviewTitleCaption_END%"/>
+          <my:Property my:Name="MainSearchScreenText" my:Value="%SYMBOL_AssistantMainSearchScreenTextCaption_END%"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="CostCenter" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=CostCenter.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=CostCenter}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=CostCenter.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=CostCenter, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="CostCenterName" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=CostCenterName.DisplayName}" my:Description=""  my:RightsLevel="{Binding Source=rights, Path=CostCenterName}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=CostCenterName.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=CostCenterName, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="ContactInfo" my:Caption="%SYMBOL_ContactInfoTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Help my:HelpText="%SYMBOL_ContactInfoTabHelpText_END%" my:Link="01796fb1-c1ab-417c-abe3-41d1907e299a.htm#bkmk_grouping_ContactInfo"/>
+      <my:Control my:Name="OfficePhone" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=OfficePhone.DisplayName}" my:Description="{Binding Source=schema, Path=OfficePhone.Description}"  my:RightsLevel="{Binding Source=rights, Path=OfficePhone}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficePhone.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficePhone, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="OfficeFax" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=OfficeFax.DisplayName}" my:Description="{Binding Source=schema, Path=OfficeFax.Description}"  my:RightsLevel="{Binding Source=rights, Path=OfficeFax}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficeFax.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficeFax, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="MobilePhone" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=MobilePhone.DisplayName}" my:Description="{Binding Source=schema, Path=MobilePhone.Description}"  my:RightsLevel="{Binding Source=rights, Path=MobilePhone}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=MobilePhone.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=MobilePhone, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="OfficeLocation" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=OfficeLocation.DisplayName}" my:Description="{Binding Source=schema, Path=OfficeLocation.Description}"  my:RightsLevel="{Binding Source=rights, Path=OfficeLocation}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=OfficeLocation.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=OfficeLocation, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Address" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=Address.DisplayName}" my:Description="{Binding Source=schema, Path=Address.Description}"  my:RightsLevel="{Binding Source=rights, Path=Address}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Address.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=Address, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="City" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=City.DisplayName}" my:Description="{Binding Source=schema, Path=City.Description}"  my:RightsLevel="{Binding Source=rights, Path=City}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=City.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="128"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=City, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="PostalCode" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=PostalCode.DisplayName}" my:Description="{Binding Source=schema, Path=PostalCode.Description}"  my:RightsLevel="{Binding Source=rights, Path=PostalCode}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=PostalCode.Required}"/>
+          <my:Property my:Name="Columns" my:Value="34"/>
+          <my:Property my:Name="MaxLength" my:Value="40"/>
+          <my:Property my:Name="Text" my:Value="{Binding Source=object, Path=PostalCode, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="Country" my:TypeName="UocDropDownList" my:Caption="{Binding Source=schema, Path=Country.DisplayName}" my:Description="{Binding Source=schema, Path=Country.Description}"  my:RightsLevel="{Binding Source=rights, Path=Country}">
+        <my:Properties>
+          <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=Country.Required}"/>
+          <my:Property my:Name="ValuePath" my:Value="@Code"/>
+          <my:Property my:Name="CaptionPath" my:Value="@Name"/>
+          <my:Property my:Name="ItemSource" my:Value="{Binding Source=regions, Path=/Regions/*}"/>
+          <my:Property my:Name="SelectedValue" my:Value="{Binding Source=object, Path=Country, Mode=TwoWay}"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="provisioningGroup" my:Caption="%SYMBOL_ProvisioningTabCaption_END%" my:Enabled="true" my:Visible="true">
+      <my:Help my:HelpText="%SYMBOL_ProvisioningTabHelpText_END%" my:Link="01796fb1-c1ab-417c-abe3-41d1907e299a.htm#bkmk_grouping_provisioningGroup"/>
+      <my:Control my:Name="ExpectedRulesList" my:TypeName="UocListView" my:Caption="{Binding Source=schema, Path=ExpectedRulesList.DisplayName}" my:Description="{Binding Source=schema, Path=ExpectedRulesList.Description}" my:RightsLevel="{Binding Source=rights, Path=ExpectedRulesList}">
+        <my:Properties>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName, ExpectedRuleEntryAction, SynchronizationRuleStatus"/>
+          <my:Property my:Name="ResultObjectType" my:Value="ExpectedRuleEntry"/>
+          <my:Property my:Name="UsageKeywords" my:Value="ExpectedRuleEntry"/>
+          <my:Property my:Name="TargetAttribute" my:Value="ExpectedRulesList"/>
+          <my:Property my:Name="EmptyResultText" my:Value="%SYMBOL_ProvisioningEmptyResultText_END%"/>
+          <my:Property my:Name="PageSize" my:Value="10"/>
+          <my:Property my:Name="ShowTitleBar" my:Value="false"/>
+          <my:Property my:Name="ShowActionBar" my:Value="false"/>
+          <my:Property my:Name="ShowPreview" my:Value="false"/>
+          <my:Property my:Name="ShowSearchControl" my:Value="false"/>
+          <my:Property my:Name="EnableSelection" my:Value="false"/>
+          <my:Property my:Name="SingleSelection" my:Value="false"/>
+          <my:Property my:Name="ItemClickBehavior" my:Value="ModelessDialog"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+      <my:Control my:Name="DetectedRulesList" my:TypeName="UocListView" my:Caption="{Binding Source=schema, Path=DetectedRulesList.DisplayName}" my:Description="{Binding Source=schema, Path=DetectedRulesList.Description}" my:RightsLevel="{Binding Source=rights, Path=DetectedRulesList}">
+        <my:Properties>
+          <my:Property my:Name="ColumnsToDisplay" my:Value="DisplayName"/>
+          <my:Property my:Name="ResultObjectType" my:Value="DetectedRuleEntry"/>
+          <my:Property my:Name="UsageKeywords" my:Value="DetectedRuleEntry"/>
+          <my:Property my:Name="TargetAttribute" my:Value="DetectedRulesList"/>
+          <my:Property my:Name="EmptyResultText" my:Value="%SYMBOL_DetectedRulesListEmptyResultText_END%"/>
+          <my:Property my:Name="PageSize" my:Value="10"/>
+          <my:Property my:Name="ShowTitleBar" my:Value="false"/>
+          <my:Property my:Name="ShowActionBar" my:Value="false"/>
+          <my:Property my:Name="ShowPreview" my:Value="false"/>
+          <my:Property my:Name="ShowSearchControl" my:Value="false"/>
+          <my:Property my:Name="EnableSelection" my:Value="false"/>
+          <my:Property my:Name="SingleSelection" my:Value="false"/>
+          <my:Property my:Name="ItemClickBehavior" my:Value="ModelessDialog"/>
+          <my:Property my:Name="ReadOnly" my:Value="true"/>
+        </my:Properties>
+      </my:Control>
+    </my:Grouping>
+    <my:Grouping my:Name="summaryGroup" my:Caption="%SYMBOL_SummaryTabCaption_END%" my:IsSummary="true">
+      <my:Control my:Name="summaryControl" my:TypeName="UocHtmlSummary" my:ExpandArea="true">
+        <my:Properties>
+          <my:Property my:Name="ModificationsXml" my:Value="{Binding Source=delta, Path=DeltaXml}"/>
+          <my:Property my:Name="TransformXsl" my:Value="{Binding Source=summaryTransformXsl, Path=/}"/>
+        </my:Properties>
+        <my:Events>
+          <my:Event my:Name="HTMLReady" my:Handler="OnSummaryHTMLReady"/>
+        </my:Events>
+      </my:Control>
+    </my:Grouping>
+  </my:Panel>
+</my:ObjectControlConfiguration>

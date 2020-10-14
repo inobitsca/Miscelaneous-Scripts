@@ -1,0 +1,1 @@
+forfiles /p "C:\Temp\AUP" /s /m *.log /c "cmd /c Del @path" /d -30

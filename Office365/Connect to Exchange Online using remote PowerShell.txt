@@ -1,0 +1,17 @@
+# Your MSonline admin credential
+$Cred = Get-Credential
+
+#Connect to remote Exchange Powershell
+$S = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Cred -Authentication Basic -AllowRedirection
+Import-PSSession $S -allowclobber
+
+#Disconnect to remote Exchange Powershell
+Remove-PSSession $S 
+
+
+
+$S = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://Dagmid01.africa.enterprise.root/powershell -Credential $Cred -Authentication Basic -AllowRedirection
+Import-PSSession $S -allowclobber
+
+
+svc-fim-adma

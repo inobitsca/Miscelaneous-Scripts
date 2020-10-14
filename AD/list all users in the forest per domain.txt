@@ -1,0 +1,22 @@
+﻿<# 
+Script to Dump certain properties of all users in the forest
+Makes use of ActiveDirectory Module and Quest ARS Cmdlets
+#>
+[string]$date=get-date -Format "dd MMM yyyy"
+
+
+$adforest=get-adforest
+$addomains=$adforest.domains
+$directory=Get-Location
+
+foreach($addomain in $addomains)
+{
+$logfile="$directory\$addomain $date.csv"
+$logfile
+#Pause
+Write-Host("Searching domain: $addomain")
+get-qaduser -SizeLimit 0 -IncludeAllProperties -service $addomain |
+Select DisplayName,UserPrincipalName,Domain,SamAccountName,NTAccountName,PrimarySMTPAddress,DN |
+Export-csv -NoTypeInformation -Delimiter ";" -path $logfile -Append
+Write-Host("Finished searching domain: $addomain")
+}

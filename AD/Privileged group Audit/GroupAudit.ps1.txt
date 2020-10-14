@@ -1,0 +1,102 @@
+#Declare Function
+Function Get-PrivilegedGroupChanges {            
+Param(            
+    $Server = (Get-ADDomainController -Discover | Select-Object -ExpandProperty HostName),            
+    $Hour = 24            
+)            
+            
+    $ProtectedGroups = Get-ADGroup -Filter 'AdminCount -eq 1' -Server $Server            
+    $Members = @()            
+            
+    ForEach ($Group in $ProtectedGroups) {            
+        $Members += Get-ADReplicationAttributeMetadata -Server $Server `
+            -Object $Group.DistinguishedName -ShowAllLinkedValues |            
+         Where-Object {$_.IsLinkValue} |            
+         Select-Object @{name='GroupDN';expression={$Group.DistinguishedName}}, `
+            @{name='GroupName';expression={$Group.Name}}, *            
+    }            
+            
+    $Members |            
+        Where-Object {$_.LastOriginatingChangeTime -gt (Get-Date).AddHours(-1 * $Hour)}                      
+}            
+# Set SQL connection
+$conn = New-Object System.Data.SqlClient.SqlConnection
+$conn.ConnectionString = "Data Source=INAZSQL01;Initial Catalog=ADAudit;Integrated Security=SSPI;"
+
+#Declare Email Variables
+
+$EmailTo = "cedrica@inobits.com" #,"cedricab@looking-glass.co.za"
+$EmailFrom = "ADAudit@inobitsza.com"
+$EmailSubject = "Privileged group membership has changed"
+$EmailBody = "The following changes have been made to priveleged security groups: 'n check"
+$EmailSMTPServer = "INAZEX01"
+#$EmailAttachments = "C:\Scripts\RegistredResetPassUsers.csv","C:\Scripts\ResetPassUsersTotal.csv","C:\Scripts\ResetPassUsersDifferance.csv"
+
+[string]$emailbody = "Privileged group membership has changed.<BR><BR>"
+
+
+#Get Changes in the last hour
+
+$Changes = Get-PrivilegedGroupChanges -hour 24
+
+if ($Changes) {
+
+# If there are changes Log to SQL
+$conn.open()
+
+Foreach ($Chg in $Changes) {
+$GroupDN = """" + $chg.GroupDN + """"
+$GroupName =  """" + $chg.GroupName + """"
+$AttributeName =  """" +  $chg.AttributeName + """"
+$AttributeValue =  """" +  $chg.AttributeValue + """"
+$FirstOriginatingCreateTime = get-date  $chg.FirstOriginatingCreateTime -format yyyy-MM-ddTHH:mm:ss
+$IsLinkValue =   """" + $chg.IsLinkValue + """"
+$LastOriginatingChangeDirectoryServerIdentity =  """" +  $chg.LastOriginatingChangeDirectoryServerIdentity + """"
+$LastOriginatingChangeDirectoryServerInvocationId =  """" +  $chg.LastOriginatingChangeDirectoryServerInvocationId + """"
+$LastOriginatingChangeTime = get-date   $chg.LastOriginatingChangeTime -format yyyy-MM-ddTHH:mm:ss
+$LastOriginatingChangeUsn =  """" +  $chg.LastOriginatingChangeUsn + """"
+$LocalChangeUsn =  $chg.LocalChangeUsn
+$Object =  """" +  $chg.Object + """" 
+$Server =  """" +  $chg.Server + """"
+$Version =   $chg.Version 
+$ChDir  = $Chg.version | % {if($_ % 2 -eq 0) {"Removed"} if($_ % 2 -eq 1) {"Added"}}
+$cmd = New-Object System.Data.SqlClient.SqlCommand
+$cmd.connection = $conn
+$cmd.commandtext ="INSERT INTO GroupChange (GroupDN,GroupName,AttributeName,AttributeValue,FirstOriginatingCreateTime,IsLinkValue,LastOriginatingChangeDirectoryServerIdentity,LastOriginatingChangeDirectoryServerInvocationId,LastOriginatingChangeTime,LastOriginatingChangeUsn,LocalChangeUsn,Object,Server,Version,ChangeDirection) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')" -f  $GroupDN,  $GroupName,  $AttributeName,  $AttributeValue,  $FirstOriginatingCreateTime,  $IsLinkValue,  $LastOriginatingChangeDirectoryServerIdentity,  $LastOriginatingChangeDirectoryServerInvocationId,  $LastOriginatingChangeTime,  $LastOriginatingChangeUsn,   $LocalChangeUsn,  $Object,  $Server,  $Version,  $ChDir
+$cmd.executenonquery()
+}
+
+
+$conn.close()
+}
+
+#If there are changes, send an email.
+if ($Changes) {
+
+Foreach ($Chg in $Changes) {
+$GroupName =  """" + $chg.GroupName + """"
+$AttributeValue =   $chg.AttributeValue 
+$Time = get-date   $chg.LastOriginatingChangeTime -format "yyyy-MM-dd HH:mm:ss"
+$time2 = (get-date $time).addseconds(-30)
+$time3 = (get-date $time).addseconds(30)
+$Version =   $chg.Version 
+$ChDir  = $Chg.version | % {if($_ % 2 -eq 0) {" was removed from the "} if($_ % 2 -eq 1) {" was added to the "}}
+$Obj = get-adobject $AttributeValue
+$name = $obj.name
+$class = $obj.ObjectClass
+$emailbody = $emailbody + "The " + $class +" " +"""" + "<b>" + $name + "</b>" +"""" +" " + $Chdir + "<b>" + $GroupName + "</b> group" + " at "+ $time + "<br><br>"
+
+#get security event logs from AD server for 30 seconds either side of the change
+$log = Get-WinEvent -ComputerName  "INAZDC01" -FilterHashTable @{ LogName = "Security"; StartTime = $time2; EndTime =  $time3; ID = 4732 }
+If ($log) {
+$message = $log.message
+$message1 = $message -replace "`n","<br>"
+$emailbody = $emailbody + "The following security event was logged on Domain Controller INAZDC01: <br><br>Time Created: " + $Log.TimeCreated +"<br>ID:" + $log.ID + "<br>Source: " + $log.ProviderName + "<br><br>Message: "
+$emailbody = $emailbody + $message1} else {$emailbody = $emailbody + "No security event was logged on Domain Controller INAZDC01"}
+$emailbody = $emailbody +  "<BR><BR> -------------------------------------------<BR><BR>"
+}
+
+
+
+Send-MailMessage -From $EmailFrom -to $EmailTo -Subject  $EmailSubject -SmtpServer $EmailSMTPServer -Body $EmailBody -BodyAsHtml -port 26 
+}

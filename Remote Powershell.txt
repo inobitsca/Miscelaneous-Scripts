@@ -1,0 +1,5 @@
+#On remte server the following must be run.
+enable-psremoting -force
+
+$cred = get-credential
+Enter-PSSession -ComputerName SERVERNAME -Credential $cred

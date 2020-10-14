@@ -1,0 +1,7 @@
+# Set X: as Letter for DVD Drive
+$drive = Get-WmiObject -Class win32_volume -Filter "DriveLetter = 'd:'"
+Set-WmiInstance -input $drive -Arguments @{DriveLetter="x:"; Label=""}
+
+# Set D: as Letter for Setup.vhd
+$drive = Get-WmiObject -Class win32_volume -Filter "DriveLetter = 'e:'"
+Set-WmiInstance -input $drive -Arguments @{DriveLetter="D:"; Label="Setup Files"}

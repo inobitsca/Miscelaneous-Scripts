@@ -1,0 +1,35 @@
+'Script Created By – Sarvesh Huddedar v1 – 28-12-2011
+'Setting up constants required for execute-on.. 
+'VB Script
+
+Const ADS_OPTION_SECURITY_MASK = 3 
+Const ADS_SECURITY_INFO_DACL = &H4
+
+' Reading Source dn for OU for which we want to copy permissions 
+
+strRWSRCDN = inputbox("Please Enter Source OU distinguishedName from where you want to copy permissions")
+strRWTRGDN = inputbox("Please Enter Target OU distinguishedName where you want to set copied permissions")
+strUser  = inputbox("Please Enter your Username DOMAIN\User")
+strPwd   = inputbox("Please Enter your Password")
+
+strSRCDN = "LDAP://" & strRWSRCDN
+strTRGDN = "LDAP://" & strRWTRGDN
+
+Set objDS   = GetObject("LDAP:")
+Set objAD   = objDs.OpenDsObject(strSRCDN,strUser,strPwd,1)
+Set objSD   = objAD.Get("ntSecurityDescriptor")
+Set objDacl       = objSD.DiscretionaryAcl
+
+Set objAD   = objDs.OpenDsObject(strTRGDN,strUser,strPwd,1)
+
+objSD.DiscretionaryAcl = objDacl
+objAD.SetOption ADS_OPTION_SECURITY_MASK, ADS_SECURITY_INFO_DACL
+objAD.Put "ntSecurityDescriptor", Array(objSD)
+objAD.SetInfo
+
+strMSG = "Source OU = " & strSRCDN & VbCrLf
+StrMSG = StrMSG & "Target OU = " & strTRGDN & VbCrLf
+StrMSG = StrMSG & "Permissions copied.. Enjoy !"
+
+WScript.echo(strMSG)
+

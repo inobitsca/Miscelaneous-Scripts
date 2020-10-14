@@ -1,0 +1,3 @@
+$RecvConn = Get-ReceiveConnector "Old Relay Connector"
+$RecvConn.RemoteIPRanges 
+Set-ReceiveConnector "New Relay Connector" -RemoteIPRanges $RecvConn.RemoteIPRanges

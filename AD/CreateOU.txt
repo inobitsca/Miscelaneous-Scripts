@@ -1,0 +1,7 @@
+dsadd ou "OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=Disabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=Enabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=WithMailbox,OU=Disabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=WithMailbox,OU=Enabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=NoMailbox,OU=Disabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"
+dsadd ou "OU=NoMailbox,OU=Enabled,OU=2012-Oct-delete,DC=mccarthyltd,DC=local"

@@ -1,0 +1,73 @@
+﻿$files = Get-ChildItem ".\XMLData\*.xml"
+
+foreach ($file in $files) {
+
+    [xml]$Global:xmldata = get-content $file.PSPath
+
+    $data = @()
+
+    $GPOS = $xmldata.report.GPO
+
+    Foreach ($gpo in $GPOS) {
+
+        $Groups = $gpo.Computer.ExtensionData | Where-Object {$_.Name -eq "Security"} | Where-Object {$_.Extension.RestrictedGroups} | Select -ExpandProperty Extension| Select -ExpandProperty RestrictedGroups
+        
+        $groupobject = @()
+
+        $Groups | ForEach-Object {
+            $testobject = New-Object –TypeName PSObject
+            $GroupName = $_.GroupName.Name.InnerXML | Out-String
+            $Member = $_.Member.Name.InnerXML | Out-String
+            $MemberOf = $_.MemberOf.Name.InnerXML | Out-String
+
+            $testobject | Add-Member –MemberType NoteProperty –Name "Group Name" -Value $GroupName
+            $testobject | Add-Member –MemberType NoteProperty –Name "Member" -Value $Member
+            $testobject | Add-Member –MemberType NoteProperty –Name "Member Of" -Value $MemberOf
+
+            $groupobject += $testobject
+        }
+
+        if ($groupobject.Length -gt 0) {
+
+            $groupobject | ForEach-Object {
+                $object = New-Object –TypeName PSObject
+                $object | Add-Member –MemberType NoteProperty –Name Name –Value $gpo.Name
+
+                $Links = $gpo.LinksTo.SomPath | Out-String
+                $object | Add-Member -MemberType NoteProperty -Name LinksTo -Value $Links.Trim()
+
+                $SecurityFilter = $gpo.SecurityDescriptor.Permissions.TrusteePermissions | Where-Object {$_.Standard.GPOGroupedAccessEnum -like "Apply Group Policy"}
+                $SecurityFilter = $SecurityFilter.Trustee.Name.InnerXml | Out-String
+                $object | Add-Member -MemberType NoteProperty -Name 'Security Filtering' -Value $SecurityFilter.Trim()
+
+                $object | Add-Member -MemberType NoteProperty -Name 'Group Name' -Value $_.'Group Name'
+                $object | Add-Member -MemberType NoteProperty -Name 'Members' -Value $_.'Member'
+                $object | Add-Member -MemberType NoteProperty -Name 'Member Of' -Value $_.'Member Of'
+
+                $data += $object
+
+                }
+        } else {
+                $object = New-Object –TypeName PSObject
+                $object | Add-Member –MemberType NoteProperty –Name Name –Value $gpo.Name
+
+                $Links = $gpo.LinksTo.SomPath | Out-String
+                $object | Add-Member -MemberType NoteProperty -Name LinksTo -Value $Links.Trim()
+
+                $SecurityFilter = $gpo.SecurityDescriptor.Permissions.TrusteePermissions | Where-Object {$_.Standard.GPOGroupedAccessEnum -like "Apply Group Policy"}
+                $SecurityFilter = $SecurityFilter.Trustee.Name.InnerXml | Out-String
+                $object | Add-Member -MemberType NoteProperty -Name 'Security Filtering' -Value $SecurityFilter.Trim()
+
+                $object | Add-Member -MemberType NoteProperty -Name 'Group Name' -Value $_.'Group Name'
+                $object | Add-Member -MemberType NoteProperty -Name 'Members' -Value $_.'Member'
+                $object | Add-Member -MemberType NoteProperty -Name 'Member Of' -Value $_.'Member Of'
+
+                $data += $object
+        }
+
+    $data | fl
+
+    $OutFile = $file.Name.ToString() + ".csv"
+    $data | Export-CSV -Path .\CSVData\$OutFile -NoTypeInformation -Delimiter ';'
+}
+}

@@ -1,0 +1,3 @@
+Set-WebApplicationProxySslCertificate -Thumbprint f25da7e9b31c1ea554b89c185515109951c61252
+
+Set-AdfsSslCertificate -Thumbprint f25da7e9b31c1ea554b89c185515109951c61252

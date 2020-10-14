@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Configuration> 
+  <WebApplication Url="http://fimsrv01"> 
+    <AlternateUrl IncomingUrl="https://idweb" UrlZone="Intranet" /> 
+    <AlternateUrl IncomingUrl="https://idweb.contoso.com" UrlZone="Internet" /> 
+  </WebApplication> 
+</Configuration>

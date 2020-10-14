@@ -1,0 +1,14 @@
+CSVDE -f users.csv -l ObjectClass,Name,givenName,SN,SamAccountName,mail,mailnickname -d "OU=Budget Rent-a-Car,DC=mccarthyltd,DC=local"  -r "(objectClass=user)"
+
+
+SQL_Latin1_General_CP1_CI_AS
+SQL_Latin1_General_CP1_CI_AS
+SQL_Latin1_General_CP1_CI_AS
+
+Ewok31gwb
+669E65B16FE97E9C41D0
+669E65B16FE97E9C41D0
+
+sysmann##123
+
+P@ssw0rdNETsur!t

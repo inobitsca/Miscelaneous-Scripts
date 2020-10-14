@@ -1,0 +1,7 @@
+SG – Internet 
+
+Single Variable
+Import-CSV "C:\temp\toyotaweb.csv" | % { Add-ADGroupMember -Identity "ToyotaLiveScorecard"  -member $_.SAMAccountName }
+
+2 variables
+Import-CSV "C:\temp\SPGroups.csv" | % { Add-ADGroupMember -Identity "$_.Group"  -member $_.SAMAccountName }

@@ -1,0 +1,2 @@
+$newPassword = (Read-Host -Prompt "Provide New Password" -AsSecureString)
+get-aduser -SearchBase "OU=Chester Group,DC=cullinanholdings,DC=co,DC=za" -filter * |Set-ADAccountPassword -NewPassword $newpassword
