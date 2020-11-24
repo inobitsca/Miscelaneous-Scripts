@@ -1,1 +1,1 @@
-Update-AdfsRelyingPartyTrust -TargetName "Salesforce Prod" -MetadataFile C:\ADFS\Salesforce\SAMLSP-Prod-20200318.xml
+Update-AdfsRelyingPartyTrust -TargetName "Salesforce UAT" -MetadataFile C:\ADFS\Salesforce\2020\SAMLSP-00D8E0000000tSS.xml

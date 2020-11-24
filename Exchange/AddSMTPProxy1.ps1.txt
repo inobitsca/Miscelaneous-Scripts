@@ -1,12 +1,13 @@
 Import-Module ActiveDirectory
 
 
-$users = import-csv match.csv
+$users = get-aduser -SearchBase "OU=Evxxxxx,DC=co,dc=za" -Properties * -filter *
+
 
 Foreach ($user in $users) {
   
-$ID = $user.ADUPN
-$email = $user.MSOLUPN
-Set-ADUser -Identity $ID -Add @{Proxyaddresses="smtp:"+$email}
-Set-ADUser -Identity $ID -emailaddress $newmail 
+$ID = $user.samaccountname
+$email = $user.userprincipalname
+Set-ADUser -Identity $ID -Add @{Proxyaddresses="SMTP:"+$email}
+Set-ADUser -Identity $ID -emailaddress $email 
 } 

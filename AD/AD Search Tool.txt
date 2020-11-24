@@ -1,0 +1,61 @@
+#requires -module ActiveDirectory
+[CmdletBinding()]
+param ()
+$StartingDN = 'OU=PF Users,DC=Premierfoods,DC=com' # use this and delete the line below if you want don't want to start in the top level OU but want to specify a starting OU from a settings file (settings file not implemented)
+$StartingDN = Get-ADDomain | Select-Object -ExpandProperty DistinguishedName
+
+$TLDNName = $StartingDN
+$TLDNObj = Get-ADOrganizationalUnit -Filter * -SearchBase $TLDNName -SearchScope OneLevel | Select-Object -Property Name, DistinguishedName | Out-GridView -PassThru
+$TLDNName = $TLDNObj.DistinguishedName
+$LastSelectedDN = $TLDNObj
+$CanContinue = $true
+
+do {
+    Write-Debug -Message "`$CanContinue $CanContinue at beginning of loop"
+    # $TLDNName = $LastSelectedDN.DistinguishedName
+    $LastSelectedDN = $TLDNObj
+    Write-Debug -Message "`$LastSelectedDN $LastSelectedDN "
+    $TLDNObj = Get-ADOrganizationalUnit -Filter * -SearchBase $TLDNName -SearchScope OneLevel | Select-Object -Property Name, DistinguishedName | Out-GridView -PassThru
+    Write-Debug -Message "`$TLDNObj $TLDNObj "
+    $SubOUList = Get-ADOrganizationalUnit -Filter * -SearchBase $LastSelectedDN.DistinguishedName -SearchScope OneLevel | Select-Object -ExpandProperty DistinguishedName
+    Write-Debug -Message "`$SubOUList $($SubOUList.Count)"
+
+    if (-not ($null -eq $TLDNObj)) {
+        $TLDNName = $TLDNObj.DistinguishedName
+        Write-Debug -Message "`$TLDNName $TLDNName "
+    }
+    else {
+        $TLDNName = $LastSelectedDN.DistinguishedName
+        Write-Debug -Message "`$TLDNName $TLDNName "
+    }
+
+    $TLDNName = $TLDNObj.DistinguishedName
+    Write-Debug -Message "`$TLDNName $TLDNName "
+    
+    if (-not ($null -eq $TLDNObj)) {
+        $CanContinue = $true
+        if (-not ($null -eq $SubOUList)) {
+            $CanContinue = $true
+        }
+        else {
+            $CanContinue = $false
+        }
+    }
+    else {
+        $CanContinue = $false
+    }
+    Write-Debug -Message "`$CanContinue $CanContinue at end of do-while loop"
+}
+while ($CanContinue)
+
+Write-Debug -Message "Final OU selected is $($LastSelectedDN.name)"
+
+
+if (((Get-ADUser -Filter "Enabled -eq 'True'" -SearchBase $LastSelectedDN.distinguishedname) | Measure-Object | Select-Object -ExpandProperty Count) -gt 0) {
+    Write-Debug -Message "Done with OU selection loop, there should be users in this OU ($($LastSelectedDN.DistinguishedName))"
+    $SelectedADAccount = Get-ADUser -Filter "Enabled -eq 'True'" -SearchBase $LastSelectedDN.distinguishedname | Out-GridView -PassThru
+    Write-Debug -Message "You have selected ""$($SelectedADAccount.name)"" ($($SelectedADAccount.samaccountname)). Well done you!"
+    Write-Output -InputObject $SelectedADAccount
+}
+else {
+    Write-Warning """$($LastSelectedDN.name)"" does not contain any Enabled / Active users"
