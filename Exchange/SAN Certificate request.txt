@@ -1,7 +1,4 @@
-New-ExchangeCertificate -FriendlyName "webmail.cavigroup.co.za" `
--subjectname 'C=ZA,S=Gauteng,L=Johannesburg,O="CAVI Group",OU=IT,CN=webmail.cavigroup.co.za' `
--DomainName webmail.cavigroup.co.za, autodiscover.cavigroup.co.za, mail.cavigroup.co.za`
- -GenerateRequest -PrivateKeyExportable $true
+New-ExchangeCertificate -FriendlyName "autodiscover.medikredit.co.za" -subjectname 'C=ZA,S=Gauteng,L=Johannesburg,O="MediKredit",OU=IT,CN=autodiscover.medikredit.co.za' -DomainName autodiscover.medikredit.co.za -GenerateRequest -PrivateKeyExportable $true
 
 
 

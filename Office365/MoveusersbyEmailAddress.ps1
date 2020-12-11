@@ -17,10 +17,14 @@ set-msoluser –userprincipalname $U -UsageLocation za
 
 set-msoluserlicense –userprincipalname $U –addlicenses  "syndication-account:EXCHANGESTANDARD"
 
-#New-MoveRequest -identity $U -Remote -RemoteHostName webmail.cullinan.co.za -RemoteCredential $RemCred -TargetDeliveryDomain “vb001437.onmicrosoft.com” -AcceptLargeDataLoss -BadItemLimit 1000
+#New-MoveRequest -identity $U -Remote -RemoteHostName autodiscover.medikredit.co.za -RemoteCredential $RemCred -TargetDeliveryDomain “medikredit.co.za” -AcceptLargeDataLoss -BadItemLimit 1000
 
 
 }
 
 
 c:\temp\UPNsFromEmailAddress.ps1
+
+
+New-MoveRequest -identity mashudum@medikredit.co.za -Remote -RemoteHostName autodiscover.medikredit.co.za -RemoteCredential $credential -TargetDeliveryDomain “medikredit.co.za” -AcceptLargeDataLoss -BadItemLimit 1000
+Bus-Apps-Accpac-Prod-RG
