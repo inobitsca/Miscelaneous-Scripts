@@ -1,9 +1,8 @@
  w32tm /config  /syncfromflags:manual /manualpeerlist:"0.za.pool.ntp.org,0x1 1.za.pool.ntp.org,0x1 2.za.pool.ntp.org,0x1 3.za.pool.ntp.org,0x1" /reliable:yes /update
 
 
- w32tm /config  /syncfromflags:manual /manualpeerlist:time.windows.com
+ w32tm /config  /syncfromflags:manual /manualpeerlist:server1.com,0x1 server2.com,0x1
  
  w32tm /config /reliable:yes
-
 
 restart-service w32time
