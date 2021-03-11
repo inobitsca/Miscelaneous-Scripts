@@ -14,8 +14,8 @@ $name = $DCname.Namehost
 Write-host "Testing IP $DCIP on $name" -Fore Yellow
 
 $DNS = tcping -n 1 $DCIP 53
-if ($Kerb -like "*open*") {Write-host "Port 53 is open" -fore Green}
-if ($Kerb -like "*no response*") {Write-host "Port 53 is not open" -fore Red}
+if ($DNS -like "*open*") {Write-host "Port 53 is open" -fore Green}
+if ($DNS -like "*no response*") {Write-host "Port 53 is not open" -fore Red}
 
 $LDAP = tcping -n 1 $DCIP 389
 if ($Ldap -like "*open*") {Write-host "Port 389 is open" -fore Green}
@@ -23,7 +23,7 @@ if ($Ldap -like "*no response*") {Write-host "Port 389 is not open" -fore red}
 
 $LDAPS = tcping -n 1 $DCIP 636
 if ($Ldaps -like "*open*") {Write-host "Port 636 is open" -fore Green}
-if ($Ldap -like "*no response*") {Write-host "Port 636 is not open" -fore Red}
+if ($Ldaps -like "*no response*") {Write-host "Port 636 is not open" -fore Red}
 
 $Kerb = tcping -n 1 $DCIP 88
 if ($Kerb -like "*open*") {Write-host "Port 88 is open" -fore Green}
