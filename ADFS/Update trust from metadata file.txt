@@ -1,1 +1,3 @@
-Update-AdfsRelyingPartyTrust -TargetName "Salesforce UAT" -MetadataFile C:\ADFS\Salesforce\2020\SAMLSP-00D8E0000000tSS.xml
+import-module adfs
+
+Update-AdfsRelyingPartyTrust -TargetName "Salesforce Prod" -MetadataFile C:\ADFS\Salesforce\2021\SAMLSP-00D4J000000ESqJProd.xml
