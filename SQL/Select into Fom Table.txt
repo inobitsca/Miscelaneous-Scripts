@@ -1,0 +1,5 @@
+Update [AIS].[dbo].[mms_metaverse]
+set Mobile =
+(SELECT mobile
+FROM [AIS].[dbo].[mms_metaverse_TEMP]
+where [dbo].[mms_metaverse_TEMP].uid = [AIS].[dbo].[mms_metaverse].uid )
