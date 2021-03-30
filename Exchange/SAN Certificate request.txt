@@ -1,11 +1,1 @@
-New-ExchangeCertificate -FriendlyName "autodiscover.medikredit.co.za" -subjectname 'C=ZA,S=Gauteng,L=Johannesburg,O="MediKredit",OU=IT,CN=autodiscover.medikredit.co.za' -DomainName autodiscover.medikredit.co.za -GenerateRequest -PrivateKeyExportable $true
-
-
-
-
-	
-
-
-
-
-
+New-ExchangeCertificate -FriendlyName "remote.techmatic.co.za" -subjectname 'C=ZA,S=Gauteng,L=Johannesburg,O="techmatic",OU=IT,CN=remote.techmatic.co.za' -DomainName remote.techmatic.co.za,autodiscover.techmatic.co.za -GenerateRequest -PrivateKeyExportable $true
