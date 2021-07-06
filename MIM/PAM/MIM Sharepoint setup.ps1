@@ -1,16 +1,16 @@
 New-SPManagedAccount ##Will prompt for new account enter premierfoods\SVCMIMSharePoint
 $dbManagedAccount = Get-SPManagedAccount -Identity premierfoods\svcmimapppool
-New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 80 -URL http://mim.premierfoods.com
+New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "Kerberos" -Port 80 -URL http://mim.lfmd.co.za
 
 
 $t = Get-SPWebTemplate -compatibilityLevel 14 -Identity "STS#1"
-$w = Get-SPWebApplication http://mim.premierfoods.com/
+$w = Get-SPWebApplication http://mim.lfmd.co.za/
 New-SPSite -Url $w.Url -Template $t -OwnerAlias premierfoods\svcmimadmin -CompatibilityLevel 14 -Name "MIM Portal"
 $s = SpSite($w.Url)
 $s.CompatibilityLevel
  
  
-$siteUrl = "http://mim.premierfoods.com"; # Change this one!
+$siteUrl = "http://mim.lfmd.co.za"; # Change this one!
 $site = Get-SPSite $siteUrl;
 $site.AllowSelfServiceUpgradeEvaluation = $false;
 $site.AllowSelfServiceUpgrade = $false;

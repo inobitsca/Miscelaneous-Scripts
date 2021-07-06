@@ -1,6 +1,6 @@
 #"Edit the Client Access FQDN starting with http:// or https://" 
 
-$urlpath =  "https://mail.synchem.co.za" 
+$urlpath =  "https://remote.techmatic.co.za" 
 
 
 Get-ClientAccessServer | Set-ClientAccessServer –AutodiscoverServiceInternalUri “$urlpath/autodiscover/autodiscover.xml” 

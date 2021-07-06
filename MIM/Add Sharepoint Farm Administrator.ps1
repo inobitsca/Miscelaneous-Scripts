@@ -1,4 +1,4 @@
-$newFarmAdministrator = "Transnet\TSSA-334849"
+$newFarmAdministrator = "lfmd\MIMservice"
 #-Host -Prompt 'Please provide the name of the new Farm Administrator in the form of DOMAIN\Username'
 
 $caWebApp = Get-SPWebApplication -IncludeCentralAdministration | where-object {$_.DisplayName -eq "SharePoint Central Administration v4"} 

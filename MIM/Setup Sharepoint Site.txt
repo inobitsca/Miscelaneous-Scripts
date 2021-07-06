@@ -1,10 +1,10 @@
-$dbManagedAccount = Get-SPManagedAccount -Identity mccarthy\MIMSharePoint
-New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "NTLM"  -URL http://mim.mccarthytd.co.za
+$dbManagedAccount = Get-SPManagedAccount -Identity LFMD\MIMSharePoint
+New-SpWebApplication -Name "MIM Portal" -ApplicationPool "MIMAppPool" -ApplicationPoolAccount $dbManagedAccount -AuthenticationMethod "NTLM"  -URL http://mim.LFMDtd.co.za
 	 
  
 $t = Get-SPWebTemplate -compatibilityLevel 14 -Identity "STS#1"
-$w = Get-SPWebApplication http://mim.mccarthytd.co.za
-New-SPSite -Url $w.Url -Template $t -OwnerAlias mccarthy\MIMAdmin -CompatibilityLevel 14 -Name "IDM" -SecondaryOwnerAlias mccarthy\MIMBackupAdmin
+$w = Get-SPWebApplication http://mim.LFMDtd.co.za
+New-SPSite -Url $w.Url -Template $t -OwnerAlias LFMD\MIMAdmin -CompatibilityLevel 14 -Name "IDM" -SecondaryOwnerAlias LFMD\MIMBackupAdmin
 $s = SpSite($w.Url)
 $s.AllowSelfServiceUpgrade = $false
 $s.CompatibilityLevel

@@ -1,11 +1,13 @@
-﻿#$DCIP = Read-host "Please enter the IP address you want to test"
-$Dom = Read-host "Please enter the domain you want to test"
-$DCIPS = Resolve-DnsName $Dom
-foreach ($D in $DCIPS){
-$DCIP = $D.IPaddress 
-$DCName = Resolve-DnsName $DCIP -server $DCIP
-$name = $DCname.Namehost
-Write-host "Testing IP $DCIP on $name" -Fore Yellow
+﻿Write-host "
+Tests the ports required for connection to a DC for Trusts or other authentication, by domain name.
+NOTE: This script requires TCPING.exe in the execution path.
+https://www.elifulkerson.com/projects/tcping.php
+https://download.elifulkerson.com//files/tcping/0.39/tcping.exe
+" -fore Cyan
+
+$DCIP = Read-host "Please enter the IP address you want to test"
+
+Write-host "Testing AD Ports on IP $DCIP" -Fore Yellow
 
 $DNS = tcping -n 1 $DCIP 53
 if ($Kerb -like "*open*") {Write-host "Port 53 is open" -fore Green}
@@ -42,6 +44,6 @@ if ($RDP -like "*no response*") {Write-host "Port 3389 is not open" -fore Red}
 $RDP = tcping -n 1 $DCIP 3268
 if ($RDP -like "*open*") {Write-host "Port 3268 is open" -fore Green}
 if ($RDP -like "*no response*") {Write-host "Port 3268 is not open" -fore Red}
+
 Write-host ""
 
-}

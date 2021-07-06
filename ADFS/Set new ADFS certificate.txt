@@ -1,0 +1,6 @@
+$TP ="E5C306D9DE9398D75412091F3369490EB5AEEB8e"
+
+Set-AdfsSslCertificate -Thumbprint $tp
+Set-AdfsCertificate -CertificateType Service-Communications -Thumbprint $tp
+stop-Service "Active Directory Federation Services"
+start-Service "Active Directory Federation Services"

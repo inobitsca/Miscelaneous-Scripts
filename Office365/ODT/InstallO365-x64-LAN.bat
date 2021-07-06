@@ -1,0 +1,1 @@
+\\nesjnbbak01.nespressosa.co.za\ODT\setup.exe /configure \\nesjnbbak01.nespressosa.co.za\ODTO365-x64.xml

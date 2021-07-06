@@ -1,0 +1,15 @@
+
+
+<Configuration>
+
+  <Add SourcePath="\\nesjnbbak01.nespressosa.co.za\ODT" OfficeClientEdition="32" Channel="SemiAnnual" >
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+    </Product>
+  </Add>
+  <Updates Enabled="FALSE" Channel="SemiAnnual" SourcePath="\\nesjnbbak01.nespressosa.co.za\ODT" />
+  <Display Level="None" AcceptEULA="TRUE" />
+
+  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+</Configuration>
